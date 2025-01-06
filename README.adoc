@@ -55,16 +55,16 @@ toc::[]
 
 Projet réalisé par::
 
-- BOUVET Bastien -- Scrum Master / Développeur
-- BRUN Yolan -- Chef de projet / Rédacteur / Développeur
-- CORREIA MENDES Leonardo -- Développeur
-- PENICAUD-BERNAL Diego -- Responsable base de donnée / Développeur
-- SHARIFI Daner -- Responsable serveur web / Développeur
-- CRISTINI Aidan -- Git Master / Développeur
+- link:https://github.com/rboulle[BOUVET Bastien] -- Scrum Master / Développeur
+- link:https://github.com/rboulle[BRUN Yolan] -- Chef de projet / Rédacteur / Développeur
+- link:https://github.com/rboulle[CORREIA MENDES Leonardo] -- Développeur
+- link:https://github.com/rboulle[PENICAUD-BERNAL Diego] -- Responsable base de donnée / Développeur
+- link:https://github.com/rboulle[SHARIFI Daner] -- Responsable serveur web / Développeur
+- link:https://github.com/rboulle[CRISTINI Aidan] -- Git Master / Développeur
 
 Tuteur enseignant de l'équipe:: 
 
-- BOULLE Rémi
+- link:https://github.com/rboulle[BOULLE Rémi]
 
 == Contexte général
 
