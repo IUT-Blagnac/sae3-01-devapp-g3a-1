@@ -53,7 +53,7 @@ toc::[]
 
 == Equipe
 
-Projet est réalisé par::
+Projet réalisé par::
 
 - BOUVET Bastien -- Scrum Master / Développeur
 - BRUN Yolan -- Chef de projet / Rédacteur / Développeur
@@ -62,7 +62,7 @@ Projet est réalisé par::
 - SHARIFI Daner -- Responsable serveur web / Développeur
 - CRISTINI Aidan -- Git Master / Développeur
 
-Tuteur/tutrice enseignant(e) de l'équipe:: 
+Tuteur enseignant de l'équipe:: 
 
 - Rémi BOULE
 
