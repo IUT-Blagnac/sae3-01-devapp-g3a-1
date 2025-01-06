@@ -62,7 +62,9 @@ Projet est réalisé par::
 - KEBAB Daner -- Développeur
 - CRISTINI Aidan -- GitMaster / Développeur
 
-Tuteur/tutrice enseignant(e) de l'équipe:: Rémi BOULE
+Tuteur/tutrice enseignant(e) de l'équipe:: 
+
+Rémi BOULE
 
 == Contexte général
 
