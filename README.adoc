@@ -55,12 +55,12 @@ toc::[]
 
 Projet est réalisé par::
 
-- BOUVET Bastien -- ScrumMaster / Développeur
-- BRUN Yolan -- Chef de projet / Développeur
+- BOUVET Bastien -- Scrum Master / Développeur
+- BRUN Yolan -- Chef de projet / Rédacteur / Développeur
 - CORREIA MENDES Leonardo -- Développeur
-- PENICAUD-BERNAL Diego -- Développeur
-- KEBAB Daner -- Développeur
-- CRISTINI Aidan -- GitMaster / Développeur
+- PENICAUD-BERNAL Diego -- Responsable base de donnée / Développeur
+- SHARIFI Daner -- Responsable serveur web / Développeur
+- CRISTINI Aidan -- Git Master / Développeur
 
 Tuteur/tutrice enseignant(e) de l'équipe : 
 
