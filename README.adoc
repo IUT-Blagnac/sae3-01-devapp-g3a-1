@@ -62,9 +62,9 @@ Projet est réalisé par::
 - SHARIFI Daner -- Responsable serveur web / Développeur
 - CRISTINI Aidan -- Git Master / Développeur
 
-Tuteur/tutrice enseignant(e) de l'équipe : 
+Tuteur/tutrice enseignant(e) de l'équipe:: 
 
-  - Rémi BOULE
+- Rémi BOULE
 
 == Contexte général
 
