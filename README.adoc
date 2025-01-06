@@ -8,7 +8,6 @@
 :window: _blank
 :correction!:
 
-////
 // Useful definitions
 :asciidoc: http://www.methods.co.nz/asciidoc[AsciiDoc]
 :icongit: icon:git[]
@@ -32,6 +31,7 @@ endif::[]
 // /!\ A MODIFIER !!!
 :baseURL: https://github.com/IUT-Blagnac/sae3-01-template
 
+////
 // Tags
 image:{baseURL}/actions/workflows/blank.yml/badge.svg[Bidon] 
 image:{baseURL}/actions/workflows/build.yml/badge.svg[Build] 
