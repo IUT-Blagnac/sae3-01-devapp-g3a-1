@@ -57,8 +57,8 @@ Projet est réalisé par::
 
 - BOUVET Bastien -- ScrumMaster / Développeur
 - BRUN Yolan -- Chef de projet / Développeur
-- XXX Leonardo -- Développeur
-- XXX-XXX Diego -- Développeur
+- CORREIA MENDES Leonardo -- Développeur
+- PENICAUD-BERNAL Diego -- Développeur
 - KEBAB Daner -- Développeur
 - CRISTINI Aidan -- GitMaster / Développeur
 
