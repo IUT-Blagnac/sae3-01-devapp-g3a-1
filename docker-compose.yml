@@ -4,7 +4,7 @@ services:
       context: ./WEB # Chemin vers le Dockerfile Nginx
     container_name: nginx
     ports:
-      - "8080:80" # Mapper le port 80 du conteneur sur le port 8080 de l'hôte
+      - "80:80" # Mapper le port 80 du conteneur sur le port 80 de l'hôte
     volumes:
       - ./WEB/index.html:/usr/share/nginx/html/index.html:ro
 
