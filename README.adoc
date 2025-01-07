@@ -56,8 +56,8 @@ toc::[]
 Projet réalisé par::
 
 - link:https://github.com/boubast[BOUVET Bastien] -- Scrum Master / Développeur
-- link:https://github.com/YolanBrun[BRUN Yolan] -- Chef de projet / Rédacteur / Développeur
-- link:https://github.com/leonardo-correiamendes[CORREIA MENDES Leonardo] -- Développeur
+- link:https://github.com/YolanBrun[BRUN Yolan] --  Rédacteur / Développeur
+- link:https://github.com/leonardo-correiamendes[CORREIA MENDES Leonardo] -- Chef de projet / Développeur
 - link:https://github.com/Diego-PB[PENICAUD-BERNAL Diego] -- Responsable base de donnée / Développeur
 - link:https://github.com/DanerSharifi-FR[SHARIFI Daner] -- Responsable serveur web / Développeur
 - link:https://github.com/Smogita[CRISTINI Aidan] -- Git Master / Développeur
