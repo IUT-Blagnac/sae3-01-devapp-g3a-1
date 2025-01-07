@@ -62,9 +62,11 @@ Projet réalisé par::
 - link:https://github.com/DanerSharifi-FR[SHARIFI Daner] -- Responsable serveur web / Développeur
 - link:https://github.com/Smogita[CRISTINI Aidan] -- Git Master / Développeur
 
+
 Tuteur enseignant de l'équipe:: 
 
 - link:https://github.com/rboulle[BOULLE Rémi]
+
 
 Tutrice enseignante de l'équipe:: 
 
