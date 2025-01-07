@@ -66,6 +66,10 @@ Tuteur enseignant de l'équipe::
 
 - link:https://github.com/rboulle[BOULLE Rémi]
 
+Tutrice enseignante de l'équipe:: 
+
+- link:https://github.com/ependaries[PENDARIES Esther]
+
 == Contexte général
 
 TIP: Cette partie de votre `README.adoc` peut être supprimée ou mise ailleurs.
