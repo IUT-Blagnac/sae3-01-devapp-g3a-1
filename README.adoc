@@ -38,13 +38,13 @@ image:{baseURL}/actions/workflows/build.yml/badge.svg[Build]
 image:{baseURL}/actions/workflows/tests.yml/badge.svg[Tests] 
 image:https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg[License: MPL-2.0, link="https://opensource.org/licenses/MPL-2.0"]
 //---------------------------------------------------------------
-////
+
 
 TIP: Pensez à mettre à jour les infos dans ce fichier pour que les badges pointent sur les résultats effectifs de vos intégrations continue ou sur la bonne licence logicielle.
 
 WARNING: Ce dépôt présente le projet à développer dans le cadre de la SAÉ 3.01 du BUT1 Informatique de l'IUT de Blagnac.
 
-////
+
 Ce fichier `README.adoc` (dont vous lisez sûrement le rendu HTML automatiquement effectué par GitHUb), fait partie du dépôt initial cloné à partir du lien GitHub classroom qui vous a été donné en cours (https://classroom.github.com/a/fePVlfpN).
 Vous trouverez le dépôt "template" qui a servi de base ici : https://github.com/IUT-Blagnac/sae3-01-template. En complément du cours Moodle de la SAE 3.01 (cf. <<liensUtiles>>), ce dépôt template vous permet d'accéder à des exemples d'https://github.com/IUT-Blagnac/sae3-01-template/issues[issues], de https://github.com/IUT-Blagnac/sae3-01-template/releases[releases], ou d'autres artefacts à venir.
 ////
@@ -65,7 +65,7 @@ Projet réalisé par::
 
 Tuteur enseignant de l'équipe:: 
 
-- link:https://github.com/rboulle[BOULLE Rémi]
+- link:https://github.com/rboulle[BOULLE Rémi] -- Product Owner
 
 
 Tutrice enseignante de l'équipe:: 
@@ -186,6 +186,31 @@ Chaque sprint (semaine) vous devrez livrer une nouvelle version de votre applica
 Utilisez pour cela les fonctionnalités de GitHub pour les https://docs.github.com/en/repositories/releasing-projects-on-github[Releases].
 
 De plus ce fichier `README.adoc` devra être à jour des informations suivantes :
+
+[[liensUtiles]]
+=== Liens utiles
+
+[cols="1,2,3,4,5",options="header"]
+|===
+| Date  | Version  | Nom              | Lien | Description
+|  Sem.2 (8/01 - 14/01 ) |   | Cours Moodle     | https://webetud.iut-blagnac.fr/course/view.php?id=920[cours Moodle sur la SAE] | Contient toute information concernant le sujet et l'organisation de notre dépôt
+|     |  | Backlog Produit  | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-23-24-LocURa-Equipe-3A04/issues[Backlog produit] | Vous trouverez les priorités, critères d’acceptabilité et évaluation de compléxité dans le premier commentaire de chaque User Story (Veuillez filtrer en choisissant le label User Stories)
+|       | 1er Sprint  | Sprint 1 | https://github.com/orgs/IUT-Blagnac/projects/171[Sprint 1] | La colonne User Stories représente les User stories à développer durant le sprint
+|        | 1er Sprint | Bilan Sprint 1   | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-23-24-LocURa-Equipe-3A04/blob/master/Doc/Sprint%201/bilanSprint1.adoc[Bilan Sprint 1] | Le bilan du premier Sprint. Contient aussi la prévision du prochain https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-23-24-LocURa-Equipe-3A04/blob/master/Doc/Sprint%201/bilanSprint1.adoc#2-prochain-sprint[Sprint] 
+|        | 1er Sprint | Documentation Utilisateur | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-23-24-LocURa-Equipe-3A04/blob/master/Doc/Sprint%201/DocUtilisateur.adoc[Documentation Utilisateur] | Montre comment installer l'application et la présente avec ses fonctionnalités
+|        | 1er Sprint | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-23-24-LocURa-Equipe-3A04/blob/master/Doc/Sprint%201/DocTechnique.adoc[Documentation Technique] | Montre le fonctionnement et les fichiers clés de l'application
+| Sem.3 (15/01 - 21/01 )  |2ème Sprint   | Cahier de tests | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-23-24-LocURa-Equipe-3A04/blob/master/Doc/Sprint%202/CahierDeTest.adoc[Cahier de tests] | Donne les différents tests que l'on a pu effectuer
+|         | 2ème Sprint | Documentation Utilisateur |    https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-23-24-LocURa-Equipe-3A04/blob/master/Doc/Sprint%202/DocUtilisateur.adoc[Documentation Utilisateur]| Montre comment installer l'application et la présente avec ses fonctionnalités
+|         | 2ème Sprint | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-23-24-LocURa-Equipe-3A04/blob/master/Doc/Sprint%202/DocTechnique.adoc[Documentation Technique] |  Montre le fonctionnement et les fichiers clés de l'application
+|         | 2ème Sprint | Sprint 2 | https://github.com/orgs/IUT-Blagnac/projects/173[Sprint 2] | La colonne User Stories représente les User stories à développer durant le sprint
+|         | 2ème Sprint | Bilan Sprint 2 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-23-24-LocURa-Equipe-3A04/blob/master/Doc/Sprint%202/BilanSprint2.adoc[Bilan Sprint 2] | Le bilan du deuxième Sprint
+|        | 2ème Sprint | Prévision Sprint 3 | https://github.com/orgs/IUT-Blagnac/projects/174[Prévision Sprint 3] | Prévision du prochain Sprint (3) 
+| Sem.4 (22/01 - 29/01       | 3ème Sprint | Sprint 3 |  https://github.com/orgs/IUT-Blagnac/projects/174[Sprint 3] | La colonne User Stories représente les User stories à développer durant le sprint
+|                            | 3ème Sprint |  Cahier de tests |  https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-23-24-LocURa-Equipe-3A04/blob/master/Doc/Sprint%203/CahierDeTest.adoc[Cahier de tests] | Donne les différents tests que l'on a pu effectuer
+|                            | 3ème Sprint | Documentation Utilisateur |  https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-23-24-LocURa-Equipe-3A04/blob/master/Doc/Sprint%203/DocUtilisateur.adoc[Documentation Utilisateur] |  Montre comment installer l'application et la présente avec ses fonctionnalités
+|       | 3ème Sprint  | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-23-24-LocURa-Equipe-3A04/blob/master/Doc/Sprint%203/DocTechnique.adoc[Documentation Technique] | Montre le fonctionnement et les fichiers clés de l'application
+| | 3ème Sprint | Bilan Sprint 3 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-23-24-LocURa-Equipe-3A04/blob/master/Doc/Sprint%203/BilanSprint3.adoc[Bilan Sprint 3] | Le bilan du troisième Sprint
+|===
 
 - Version courante : https://github.com/IUT-Blagnac/sae3-01-template/releases/tag/v0.1.2[v0.1.2]
 - Lien vers la doc technique
