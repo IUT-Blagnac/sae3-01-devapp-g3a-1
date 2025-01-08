@@ -65,7 +65,7 @@ Projet réalisé par::
 
 Tuteur enseignant de l'équipe:: 
 
-- link:https://github.com/rboulle[BOULLE Rémi]
+- link:https://github.com/rboulle[BOULLE Rémi] -- Product Owner
 
 
 Tutrice enseignante de l'équipe:: 
