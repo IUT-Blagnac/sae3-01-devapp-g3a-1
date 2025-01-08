@@ -80,16 +80,12 @@ Les salles du 1er étage du département d’informatique sont équipées de cap
 
 L’objectif du projet est de développer une interface web permettant de visualiser les données remontées par les capteurs, les stocker dans une base et d’avoir un historique. Le but est de donner un aperçu de l’occupation des salles et de pouvoir faire des statistiques.
 
-Un plan SVG des salles est disponible.
-
 Le **livrable attendu** est constitué :
 
 - un site/application **fonctionnel** et déployable sous la forme d’un container avec docker.
 - des sources du site ou de l’application développée
 - d’une doc précise d’installation au format asciidoc (l’installation sera testée sur machine GNU/Linux)
 - un README présentant le projet avec, au début, la composition du groupe (Noms, prénoms)
-
-Insistons sur le fait qu’un critère essentiel est que le livrable soit fonctionnel et déployable facilement !
 
 [[liensUtiles]]
 === Liens utiles
