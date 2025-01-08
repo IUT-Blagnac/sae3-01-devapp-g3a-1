@@ -74,26 +74,47 @@ Tutrice enseignante de l'équipe::
 
 == Contexte général
 
-TIP: Cette partie de votre `README.adoc` peut être supprimée ou mise ailleurs.
+### Sujet "Dashboard du département"
 
-=== Dépôt initial
+Les salles du 1er étage du département d’informatique sont équipées de capteurs AM107. Ces capteurs remontent des données de présence (via la valeur `activity`), de luminosité (en lux) et de niveau de CO2 sur un flux MQTT.
 
-Ce dépôt initial a été créé pour que tous les groupes de 2ème année aient les mêmes informations de départ.
+L’objectif du projet est de développer une interface web permettant de visualiser les données remontées par les capteurs, les stocker dans une base et d’avoir un historique. Le but est de donner un aperçu de l’occupation des salles et de pouvoir faire des statistiques.
 
-Vous y trouverez des fichiers qui peuvent être supprimés s'ils ne vous sont pas utiles :
+Un plan SVG des salles est disponible.
 
-- `.gitignore` => un fichier minimaliste des éléments à ne pas pousser en général sur vos dépôts (utiliser la commande `git add -f` pour forcer l'ajout d'un fichier Jar qui ne bougera plus, pour archive par exemple).
-- `.github` => le répertoire qui contient des éléments de gestion de projet :
-** `workflows` => le repertoire qui contient les actions à lancer à chaque push sur votre repo. 
-*** `blank.yml` => un exemple bidon mais dont vous pourrez vérifier l’exécution correcte (1er tag)
-** `ISSUE_TEMPLATE` => le repertoire qui contient quelques templates pour vos issues.
-*** `us.yml` => Exemple de template pour les User Stories
-*** `bug.yml` => Exemple de template pour les issues de bug report
+Le **livrable attendu** est constitué :
 
-TIP: Adaptez ces fichiers à votre projet et à votre organisation. Et inspirez-vous en pour en ajouter.
+- un site/application **fonctionnel** et déployable sous la forme d’un container avec docker.
+- des sources du site ou de l’application développée
+- d’une doc précise d’installation au format asciidoc (l’installation sera testée sur machine GNU/Linux)
+- un README présentant le projet avec, au début, la composition du groupe (Noms, prénoms)
+
+Insistons sur le fait qu’un critère essentiel est que le livrable soit fonctionnel et déployable facilement !
 
 [[liensUtiles]]
 === Liens utiles
+
+[cols="1,2,3,4,5",options="header"]
+|===
+| Date  | Version  | Nom              | Lien | Description
+|  Sem.2 ( 06/01/25 - 12/01/25 ) |   | Cours Moodle     | https://webetud.iut-blagnac.fr/mod/resource/view.php?id=36226[Sujet SAE] | Sujet de la SAE, à retrouver sur Webetud
+|     | 1er Sprint | Sprint / Backlog 1 | https://github.com/orgs/IUT-Blagnac/projects/300/views/1[Backlog et 1er Sprint] | 1er Sprint / Backlog du 1er Sprint, avec chaque User Story et tâches
+|        | 1er Sprint | Documentation Utilisateur | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Doc_Utilisateur/Doc_Utilisateur1.md[Documentation Utilisateur] | Installation et présentation du docker avec ses fonctionnalités
+|        | 1er Sprint | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Doc_Technique/Doc_Technique1.md[Documentation Technique] | Fonctionnement et fichiers clés du docker
+|        | 1er Sprint | Bilan Sprint 1   | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Bilans/Bilan_Sprint1.md[Bilan Sprint 1] |Bilan du premier Sprint
+|        | 1er Sprint | Prévision Sprint 2 | https://github.com/orgs/IUT-Blagnac/projects/302[Prévision Sprint 2] | Prévision du prochain Sprint (2) 
+| Sem.3 ( 13/01/25 - 19/01/25 ) | 2ème Sprint | Sprint / Backlog 2 | https://github.com/orgs/IUT-Blagnac/projects/302[Sprint 2] | 2ème Sprint / Backlog du 2ème Sprint, avec chaque User Story et tâches
+|         | 2ème Sprint | Cahier de tests |https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Cahier_de_Tests.md[Cahier de tests] | Cahier de tests
+|         | 2ème Sprint | Documentation Utilisateur | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Doc_Utilisateur/Doc_Utilisateur2.md[Documentation Utilisateur]| Installation et présentation du docker avec ses fonctionnalités
+|         | 2ème Sprint | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Doc_Technique/Doc_Technique2.md[Documentation Technique] | Fonctionnement et fichiers clés du docker
+|         | 2ème Sprint | Bilan Sprint 2 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Bilans/Bilan_Sprint2.md[Bilan Sprint 2] | Bilan du deuxième Sprint
+|        | 2ème Sprint | Prévision Sprint 3 | https://github.com/orgs/IUT-Blagnac/projects/303[Prévision Sprint 3] | Prévision du prochain Sprint (3) 
+| Sem.4 ( 20/01/25 - 26/01/25 )   | 3ème Sprint | Sprint / Backlog 3 |  https://github.com/orgs/IUT-Blagnac/projects/303[Sprint 3] | 3ème Sprint / Backlog du 3ème Sprint, avec chaque User Story et tâches
+|          | 3ème Sprint |  Cahier de tests | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Cahier_de_Tests.md[Cahier de tests] | Cahier de tests
+|         | 3ème Sprint | Documentation Utilisateur |  https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Doc_Utilisateur/Doc_Utilisateur3.md[Documentation Utilisateur] |  Installation et présentation du docker avec ses fonctionnalités
+|       | 3ème Sprint  | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Doc_Technique/Doc_Technique3.md[Documentation Technique] | Fonctionnement et fichiers clés du docker
+| | 3ème Sprint | Bilan Sprint 3 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Bilans/Bilan_Sprint3.md[Bilan Sprint 3] | Bilan du troisième Sprint
+|===
 
 - Le https://webetud.iut-blagnac.fr/course/view.php?id=841[cours Moodle] sur la SAE
 - Le dépôt https://github.com/IUT-Blagnac/sae3-01-template[template] qui sert de base à tous les dépôts étudiants.
@@ -186,31 +207,6 @@ Chaque sprint (semaine) vous devrez livrer une nouvelle version de votre applica
 Utilisez pour cela les fonctionnalités de GitHub pour les https://docs.github.com/en/repositories/releasing-projects-on-github[Releases].
 
 De plus ce fichier `README.adoc` devra être à jour des informations suivantes :
-
-[[liensUtiles]]
-=== Liens utiles
-
-[cols="1,2,3,4,5",options="header"]
-|===
-| Date  | Version  | Nom              | Lien | Description
-|  Sem.2 ( 06/01/25 - 12/01/25 ) |   | Cours Moodle     | https://webetud.iut-blagnac.fr/mod/resource/view.php?id=36226[Sujet SAE] | Sujet de la SAE, à retrouver sur Webetud
-|     | 1er Sprint | Sprint / Backlog 1 | https://github.com/orgs/IUT-Blagnac/projects/300/views/1[Backlog et 1er Sprint] | 1er Sprint / Backlog du 1er Sprint, avec chaque User Story et tâches
-|        | 1er Sprint | Documentation Utilisateur | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Doc_Utilisateur/Doc_Utilisateur1.md[Documentation Utilisateur] | Installation et présentation du docker avec ses fonctionnalités
-|        | 1er Sprint | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Doc_Technique/Doc_Technique1.md[Documentation Technique] | Fonctionnement et fichiers clés du docker
-|        | 1er Sprint | Bilan Sprint 1   | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Bilans/Bilan_Sprint1.md[Bilan Sprint 1] |Bilan du premier Sprint
-|        | 1er Sprint | Prévision Sprint 2 | https://github.com/orgs/IUT-Blagnac/projects/302[Prévision Sprint 2] | Prévision du prochain Sprint (2) 
-| Sem.3 ( 13/01/25 - 19/01/25 ) | 2ème Sprint | Sprint / Backlog 2 | https://github.com/orgs/IUT-Blagnac/projects/302[Sprint 2] | 2ème Sprint / Backlog du 2ème Sprint, avec chaque User Story et tâches
-|         | 2ème Sprint | Cahier de tests |https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Cahier_de_Tests.md[Cahier de tests] | Cahier de tests
-|         | 2ème Sprint | Documentation Utilisateur | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Doc_Utilisateur/Doc_Utilisateur2.md[Documentation Utilisateur]| Installation et présentation du docker avec ses fonctionnalités
-|         | 2ème Sprint | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Doc_Technique/Doc_Technique2.md[Documentation Technique] | Fonctionnement et fichiers clés du docker
-|         | 2ème Sprint | Bilan Sprint 2 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Bilans/Bilan_Sprint2.md[Bilan Sprint 2] | Bilan du deuxième Sprint
-|        | 2ème Sprint | Prévision Sprint 3 | https://github.com/orgs/IUT-Blagnac/projects/303[Prévision Sprint 3] | Prévision du prochain Sprint (3) 
-| Sem.4 ( 20/01/25 - 26/01/25 )   | 3ème Sprint | Sprint / Backlog 3 |  https://github.com/orgs/IUT-Blagnac/projects/303[Sprint 3] | 3ème Sprint / Backlog du 3ème Sprint, avec chaque User Story et tâches
-|          | 3ème Sprint |  Cahier de tests | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Cahier_de_Tests.md[Cahier de tests] | Cahier de tests
-|         | 3ème Sprint | Documentation Utilisateur |  https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Doc_Utilisateur/Doc_Utilisateur3.md[Documentation Utilisateur] |  Installation et présentation du docker avec ses fonctionnalités
-|       | 3ème Sprint  | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Doc_Technique/Doc_Technique3.md[Documentation Technique] | Fonctionnement et fichiers clés du docker
-| | 3ème Sprint | Bilan Sprint 3 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Bilans/Bilan_Sprint3.md[Bilan Sprint 3] | Bilan du troisième Sprint
-|===
 
 - Version courante : https://github.com/IUT-Blagnac/sae3-01-template/releases/tag/v0.1.2[v0.1.2]
 - Lien vers la doc technique
