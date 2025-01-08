@@ -105,6 +105,81 @@ TIP: Pensez à utiliser les salons Discord dédiés pour poser vos questions.
 
 TIP: Mettez ici toutes les informations nécessaire à l'utilisation de votre dépôt (comment on installe votre application, où sont les docs, etc.)
 
+
+
+
+=== Organisation Générale
+
+Ce projet est organisé autour de plusieurs dossiers et fichiers pour structurer le développement et le déploiement d'une application utilisant Docker, une base de données TimescaleDB, un serveur web Nginx, et un backend PHP. Voici une description de la structure :
+
+[source]
+----
+.
+├── BD
+│   ├── README.md
+│   └── script.sql
+├── README.adoc
+├── WEB
+│   ├── Dockerfile
+│   ├── index.php
+│   └── index_old.html
+├── docker-compose.yml
+├── docker_control.sh
+├── images
+│   └── README.md
+└── nginx.conf
+----
+
+=== Détails des Répertoires et Fichiers
+
+==== `BD`
+- **Description** : Ce répertoire contient les fichiers liés à la base de données.
+- **Fichiers principaux** :
+  - `README.md` : Documentation sur la configuration et l'utilisation de la base de données.
+  - `script.sql` : Script SQL pour initialiser les tables de notre base de donnée.
+
+==== `WEB`
+- **Description** : Ce répertoire contient les fichiers nécessaires au serveur web et au backend PHP.
+- **Fichiers principaux** :
+  - `Dockerfile` : Définit l'image Docker pour le conteneur PHP, incluant les extensions nécessaires (comme `pdo_pgsql`).
+  - `index.php` : Page principale qui interagit avec la base de données et affiche les données de la table `membre`.
+
+==== Racine du Projet
+- **Fichiers et Répertoires Principaux** :
+  - `docker-compose.yml` : Définit les services Docker (Nginx, PHP, TimescaleDB) et leur configuration.
+  - `docker_control.sh` : Script Bash pour simplifier le démarrage et l'arrêt des conteneurs Docker.
+  - `nginx.conf` : Configuration personnalisée pour le serveur Nginx, permettant la prise en charge des fichiers PHP.
+
+==== `images`
+- **Description** : Répertoire pour stocker des ressources supplémentaires, comme des fichiers d'images ou des exemples.
+- **Fichiers principaux** :
+  - `README.md` : Documentation associée à ce répertoire.
+
+=== Guide pour les Contributeurs
+
+1. **Cloner le Projet** :
+   ```bash
+   git clone <URL_DU_DEPOT>
+   cd <NOM_DU_DEPOT>
+   ```
+
+2. **Configurer et Lancer les Conteneurs Docker** :
+   ```bash
+   ./docker_control.sh
+   ```
+   - Suivez les instructions pour démarrer ou arrêter les conteneurs.
+
+3. **Développement Web** :
+   - Modifiez les fichiers dans le répertoire `WEB` pour mettre à jour le backend ou le frontend.
+
+4. **Base de Données** :
+   - Modifiez le script SQL dans le répertoire `BD` pour mettre à jour la strucure de la base de données.
+
+=== Notes
+- Le fichier `docker_control.sh` simplifie la gestion des conteneurs.
+- Assurez-vous que Docker et Docker Compose sont installés sur votre machine avant de démarrer le projet.
+
+
 == Gestion de projet & Qualité
 
 Chaque sprint (semaine) vous devrez livrer une nouvelle version de votre application (release).
