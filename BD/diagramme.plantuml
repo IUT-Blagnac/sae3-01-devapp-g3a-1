@@ -1,0 +1,16 @@
+@startuml
+class Mesures {
+  + id: INT [PK]
+  + temperature: FLOAT
+  + humidity: FLOAT
+  + activity: FLOAT
+  + tvoc: FLOAT
+  + illumination: FLOAT
+  + infrared: FLOAT
+  + infrared_and_visible: FLOAT
+  + presure: FLOAT
+  + deviceName: FLOAT
+  + room: FLOAT
+  + date_heure: DATETIME
+}
+@enduml
