@@ -20,6 +20,18 @@ services:
       - ./WEB:/usr/share/nginx/html # Répertoire partagé avec Nginx
     depends_on:
       - db
+  
+  nodered:
+    image: nodered/node-red:latest
+    container_name: nodered
+    ports:
+      - "1880:1880" # Interface web de Node-RED
+    environment:
+      - NODE_OPTIONS=--max_old_space_size=512
+    volumes:
+      - ./nodered:/data # Persistance des flux et configuration
+    depends_on:
+      - db # Node-RED dépend de la base de données
 
   db:
     image: timescale/timescaledb:latest-pg14
