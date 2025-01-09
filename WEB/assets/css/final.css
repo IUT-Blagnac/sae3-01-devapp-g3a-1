@@ -33,3 +33,23 @@ footer {
     /* stroke:rgb(255, 193, 183);
     fill: rgb(233, 8, 0); */
 }
+
+.bg-light-violet {
+    background: #fce9f9;
+    color: #dc269d;
+}
+
+.bg-light-green {
+background: #f1fce9;
+color: #70dc26;
+}
+
+.bg-light-yellow {
+    background: #fcf7e9;
+    color: #dcc026;
+}
+
+.bg-light-turquoise {
+background: #e9fcfa;
+color: #26dcc2;
+}

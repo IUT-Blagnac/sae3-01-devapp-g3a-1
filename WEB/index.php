@@ -1,3 +1,6 @@
+<?php
+    require_once "includes/connexion.inc.php";
+?>
 <!doctype html>
 <html lang="en"><!-- [Head] start -->
 <head><title>Online Courses | Able Pro Dashboard Template</title><!-- [Meta] -->
@@ -319,6 +322,7 @@
         </div>
     </div>
 </footer><!-- Required Js -->
+<script src="../assets/js/final.js"></scrpit>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script src="../assets/js/plugins/popper.min.js"></script>
 <script src="../assets/js/plugins/simplebar.min.js"></script>
@@ -340,7 +344,6 @@
 <script src="../assets/js/plugins/apexcharts.min.js"></script>
 <script src="../assets/js/plugins/peity-vanilla.min.js"></script><!-- custom widgets js -->
 <script src="../assets/js/widgets/revenue-sales-chart.js"></script>
-<script src="../assets/js/widgets/invites-goal-chart.js"></script>
 <script src="../assets/js/widgets/course-report-bar-chart.js"></script>
 <script src="../assets/js/widgets/total-revenue-line-1-chart.js"></script>
 <script src="../assets/js/widgets/total-revenue-line-2-chart.js"></script>
