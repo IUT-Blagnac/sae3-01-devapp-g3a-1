@@ -7,7 +7,7 @@
     }
     
     try {
-        $sql = "SELECT * FROM mesures";  // Remplacez 'votre_table' par le nom de votre table
+        $sql = "SELECT * FROM mesures"; 
         $stmt = $pdo->query($sql);
     
         $row = $stmt->fetch(PDO::FETCH_ASSOC);

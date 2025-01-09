@@ -3,6 +3,12 @@
 # Chemin du projet
 PROJECT_DIR="$(dirname "$(readlink -f "$0")")"
 
+# Vérification de docker-compose
+if ! command -v docker-compose &> /dev/null; then
+    echo "Erreur : docker-compose n'est pas installé. Veuillez l'installer avant de lancer ce script."
+    exit 1
+fi
+
 # Fonction pour démarrer Docker Compose
 start_containers() {
     echo "Lancement des conteneurs Docker..."
@@ -17,7 +23,11 @@ stop_containers() {
     echo "Conteneurs arrêtés !"
 }
 
-# Demande à l'utilisateur s'il veut lancer ou arrêter les conteneurs
+# Menu interactif
+echo
+echo "=== Gestion des Conteneurs Docker ==="
+echo "Chemin du projet : $PROJECT_DIR"
+echo
 echo "Que voulez-vous faire ?"
 echo "1) Démarrer les conteneurs"
 echo "2) Arrêter les conteneurs"
@@ -28,4 +38,3 @@ case $choice in
     2) stop_containers ;;
     *) echo "Option invalide. Veuillez choisir 1 ou 2." ;;
 esac
-gi
