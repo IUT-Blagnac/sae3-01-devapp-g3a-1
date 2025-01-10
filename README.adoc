@@ -57,6 +57,12 @@ Tutrice enseignante de l'équipe::
 
 - link:https://github.com/ependaries[PENDARIES Esther]
 
+== Lancement du projet
+
+Pour lancer le projet, il suffit de suivre les instructions du guide de démarrage disponible dans le lien ci-dessous :
+
+link:
+
 == Contexte général
 
 ### Sujet "Dashboard du département"

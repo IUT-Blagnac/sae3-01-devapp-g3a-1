@@ -19,8 +19,8 @@ start_containers() {
 # Fonction pour arrêter Docker Compose
 stop_containers() {
     echo "Arrêt des conteneurs Docker..."
-    docker-compose -f "$PROJECT_DIR/Docker/docker-compose.yml" down
-    echo "Conteneurs arrêtés !"
+    docker-compose -f "$PROJECT_DIR/Docker/docker-compose.yml" down --volumes --remove-orphans
+    echo "Conteneurs arrêtés et nettoyés !"
 }
 
 # Menu interactif
