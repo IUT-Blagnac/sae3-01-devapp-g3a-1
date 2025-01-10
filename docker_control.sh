@@ -12,14 +12,14 @@ fi
 # Fonction pour démarrer Docker Compose
 start_containers() {
     echo "Lancement des conteneurs Docker..."
-    docker-compose -f "$PROJECT_DIR/docker-compose.yml" up -d
+    docker-compose -f "$PROJECT_DIR/Docker/docker-compose.yml" up -d
     echo "Conteneurs lancés !"
 }
 
 # Fonction pour arrêter Docker Compose
 stop_containers() {
     echo "Arrêt des conteneurs Docker..."
-    docker-compose -f "$PROJECT_DIR/docker-compose.yml" down
+    docker-compose -f "$PROJECT_DIR/Docker/docker-compose.yml" down
     echo "Conteneurs arrêtés !"
 }
 
