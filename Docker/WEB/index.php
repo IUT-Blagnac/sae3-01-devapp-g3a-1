@@ -2,16 +2,11 @@
     require_once "includes/connexion.inc.php";
 ?>
 <!doctype html>
-<html lang="en"><!-- [Head] start -->
-<head><title>Online Courses | Able Pro Dashboard Template</title><!-- [Meta] -->
+<html lang="fr"><!-- [Head] start -->
+<head><title>Tableau de bord</title><!-- [Meta] -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description"
-          content="Able Pro is trending dashboard template made using Bootstrap 5 design framework. Able Pro is available in Bootstrap, React, CodeIgniter, Angular,  and .net Technologies.">
-    <meta name="keywords"
-          content="Bootstrap admin template, Dashboard UI Kit, Dashboard Template, Backend Panel, react dashboard, angular dashboard">
-    <meta name="author" content="Phoenixcoded"><!-- [Favicon] icon -->
     <link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon"><!-- [Page specific CSS] start -->
     <link rel="stylesheet" href="../assets/css/plugins/datepicker-bs5.min.css"><!-- [Page specific CSS] end -->
     <!-- [Font] Family -->
