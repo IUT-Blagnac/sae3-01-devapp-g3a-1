@@ -7,8 +7,11 @@
     }
     
     try {
-        $sql = "SELECT * FROM mesures"; 
-        $stmt = $pdo->query($sql);
+        // select from mesures by room
+        $sql = "SELECT * FROM mesures WHERE room = :room ORDER BY id DESC LIMIT 1";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(":room", $room);
+        $stmt->execute();
     
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
     
@@ -17,8 +20,8 @@
     }
 ?>
 <!doctype html>
-<html lang="en"><!-- [Head] start -->
-<head><title>Online Courses | Able Pro Dashboard Template</title><!-- [Meta] -->
+<html lang="fr"><!-- [Head] start -->
+<head><title>Salle <?= $room ?></title><!-- [Meta] -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
