@@ -103,60 +103,75 @@ Le **livrable attendu** est constitué :
 
 === Organisation Générale
 
-Ce projet est organisé autour de plusieurs dossiers et fichiers pour structurer le développement et le déploiement d'une application utilisant Docker, une base de données TimescaleDB, un serveur web Nginx, et un backend PHP. Voici une description de la structure :
+Ce projet est organisé autour de plusieurs dossiers et fichiers pour structurer le développement, le déploiement et la documentation d'une application complète. L'application utilise Docker, une base de données TimescaleDB, un serveur web Nginx, un backend PHP, ainsi que Node-RED pour gérer un flux MQTT. Voici une description de la structure actuelle :
 
 [source]
 ----
-.
-├── BD
-│   ├── README.md
-│   └── script.sql
-├── README.adoc
-├── WEB
-│   ├── Dockerfile
-│   ├── index.php
-│   └── index_old.html
-├── docker-compose.yml
-├── docker_control.sh
-├── images
-│   └── README.md
-└── nginx.conf
+  .
+  ├── BD
+  │   ├── README.md                      // Documentation de la base de données
+  │   ├── diagramme_de_classe_bd.plantuml // Diagramme de classe de la base de données
+  │   └── script.sql                     // Script SQL pour créer et initialiser la base de données
+  ├── Docker
+  │   ├── README.md                      // Documentation des conteneurs Docker
+  │   ├── docker-compose.yml             // Configuration Docker Compose
+  │   ├── nginx.conf                     // Configuration Nginx pour le serveur web
+  │   ├── nodered                        // Configuration et données de Node-RED
+  │   │   ├── flows.json                 // Flux Node-RED pour gérer les données
+  │   │   └── settings.js                // Configuration Node-RED
+  ├── Documentation
+  │   ├── Bilans                         // Rapports des bilans de chaque sprint
+  │   │   ├── Bilan_Sprint1.md
+  │   │   ├── Bilan_Sprint2.md
+  │   │   └── Bilan_Sprint3.md
+  │   ├── Doc_Technique                  // Documentation technique détaillant les aspects techniques
+  │   │   ├── Doc_Technique1.md
+  │   │   ├── Doc_Technique2.md
+  │   │   └── Doc_Technique3.md
+  │   ├── Doc_Utilisateur                // Documentation utilisateur pour comprendre l'application
+  │   │   ├── Doc_Utilisateur1.md
+  │   │   ├── Doc_Utilisateur2.md
+  │   │   └── Doc_Utilisateur3.md
+  │   └── Cahier_de_Tests.md             // Cahier de tests pour valider les fonctionnalités
+  ├── Reunions
+  │   └── Reunion_1.md                   // Notes des réunions pour le suivi du projet
+  ├── WEB
+  │   ├── Dockerfile                     // Dockerfile pour le backend PHP
+  │   ├── index.php                      // Page principale de l'application web
+  │   ├── includes                       // Scripts PHP supplémentaires
+  │   │   └── connexion.inc.php          // Gestion de la connexion à la base de données
+  │   ├── assets                         // Ressources front-end (CSS, JS, images)
+  │   │   ├── css
+  │   │   ├── js
+  │   │   └── images
+  │   └── room.php                       // Page spécifique pour visualiser les données des salles
+  ├── images
+  │   ├── README.md                      // Documentation des images du projet
+  │   └── diagramme_de_classe.png        // Diagramme de classe pour l'application
+  ├── README.adoc                        // Document principal expliquant le projet
+  └── docker_control.sh                  // Script pour gérer facilement les conteneurs Docker
 ----
 
-=== Détails des Répertoires et Fichiers
+=== Description des Composants
 
-==== `BD`
-- **Description** : Ce répertoire contient les fichiers liés à la base de données.
-- **Fichiers principaux** :
-  - `README.md` : Documentation sur la configuration et l'utilisation de la base de données.
-  - `script.sql` : Script SQL pour initialiser les tables de notre base de donnée.
+- **BD** : Contient tous les fichiers liés à la base de données, y compris les scripts SQL pour initialiser les tables et le diagramme UML.
+- **Docker** : Regroupe les configurations Docker (Nginx, Node-RED, TimescaleDB) et les fichiers associés pour déployer l'application via des conteneurs.
+- **Documentation** : Centralise toutes les documentations liées au projet, y compris les bilans, les guides utilisateur et technique, et le cahier de tests.
+- **Reunions** : Archive des comptes rendus de réunions pour le suivi des discussions et des décisions.
+- **WEB** : Inclut le backend PHP, les ressources front-end, et les scripts supplémentaires pour l'application web.
+- **images** : Contient des ressources visuelles comme des diagrammes et des illustrations.
 
-==== `WEB`
-- **Description** : Ce répertoire contient les fichiers nécessaires au serveur web et au backend PHP.
-- **Fichiers principaux** :
-  - `Dockerfile` : Définit l'image Docker pour le conteneur PHP, incluant les extensions nécessaires (comme `pdo_pgsql`).
-  - `index.php` : Page principale qui interagit avec la base de données et affiche les données de la table `membre`.
-
-==== Racine du Projet
-- **Fichiers et Répertoires Principaux** :
-  - `docker-compose.yml` : Définit les services Docker (Nginx, PHP, TimescaleDB) et leur configuration.
-  - `docker_control.sh` : Script Bash pour simplifier le démarrage et l'arrêt des conteneurs Docker.
-  - `nginx.conf` : Configuration personnalisée pour le serveur Nginx, permettant la prise en charge des fichiers PHP.
-
-==== `images`
-- **Description** : Répertoire pour stocker des ressources supplémentaires, comme des fichiers d'images ou des exemples.
-- **Fichiers principaux** :
-  - `README.md` : Documentation associée à ce répertoire.
+Ce projet offre une architecture modulaire pour simplifier le développement, la maintenance et le déploiement. Les conteneurs Docker permettent de gérer efficacement les services essentiels tels que la base de données, le serveur web et les flux MQTT avec Node-RED.
 
 === Guide pour les Contributeurs
 
 1. **Cloner le Projet** :
    ```bash
-   git clone <URL_DU_DEPOT>
-   cd <NOM_DU_DEPOT>
+   git clone https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01.git
+   cd SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01
    ```
 
-2. **Configurer et Lancer les Conteneurs Docker** :
+2. **Lancer les Conteneurs Docker** :
    ```bash
    ./docker_control.sh
    ```
