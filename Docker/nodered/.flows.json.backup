@@ -1,0 +1,519 @@
+[
+    {
+        "id": "fc36e552fabb57dc",
+        "type": "tab",
+        "label": "Flux 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a9a91092a687928c",
+        "type": "tab",
+        "label": "Timescale basis",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e7b141167d24710c",
+        "type": "mqtt-broker",
+        "name": "test_chirpstack",
+        "broker": "chirpstack.iut-blagnac.fr",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c0fdaf5f04b80540",
+        "type": "mqtt-broker",
+        "name": "mqtt_iut_sae",
+        "broker": "mqtt.iut-blagnac.fr",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "233a32a7e323113d",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "timescaledb",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "dashboard_db",
+        "databaseFieldType": "str",
+        "ssl": "false",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": "10",
+        "maxFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "admin",
+        "userFieldType": "str",
+        "password": "password",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "55820303c8f21475",
+        "type": "mqtt in",
+        "z": "fc36e552fabb57dc",
+        "name": "",
+        "topic": "AM107/by-room/#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "c0fdaf5f04b80540",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 560,
+        "wires": [
+            [
+                "d233b8fda5345302"
+            ]
+        ]
+    },
+    {
+        "id": "9f923b2297803da5",
+        "type": "debug",
+        "z": "fc36e552fabb57dc",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "39cf3f9ede4b3dbe",
+        "type": "function",
+        "z": "fc36e552fabb57dc",
+        "name": "function 1",
+        "func": "// Récupération des objets dans le payload\nlet data1 = msg.payload[0]; // Contient les données environnementales\nlet data2 = msg.payload[1]; // Contient les informations sur l'appareil et la pièce\n\n// Récupération de la date et de l'heure actuelles\nlet now = new Date();\nlet date = now.toISOString().split('T')[0]+\" \"+now.toTimeString().split(' ')[0]; // YYYY-MM-DD:HH:mm:ss\n\n// Construction du tableau final\nlet tableau = [\n    data1.temperature || null, // Temperature\n    data1.humidity || null,    // Humidity\n    data1.activity || null,    // Activity\n    data1.tvoc || null,        // TVOC\n    data1.illumination || null, // Illumination\n    data1.infrared || null,    // Infrared\n    data1.infrared_and_visible || null, // Infrared and Visible\n    data1.pressure || null,    // Pressure\n    data2.deviceName || null,  // Device Name\n    data2.room || null,        // Room\n    date,                      // Date\n];\n\n// Stocker le tableau dans msg.payload\nmsg.payload = tableau;\n\n// Vérifie si la salle commence par \"B1\"\nif (msg.payload[9] && msg.payload[9].startsWith(\"B1\")) {\n    // Si oui, renvoyer le message\n    return msg;\n} else {\n    // Sinon, ne rien faire (filtrer le message)\n    return null;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 560,
+        "wires": [
+            [
+                "5755e2a5167ef8bc"
+            ]
+        ]
+    },
+    {
+        "id": "d233b8fda5345302",
+        "type": "debug",
+        "z": "fc36e552fabb57dc",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "ece6c1f9ef51d53c",
+        "type": "postgresql",
+        "z": "fc36e552fabb57dc",
+        "name": "TimeScaleDB_SAE",
+        "query": "{{{msg.payload}}}",
+        "postgreSQLConfig": "233a32a7e323113d",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 650,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7b41b35721a6f3d6",
+        "type": "debug",
+        "z": "fc36e552fabb57dc",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 310,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "5258c1b8599ae46f",
+        "type": "inject",
+        "z": "fc36e552fabb57dc",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[{\"temperature\":18.9,\"humidity\":51,\"activity\":0,\"co2\":601,\"tvoc\":262,\"illumination\":13,\"infrared\":3,\"infrared_and_visible\":12,\"pressure\":987.9},{\"deviceName\":\"AM107-17\",\"devEUI\":\"24e124128c012135\",\"room\":\"B112\",\"floor\":1,\"Building\":\"B\"}]",
+        "payloadType": "json",
+        "x": 110,
+        "y": 320,
+        "wires": [
+            [
+                "7b41b35721a6f3d6",
+                "39cf3f9ede4b3dbe"
+            ]
+        ]
+    },
+    {
+        "id": "5755e2a5167ef8bc",
+        "type": "function",
+        "z": "fc36e552fabb57dc",
+        "name": "function 2",
+        "func": "// Récupérer l'ID actuel depuis le contexte (si existe)\nlet currentID = flow.get('currentID') || 0;  // Si l'ID n'existe pas, initialiser à 0\n\n// Incrémenter l'ID\ncurrentID++;\n\n// Sauvegarder l'ID mis à jour dans le contexte pour la prochaine exécution\nflow.set('currentID', currentID);\n\n// Construction de la requête SQL avec les valeurs de msg.payload\nlet sqlQuery = `Insert Into Mesures\nValues(${currentID}, ${msg.payload[0]}, ${msg.payload[1]}, ${msg.payload[2]}, ${msg.payload[3]}, ${msg.payload[4]}, ${msg.payload[5]}, ${msg.payload[6]}, ${msg.payload[7]}, '${msg.payload[8]}', '${msg.payload[9]}', '${msg.payload[10]}');`;\n\n// Stocker la requête SQL dans msg.payload\nmsg.payload = sqlQuery;\n\n// Retourner le message avec la requête SQL\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 640,
+        "wires": [
+            [
+                "9f923b2297803da5",
+                "ece6c1f9ef51d53c"
+            ]
+        ]
+    },
+    {
+        "id": "33c70efb3db9a385",
+        "type": "debug",
+        "z": "a9a91092a687928c",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "b90ba5337957f19d",
+        "type": "debug",
+        "z": "a9a91092a687928c",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "53103514d9105890",
+        "type": "function",
+        "z": "a9a91092a687928c",
+        "name": "Random sensor values",
+        "func": "const deveui = \"0102030405060708\"\nconst temperature = Math.random() * 30;\nconst humidity = Math.random() * 100;\nconst co2 = Math.random() * 2000;\nmsg.payload = {\n    deveui,\n    temperature,\n    humidity,\n    co2\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 320,
+        "wires": [
+            [
+                "5191ebf8033ec1c0"
+            ]
+        ]
+    },
+    {
+        "id": "86a9f35dd483af0c",
+        "type": "debug",
+        "z": "a9a91092a687928c",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "8b37ce5fbbe53e08",
+        "type": "inject",
+        "z": "a9a91092a687928c",
+        "name": "Table",
+        "props": [
+            {
+                "p": "table",
+                "v": "tp6_iot_am107",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 270,
+        "y": 240,
+        "wires": [
+            [
+                "2bfcb285ae2c2cbf"
+            ]
+        ]
+    },
+    {
+        "id": "87f2c66f5f9039be",
+        "type": "inject",
+        "z": "a9a91092a687928c",
+        "name": "Table",
+        "props": [
+            {
+                "p": "table",
+                "v": "tp6_iot_am107",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 270,
+        "y": 320,
+        "wires": [
+            [
+                "53103514d9105890"
+            ]
+        ]
+    },
+    {
+        "id": "b6afe90bb7fa6c0a",
+        "type": "inject",
+        "z": "a9a91092a687928c",
+        "name": "Table",
+        "props": [
+            {
+                "p": "table",
+                "v": "tp6_iot_am107",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 270,
+        "y": 400,
+        "wires": [
+            [
+                "8641b910546e7a2a"
+            ]
+        ]
+    },
+    {
+        "id": "2bfcb285ae2c2cbf",
+        "type": "postgresql",
+        "z": "a9a91092a687928c",
+        "name": "Select all",
+        "query": "SELECT * FROM {{{ msg.table }}};",
+        "postgreSQLConfig": "233a32a7e323113d",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 700,
+        "y": 240,
+        "wires": [
+            [
+                "33c70efb3db9a385"
+            ]
+        ]
+    },
+    {
+        "id": "5191ebf8033ec1c0",
+        "type": "postgresql",
+        "z": "a9a91092a687928c",
+        "name": "Insert value",
+        "query": "INSERT INTO {{{ msg.table }}} VALUES(now(),'{{{ msg.payload.deveui }}}',{{{ msg.payload.temperature }}},{{{ msg.payload.humidity }}},{{{ msg.payload.co2 }}});",
+        "postgreSQLConfig": "233a32a7e323113d",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 710,
+        "y": 320,
+        "wires": [
+            [
+                "b90ba5337957f19d"
+            ]
+        ]
+    },
+    {
+        "id": "8641b910546e7a2a",
+        "type": "postgresql",
+        "z": "a9a91092a687928c",
+        "name": "Drop table",
+        "query": "DROP TABLE {{{ msg.table }}};",
+        "postgreSQLConfig": "233a32a7e323113d",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 710,
+        "y": 400,
+        "wires": [
+            [
+                "86a9f35dd483af0c"
+            ]
+        ]
+    },
+    {
+        "id": "e415e1d05c6138f9",
+        "type": "postgresql",
+        "z": "a9a91092a687928c",
+        "name": "TimeScaleDB_SAE",
+        "query": "Insert Into Mesures\nValues(2, 30, 1, 150, 300, 120, 1000, 450, 1000, 'Device_B', 'Room_Test', '2025-01-08 09:30:00+00');",
+        "postgreSQLConfig": "233a32a7e323113d",
+        "split": true,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 450,
+        "y": 120,
+        "wires": [
+            [
+                "f4a806572e85460e"
+            ]
+        ]
+    },
+    {
+        "id": "f4a806572e85460e",
+        "type": "debug",
+        "z": "a9a91092a687928c",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "87beda137b1c03af",
+        "type": "inject",
+        "z": "a9a91092a687928c",
+        "name": "Test",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "e415e1d05c6138f9"
+            ]
+        ]
+    }
+]
