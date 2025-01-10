@@ -1,23 +1,21 @@
 <?php
-    require_once "includes/connexion.inc.php";
-    $room = strtoupper($_GET["room"] ?? "");
-    if (strlen($room)<4)
-    {
-        header("Location: index.php?error=true");   
-    }
-    
-    try {
-        // select from mesures by room
-        $sql = "SELECT * FROM mesures WHERE room = :room ORDER BY id DESC LIMIT 1";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(":room", $room);
-        $stmt->execute();
-    
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-    } catch (PDOException $e) {
-        die("Erreur lors de la récupération des données : " . $e->getMessage());
-    }
+require_once "includes/connexion.inc.php";
+require_once "includes/helpers.php";
+$room = strtoupper($_GET["room"] ?? "");
+if (strlen($room) < 4) {
+    header("Location: index.php?error=true");
+}
+
+try {
+    // Pour le badges, les 2 dernières valeurs
+    $sql = "SELECT * FROM mesures WHERE room = :room ORDER BY id DESC LIMIT 2";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(":room", $room);
+    $stmt->execute();
+    $badgeRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die("Erreur lors de la récupération des données : " . $e->getMessage());
+}
 ?>
 <!doctype html>
 <html lang="fr"><!-- [Head] start -->
@@ -25,11 +23,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description"
-          content="Able Pro is trending dashboard template made using Bootstrap 5 design framework. Able Pro is available in Bootstrap, React, CodeIgniter, Angular,  and .net Technologies.">
-    <meta name="keywords"
-          content="Bootstrap admin template, Dashboard UI Kit, Dashboard Template, Backend Panel, react dashboard, angular dashboard">
-    <meta name="author" content="Phoenixcoded"><!-- [Favicon] icon -->
     <link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon"><!-- [Page specific CSS] start -->
     <link rel="stylesheet" href="../assets/css/plugins/datepicker-bs5.min.css"><!-- [Page specific CSS] end -->
     <!-- [Font] Family -->
@@ -57,7 +50,18 @@
 </div><!-- [ Pre-loader ] End --><!-- [ Sidebar Menu ] start -->
 <div class="pc-container">
     <div class="pc-content"><!-- [ breadcrumb ] start -->
+        <a href="index.php" class="btn btn-outline-primary mt-3 mb-3">
+            <i class="ti ti-arrow-left"></i> Retour au tableau de bord
+        </a>
         <div class="row">
+            <div class="col-12">
+                <div class="alert alert-warning text-center">
+                    <H3 class="alert-heading mb-0">Données de la salle <?= $room ?></H3>
+                </div>
+            </div>
+            <div class="col-12 mt-4 mb-2">
+                <h5 class="text-center">Dernière donnée + évolution </h5>
+            </div>
             <div class="col-lg-3 col-md-6">
                 <div class="card">
                     <div class="card-body">
@@ -69,8 +73,8 @@
                             </div>
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Temperature</p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0"><?= $row['temperature'] ?></h4>
-                                    <span class="text-success fw-medium">30.6%</span>
+                                    <h4 class="mb-0"><?= $badgeRows[0]['temperature'] ?>°</h4>
+                                    <?= badgeEvolution($badgeRows[0]['temperature'], $badgeRows[1]['temperature'], "°") ?>
                                 </div>
                             </div>
                         </div>
@@ -86,8 +90,8 @@
                             </div>
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Humidity</p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0"><?= $row['humidity'] ?></h4>
-                                    <span class="text-warning fw-medium">30.6%</span>
+                                    <h4 class="mb-0"><?= $badgeRows[0]['humidity'] ?></h4>
+                                    <?= badgeEvolution($badgeRows[0]['humidity'], $badgeRows[1]['humidity']) ?>
                                 </div>
                             </div>
                         </div>
@@ -103,8 +107,8 @@
                             </div>
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Activity</p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0"><?= $row['activity'] ?></h4>
-                                    <span class="text-success fw-medium">30.6%</span>
+                                    <h4 class="mb-0"><?= isset($badgeRows[0]['activity']) && strlen($badgeRows[0]['activity']) ? $badgeRows[0]['activity'] : 'None' ?></h4>
+                                    <?= badgeEvolution($badgeRows[0]['activity'], $badgeRows[1]['activity']) ?>
                                 </div>
                             </div>
                         </div>
@@ -120,8 +124,8 @@
                             </div>
                             <div class="flex-grow-1 ms-3"><p class="mb-1">TVOC</p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0"><?= $row['temperature'] ?></h4>
-                                    <span class="text-danger fw-medium">30.6%</span>
+                                    <h4 class="mb-0"><?= $badgeRows[0]['tvoc'] ?></h4>
+                                    <?= badgeEvolution($badgeRows[0]['tvoc'], $badgeRows[1]['tvoc']) ?>
                                 </div>
                             </div>
                         </div>
@@ -137,8 +141,8 @@
                             </div>
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Illumination</p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0"><?= $row['illumination'] ?></h4>
-                                    <span class="text-danger fw-medium">30.6%</span>
+                                    <h4 class="mb-0"><?= $badgeRows[0]['illumination'] ?></h4>
+                                    <?= badgeEvolution($badgeRows[0]['illumination'], $badgeRows[1]['illumination']) ?>
                                 </div>
                             </div>
                         </div>
@@ -154,8 +158,8 @@
                             </div>
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Infrared</p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0"><?= $row['infrared'] ?></h4>
-                                    <span class="text-danger fw-medium">30.6%</span>
+                                    <h4 class="mb-0"><?= $badgeRows[0]['infrared'] ?></h4>
+                                    <?= badgeEvolution($badgeRows[0]['infrared'], $badgeRows[1]['infrared']) ?>
                                 </div>
                             </div>
                         </div>
@@ -171,8 +175,8 @@
                             </div>
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Infrared and Visible</p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0"><?= $row['infrared_and_visible'] ?></h4>
-                                    <span class="text-danger fw-medium">30.6%</span>
+                                    <h4 class="mb-0"><?= $badgeRows[0]['infrared_and_visible'] ?></h4>
+                                    <?= badgeEvolution($badgeRows[0]['infrared_and_visible'], $badgeRows[1]['infrared_and_visible']) ?>
                                 </div>
                             </div>
                         </div>
@@ -188,8 +192,8 @@
                             </div>
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Presure</p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0"><?= $row['presure'] ?></h4>
-                                    <span class="text-danger fw-medium">30.6%</span>
+                                    <h4 class="mb-0"><?= $badgeRows[0]['presure'] ?></h4>
+                                    <?= badgeEvolution($badgeRows[0]['presure'], $badgeRows[1]['presure']) ?>
                                 </div>
                             </div>
                         </div>
@@ -419,7 +423,7 @@
     </div>
 </footer><!-- Required Js -->
 <script src="../assets/js/final.js"></scrpit>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script src="../assets/js/plugins/popper.min.js"></script>
 <script src="../assets/js/plugins/simplebar.min.js"></script>
 <script src="../assets/js/plugins/bootstrap.min.js"></script>
