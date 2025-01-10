@@ -136,6 +136,7 @@ Ce projet est organisé autour de plusieurs dossiers et fichiers pour structurer
 │       │   └── images
 │       └── room.php                   // Page spécifique pour visualiser les données des salles
 ├── Documentation
+│   ├── guide_demarrage.md             // Documentation pour démarrer/stopper le projet
 │   ├── Bilans                         // Rapports des bilans de chaque sprint
 │   │   ├── Bilan_Sprint1.md
 │   │   ├── Bilan_Sprint2.md
