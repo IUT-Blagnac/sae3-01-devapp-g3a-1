@@ -62,11 +62,42 @@ Le projet consiste à développer une interface web qui permet :
 
 == Diagrammes des cas d'utilisation
 
-a faire
+Celui-ci présente le diagramme des cas d’utilisation de notre projet :
+
+image::../../images/diagramme_des_cas_utilisation1.png[]
 
 == Diagrammes des classes 
 
-a faire
+Celui-ci présente le diagramme des classes de notre projet :
+
+image::../../images/diagramme_des_classes_projet1.png[]
+
+=== Explication des classes
+
+Comme le montre le diagramme des classes, notre projet est structuré autour de trois grandes composantes : le frontend (CSS et PHP), l’automatisation via Node-RED, et la gestion des données dans une base TimescaleDB.
+
+==== Frontend (CSS & PHP)
+
+* `index` :  
+  Cette classe représente la page d'accueil du site web. Elle permet aux utilisateurs de consulter les données stockées dans la base TimescaleDB et offre une interface intuitive pour naviguer dans l'application.
+
+* `assets` :  
+  Ce regroupement contient tous les fichiers statiques nécessaires à l'interface, notamment les fichiers CSS pour le style et les fichiers JavaScript pour les interactions dynamiques.
+
+==== Node-RED (Automatisation)
+
+* `fluxMQTT` :  
+  Ce composant Node-RED est chargé de la récupération des données des capteurs via le protocole MQTT, permettant une mise à jour en temps réel ainsi que l'insertion des données dans la base de donnée TimescaleDB.
+
+==== Backend (TimescaleDB)
+
+* `Mesures` :  
+  Cette table de la base de données stocke toutes les données des capteurs, telles que la température, l'humidité, la luminosité et d'autres mesures pertinentes. Elle constitue le cœur de la gestion des données dans l'application.
+
+
+Cette structure modulaire permet de répartir efficacement les responsabilités : 
+le frontend gère l'affichage et l'interaction utilisateur, Node-RED automatise le traitement des données en temps réel, et la base TimescaleDB assure leur stockage de manière fiable et évolutive.
+
 
 == Fonctionnalités
 

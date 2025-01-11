@@ -1,9 +1,9 @@
 @startuml
-title Structure Globale - Fonctionnement
+title Diagramme des classes
 
 package "Frontend (CSS & PHP)" {
-    class style {
-        "Gère les styles visuels des pages"
+    class assets {
+        "Regroupe les fichiers statiques nécessaires au site"
     }
     class index {
         "Affiche la page d'accueil avec les données de la base"
@@ -13,7 +13,7 @@ package "Frontend (CSS & PHP)" {
     }
 
     index --> connexionBaseDeDonnees
-    index --> style
+    index --> assets
 }
 
 package "Node-RED (Automatisation)" {
