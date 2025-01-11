@@ -1,8 +1,33 @@
 # Guide de démarrage du Docker
 
-## 1. Installation de Docker
+## 1. Installation de Docker (Linux)
 
-## 2. Installation de Docker Compose
+1. **Mettez à jour les paquets :**
+   ```bash
+   sudo apt update
+   ```
+
+2. **Installez Docker :**
+   ```bash
+   sudo apt install docker.io
+   ```
+
+3. **Vérifiez l'installation :**
+   ```bash
+   docker --version
+   ```
+
+## 2. Installation de Docker Compose (Linux)
+
+1. **Installez Docker Compose :**
+   ```bash
+   sudo apt install docker-compose
+   ```
+
+2. **Vérifiez l'installation :**
+   ```bash
+   docker-compose --version
+   ```
 
 ## 3. Clonnage du dépôt
 
@@ -13,6 +38,17 @@ cd SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01
 ```
 
 ## 4. Lancement de l'application/docker
+
+> [!NOTE]
+> Nous avons créé un script bash interactif pour simplifier le démarrage et l'arrêt des services Docker du projet. 
+>
+> Vous pouvez tout de meme lancer les services manuellement en utilisant les commandes `docker-compose` suivantes :
+> - Démarrer les services : `docker-compose up -d
+`
+> - Arrêter les services : `docker-compose down --volumes --remove-orphans
+`
+
+Pour lancer l'application, exécutez le script `docker_control.sh` situé à la racine du projet :
 
 ```bash
 ./docker_control.sh
