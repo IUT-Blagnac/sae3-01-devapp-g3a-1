@@ -91,6 +91,11 @@ Comme le montre le diagramme des classes, notre projet est structuré autour de 
 
 ==== Backend (TimescaleDB)
 
+==== Structure de la base de données :
+
+image::../../images/diagramme_de_classe_bd1.png[][]
+
+
 * `Mesures` :  
   Cette table de la base de données stocke toutes les données des capteurs, telles que la température, l'humidité, la luminosité et d'autres mesures pertinentes. Elle constitue le cœur de la gestion des données dans l'application.
 
