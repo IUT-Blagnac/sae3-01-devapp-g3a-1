@@ -57,6 +57,12 @@ Tutrice enseignante de l'équipe::
 
 - link:https://github.com/ependaries[PENDARIES Esther]
 
+== Lancement du projet
+
+Pour lancer le projet, il suffit de suivre les instructions du guide de démarrage disponible dans le lien ci-dessous :
+
+- link:https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/guide_demarrage.md[Guide de démarrage]
+
 == Contexte général
 
 ### Sujet "Dashboard du département"
@@ -78,8 +84,8 @@ Le **livrable attendu** est constitué :
 [cols="1,2,3,4,5",options="header"]
 |===
 | Date  | Version  | Nom              | Lien | Description
-|  Sem.2 ( 06/01/25 - 12/01/25 ) |   | Sujet SAE    | https://webetud.iut-blagnac.fr/mod/resource/view.php?id=36226[Sujet SAE] | Sujet de la SAE, à retrouver sur Webetud
-|     | 1er Sprint | Sprint / Backlog 1 | https://github.com/orgs/IUT-Blagnac/projects/300/views/1[Backlog et 1er Sprint] | 1er Sprint / Backlog du 1er Sprint, avec chaque User Story et tâches
+|   |   | Sujet SAE    | https://webetud.iut-blagnac.fr/mod/resource/view.php?id=36226[Sujet SAE] | Sujet de la SAE, à retrouver sur Webetud
+|   Sem.2 ( 06/01/25 - 12/01/25 )  | 1er Sprint | Sprint / Backlog 1 | https://github.com/orgs/IUT-Blagnac/projects/300/views/1[Backlog et 1er Sprint] | 1er Sprint / Backlog du 1er Sprint, avec chaque User Story et tâches
 |        | 1er Sprint | Documentation Utilisateur | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Utilisateur/Doc_Utilisateur1.md[Documentation Utilisateur] | Installation et présentation du docker avec ses fonctionnalités
 |        | 1er Sprint | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Technique/Doc_Technique1.md[Documentation Technique] | Fonctionnement et fichiers clés du docker
 |        | 1er Sprint | Bilan Sprint 1   | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Bilans/Bilan_Sprint1.md[Bilan Sprint 1] |Bilan du premier Sprint
@@ -130,6 +136,7 @@ Ce projet est organisé autour de plusieurs dossiers et fichiers pour structurer
 │       │   └── images
 │       └── room.php                   // Page spécifique pour visualiser les données des salles
 ├── Documentation
+│   ├── guide_demarrage.md             // Documentation pour démarrer/stopper le projet
 │   ├── Bilans                         // Rapports des bilans de chaque sprint
 │   │   ├── Bilan_Sprint1.md
 │   │   ├── Bilan_Sprint2.md
