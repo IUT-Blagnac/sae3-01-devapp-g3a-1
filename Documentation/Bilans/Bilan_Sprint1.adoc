@@ -1,0 +1,62 @@
+:toc: macro
+
+= Bilan de sprint SAE-ALT-S3-Dev-24-25-Dashboard_du_departement
+
+=== Sommaire
+toc::[]
+
+
+== Equipe 2024 - 2025
+
+- link:https://github.com/boubast[BOUVET Bastien] -- Scrum Master / Développeur
+- link:https://github.com/YolanBrun[BRUN Yolan] --  Rédacteur / Développeur
+- link:https://github.com/leonardo-correiamendes[CORREIA MENDES Leonardo] -- Chef de projet / Développeur
+- link:https://github.com/Diego-PB[PENICAUD-BERNAL Diego] -- Responsable base de donnée / Développeur
+- link:https://github.com/DanerSharifi-FR[SHARIFI Daner] -- Responsable serveur web / Développeur
+- link:https://github.com/Smogita[CRISTINI Aidan] -- Git Master / Développeur
+
+== Progrès Accompli
+
+=== Objectifs
+
+- [x] Docker : Déployer l'ensemble du projet via Docker, incluant TimescaleDB, Node-RED, PHP et Nginx.
+- [x] Base de données : Création automatique la table `Mesures` et l'alimenter automatiquement via Node-RED.
+- [x] Interface Web : Permettre l'affichage des dernières données des capteurs en cliquant sur une salle du plan SVG.
+- [ ] Historique : Ajouter une fonctionnalité pour consulter l'historique des mesures stockées.
+- [x] Node-RED : Configurer les flux MQTT pour réceptionner et traiter les données des capteurs.
+- [x] Debug : Résoudre les problèmes d'interaction entre les services dans Docker (par exemple, Nginx et TimescaleDB).
+
+=== Points Forts
+
+- Déploiement fonctionnel via Docker pour tous les services requis.
+- Mise en place réussie des flux Node-RED pour insérer automatiquement les données dans TimescaleDB.
+- Historique des données accessible via une table dans la base TimescaleDB.
+- Bonne collaboration en équipe, avec une répartition claire des tâches.
+
+=== Problèmes rencontrés
+
+- Conflits de ports (80, 5432, 1880) sur certaines machines, nécessitant des ajustements manuels.
+- Suppréssion accidentelle de l'entièreté des fichiers du dépot github.
+- Bugs liés à la configuration des conteneurs Docker sur des environnements non uniformes (ex. : écoles ou machines personnelles).
+
+=== Leçons apprises
+
+- Importance de vérifier les configurations réseau pour éviter les conflits de ports.
+- Maitrise des outils Docker et Node-RED pour des projets d'intégration complexes.
+- Amélioration de la gestion collaborative via Git et gestion des issues/projets.
+- Compréhension approfondie des bases de données TimescaleDB et des flux MQTT.
+- Conception d'une interface utilisateur simple mais fonctionnelle, centrée sur l'utilisateur.
+
+=== Résumé du sprint
+
+Au cours de ce premier sprint, notre équipe s'est concentrée sur la mise en place des bases du projet, en définissant les objectifs principaux et en construisant une infrastructure fonctionnelle. Nous avons réussi à configurer et lancer une architecture Docker intégrant les services clés : TimescaleDB, Node-RED, PHP et Nginx. Cette structure permet une gestion centralisée et simplifie les déploiements.
+
+L'intégration de Node-RED a permis de récupérer les flux MQTT des capteurs et d'insérer automatiquement les données dans la base TimescaleDB. Par ailleurs, la table `Mesures` a été créée pour stocker les informations des capteurs (température, humidité, activité, etc.), et l'interface web a été développée pour afficher les dernières données et l'historique. Ces éléments forment le cœur fonctionnel du projet.
+
+Sur le plan visuel, nous avons débuté le développement d'une interface utilisateur simple et intuitive, intégrant un plan SVG interactif permettant de visualiser les capteurs et de consulter leurs données. Ces premiers éléments posent les bases d'une expérience utilisateur efficace.
+
+Cependant, le sprint n'a pas été exempt de défis. Nous avons rencontré des conflits de ports sur certaines machines lors du lancement des conteneurs Docker, ainsi que des difficultés liées à la configuration de Node-RED et de Nginx. La gestion de ces problèmes nous a permis de mieux comprendre les subtilités des outils utilisés.
+
+Malgré ces obstacles, ce sprint a été une étape essentielle pour poser les fondations du projet. Il nous a également permis de nous familiariser avec les technologies choisies et d'établir une dynamique de collaboration au sein de l'équipe.
+
+Nous sommes satisfaits des progrès réalisés et confiants dans notre capacité à atteindre les objectifs des sprints à venir. Ce premier sprint marque une étape cruciale dans la réalisation du projet et ouvre la voie à des développements futurs. 
