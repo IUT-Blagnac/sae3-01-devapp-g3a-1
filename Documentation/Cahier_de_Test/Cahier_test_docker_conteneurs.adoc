@@ -9,7 +9,7 @@ Les conteneurs sont démarrés via le script `docker_control.sh`.
 |1 |Démarrage des conteneurs |L'utilisateur exécute le script et choisit l'option 1 |Tous les conteneurs (Nginx, PHP, Node-RED, TimescaleDB) sont démarrés |Ok  
 |2 |Arrêt des conteneurs |L'utilisateur exécute le script et choisit l'option 2 |Tous les conteneurs sont arrêtés et les volumes supprimés |Ok  
 |3 |Non-installation de Docker Compose |L'utilisateur tente d'exécuter le script sans Docker Compose installé |Un message d'erreur est affiché demandant l'installation de Docker Compose |Ok  
-|4 |Vérification des ports |Le script vérifie si les ports 80 et 1880 sont déjà utilisés avant de démarrer les conteneurs |Un message d'erreur est affiché si un port est occupé |En cours  
+|4 |Vérification des ports |Le script vérifie si les ports 80 et 1880 sont déjà utilisés avant de démarrer les conteneurs |Un message d'erreur est affiché si un port est occupé |Code modifié / Test sur pc iut a faire 
 |=======  
 
 ### Accès au serveur Nginx  

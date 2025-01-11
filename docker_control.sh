@@ -9,8 +9,37 @@ if ! command -v docker-compose &> /dev/null; then
     exit 1
 fi
 
+# Fonction pour vérifier les ports
+check_ports() {
+    echo "Vérification des ports 80 et 1880..."
+    if lsof -i:80 &> /dev/null; then
+        echo "Le port 80 est déjà utilisé. Voulez-vous arrêter le service en conflit ? (y/n)"
+        read -r response
+        if [[ $response == "y" ]]; then
+            sudo systemctl stop nginx || echo "Aucun service nginx actif à arrêter."
+        else
+            echo "Impossible de continuer tant que le port 80 est utilisé."
+            exit 1
+        fi
+    fi
+
+    if lsof -i:1880 &> /dev/null; then
+        echo "Le port 1880 est déjà utilisé. Voulez-vous arrêter le service en conflit ? (y/n)"
+        read -r response
+        if [[ $response == "y" ]]; then
+            sudo systemctl stop nodered || echo "Aucun service Node-RED actif à arrêter."
+        else
+            echo "Impossible de continuer tant que le port 1880 est utilisé."
+            exit 1
+        fi
+    fi
+
+    echo "Ports vérifiés, aucun conflit détecté."
+}
+
 # Fonction pour démarrer Docker Compose
 start_containers() {
+    check_ports
     echo "Lancement des conteneurs Docker..."
     docker-compose -f "$PROJECT_DIR/Docker/docker-compose.yml" up -d
     echo "Conteneurs lancés !"
