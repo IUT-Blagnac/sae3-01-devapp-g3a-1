@@ -225,3 +225,7 @@ Je suis à l'IUT mercredi  ( en B010 entre 13h et 14h15) si besoin
 ==== retour communication
 
 CR Très bien, penser à faire un ODJ ! 
+
+==== retour PO
+
+Très bonne avancée pour la première semaine + version démo présentée fonctionnelle. Continuez ! Prochain point d'étape courant semaine 3 !
