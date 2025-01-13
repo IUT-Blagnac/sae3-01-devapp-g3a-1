@@ -201,9 +201,16 @@ Ce projet offre une architecture modulaire pour simplifier le développement, la
 === Retour sprint 1
 
 ==== Backlog produit
-Backlog : je dois avoir un backlog produit global qui remplaçe le cahier des charges où les US ne sont pas encore réparties en sprint ! Votre client doit avoir validé ce Backlog.  Ensuite j'ai des backlog de sprint mais c'est différents, ce soont les US du backlog traitées dans le sprint. Quels sont les utilisateurs de votre application car j'ai des US pour des étudiants ? Vos US ressemblent plutôt à des tâches. Exemple : "Un administrateur souhaite vérifier les capteurs qui ont une batterie faible afin de changer les piles " Cette US nécéssite d'avoir des tâches de récupération de données via des flux, des tâches d'affichage des données, des tâches de tests ... une autre US peut être "un etudiant souhaite visualiser les données des capteurs des salles afin de faire des statistiques" ce qui implique le développement d'une fontionnalité sur le site et des tâches de backoffice et front office sur le site. "site fonctionnel" c'est trop vague.
+Backlog : je dois avoir un backlog produit global qui remplaçe le cahier des charges où les US ne sont pas encore réparties en sprint ! 
+
+Votre client doit avoir validé ce Backlog. 
+
+Vous proposez des backlogs de sprint mais c'est différent, ce sont les US du backlog traitées dans le sprint et on le fait au fur et à mesure de l'anvancée du projet.
+
+Quels sont les utilisateurs de votre application car j'ai des US pour des étudiants ? Vos US ressemblent plutôt à des tâches. Exemple : "Un administrateur souhaite vérifier les capteurs qui ont une batterie faible afin de changer les piles " Cette US nécéssite d'avoir des tâches de récupération de données via des flux, des tâches d'affichage des données, des tâches de tests ... une autre US peut être "un etudiant souhaite visualiser les données des capteurs des salles afin de faire des statistiques" ce qui implique le développement d'une fonctionnalité sur le site et des tâches de back-office et front office sur le site. "site fonctionnel" c'est trop vague.
 
 non noté  (à modifier et m'avertir pour note finale)
+
 ==== Retour sprint 1
 
 Cahier Test ok mais à fusionner et enrichir pour que cela deviennent le cahier de tests de votre appli en général(se servir des critères d'acceptabilité des US), faire une page de garde, sommaire intro contextuelle du projet, version, equipe. 
@@ -216,4 +223,5 @@ NOTE = 3,4/5
 Je suis à l'IUT mercredi  ( en B010 entre 13h et 14h15) si besoin
 
 ==== retour communication
+
 CR Très bien, penser à faire un ODJ ! 
