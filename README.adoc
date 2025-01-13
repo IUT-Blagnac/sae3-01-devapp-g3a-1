@@ -198,27 +198,22 @@ Ce projet offre une architecture modulaire pour simplifier le développement, la
 
 == Gestion de projet & Qualité
 
-Chaque sprint (semaine) vous devrez livrer une nouvelle version de votre application (release).
-Utilisez pour cela les fonctionnalités de GitHub pour les https://docs.github.com/en/repositories/releasing-projects-on-github[Releases].
+=== Retour sprint 1
 
-De plus ce fichier `README.adoc` devra être à jour des informations suivantes :
+==== Backlog produit
+Backlog : je dois avoir un backlog produit global qui remplaçe le cahier des charges où les US ne sont pas encore réparties en sprint ! Votre client doit avoir validé ce Backlog.  Ensuite j'ai des backlog de sprint mais c'est différents, ce soont les US du backlog traitées dans le sprint. Quels sont les utilisateurs de votre application car j'ai des US pour des étudiants ? Vos US ressemblent plutôt à des tâches. Exemple : "Un administrateur souhaite vérifier les capteurs qui ont une batterie faible afin de changer les piles " Cette US nécéssite d'avoir des tâches de récupération de données via des flux, des tâches d'affichage des données, des tâches de tests ... une autre US peut être "un etudiant souhaite visualiser les données des capteurs des salles afin de faire des statistiques" ce qui implique le développement d'une fontionnalité sur le site et des tâches de backoffice et front office sur le site. "site fonctionnel" c'est trop vague.
 
-- Version courante : https://github.com/IUT-Blagnac/sae3-01-template/releases/tag/v0.1.2[v0.1.2]
-- Lien vers la doc technique
-- Lien vers la doc utilisateur
-- Liste des (ou lien vers les) User Stories (ToDo/Ongoing/Done) et % restant
-- Tests unitaires et plans de test
-- Indicateurs de qualité du code (dette technique)
-- ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
+non noté  (à modifier et m'avertir pour note finale)
+==== Retour sprint 1
 
-Voici un exemple d'évaluation :
+Cahier Test ok mais à fusionner et enrichir pour que cela deviennent le cahier de tests de votre appli en général(se servir des critères d'acceptabilité des US), faire une page de garde, sommaire intro contextuelle du projet, version, equipe. 
+Doc ok mais user à avancer et je ne sais toujours pas qui va utiliser votre appli ! 
 
-ifdef::env-github[]
-image:https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image[link=https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image]
-endif::[]
+Backlog sprint ok cf. remarques backlog produit.
+Task : parfois confusion tâches/US cf retour bacglog produit
+Pensez à créer une release (même minimaliste/maquette au début pour le client !)
+NOTE = 3,4/5
+Je suis à l'IUT mercredi  ( en B010 entre 13h et 14h15) si besoin
 
-ifndef::env-github[]
-++++
-<iframe width="786" height="430" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image"></iframe>
-++++
-endif::[]
+==== retour communication
+CR Très bien, penser à faire un ODJ ! 
