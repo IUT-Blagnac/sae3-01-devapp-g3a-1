@@ -17,13 +17,15 @@
             },
             "dialog": {
                 "export": {
-                    "pretty": true
+                    "pretty": true,
+                    "json-view": false
                 }
             }
         },
         "debug": {
             "filter": "filterAll",
             "clearType": "all"
-        }
+        },
+        "menu-menu-item-sidebar": false
     }
 }
