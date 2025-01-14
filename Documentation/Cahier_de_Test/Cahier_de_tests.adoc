@@ -7,7 +7,7 @@ Bastien Bouvet
 == Introduction
 Ce document décrit les cas de test pour les environnements Node-RED et Docker.
 
-## Cahier de Recette : Tests pour Node-RED
+## Tests pour Node-RED
 
 ### Contexte
 
@@ -110,7 +110,7 @@ Valider l'insertion automatique des données reçues via MQTT dans la base de do
 
 ---
 
-## Cahier de Recette : Tests pour Docker et ses conteneurs  
+## Tests pour Docker et ses conteneurs  
 
 ### Contexte
 
@@ -277,7 +277,3 @@ Vérifier la connexion à la base de données TimescaleDB via `psql`.
 1. Exécuter la commande suivante :
    ```bash
    psql -h localhost -U admin -d dashboard_db
-
-
-
-== Cahier de Test Docker
