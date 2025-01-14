@@ -28,6 +28,9 @@ ifdef::env-github[]
 :icongit: Git
 endif::[]
 
+image::./images/pagedegarde.png[][alt="Dashboard du Département", align="center", width=100%]
+
+
 // /!\ A MODIFIER !!!
 :baseURL: https://github.com/IUT-Blagnac/sae3-01-template
 
@@ -201,7 +204,7 @@ cd SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01
 
 == Gestion de projet & Qualité
 
-=== Retour sprint 1
+=== Retour sprint 1 - Mme Pendaries
 
 ==== Backlog produit
 Backlog : je dois avoir un backlog produit global qui remplaçe le cahier des charges où les US ne sont pas encore réparties en sprint ! 
@@ -229,6 +232,6 @@ Je suis à l'IUT mercredi  ( en B010 entre 13h et 14h15) si besoin
 
 CR Très bien, penser à faire un ODJ ! 
 
-==== retour PO
+==== retour PO - M Boulle
 
 Très bonne avancée pour la première semaine + version démo présentée fonctionnelle. Continuez ! Prochain point d'étape courant semaine 3 !
