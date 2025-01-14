@@ -86,21 +86,22 @@ Le **livrable attendu** est constitué :
 | Date  | Version  | Nom              | Lien | Description
 |   |   | Sujet SAE    | https://webetud.iut-blagnac.fr/mod/resource/view.php?id=36226[Sujet SAE] | Sujet de la SAE, à retrouver sur Webetud
 |   Sem.2 ( 06/01/25 - 12/01/25 )  | 1er Sprint | Sprint / Backlog 1 | https://github.com/orgs/IUT-Blagnac/projects/300/views/1[Backlog et 1er Sprint] | 1er Sprint / Backlog du 1er Sprint, avec chaque User Story et tâches
-|        | 1er Sprint | Documentation Utilisateur | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Utilisateur/Doc_Utilisateur1.md[Documentation Utilisateur] | Installation et présentation du docker avec ses fonctionnalités
-|        | 1er Sprint | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Technique/Doc_Technique1.md[Documentation Technique] | Fonctionnement et fichiers clés du docker
-|        | 1er Sprint | Bilan Sprint 1   | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Bilans/Bilan_Sprint1.md[Bilan Sprint 1] |Bilan du premier Sprint
+|         | 1er Sprint | Cahier de tests |https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Cahier_de_Test/Cahier%20de%20Tests%20pour%20Docker.md[Cahier de tests Docker] + https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Cahier_de_Test/Cahier%20de%20Tests%20pour%20Node-RED.md[Cahier de tests Node-Red] | Cahiers de tests
+|        | 1er Sprint | Documentation Utilisateur | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Utilisateur/Doc_Utilisateur1.adoc[Documentation Utilisateur] | Installation et présentation du docker avec ses fonctionnalités
+|        | 1er Sprint | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Technique/Doc_Technique1.adoc[Documentation Technique] | Fonctionnement et fichiers clés du docker
+|        | 1er Sprint | Bilan Sprint 1   | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Bilans/Bilan_Sprint1.adoc[Bilan Sprint 1] |Bilan du premier Sprint
 |        | 1er Sprint | Prévision Sprint 2 | https://github.com/orgs/IUT-Blagnac/projects/302[Prévision Sprint 2] | Prévision du prochain Sprint (2) 
 | Sem.3 ( 13/01/25 - 19/01/25 ) | 2ème Sprint | Sprint / Backlog 2 | https://github.com/orgs/IUT-Blagnac/projects/302[Sprint 2] | 2ème Sprint / Backlog du 2ème Sprint, avec chaque User Story et tâches
-|         | 2ème Sprint | Cahier de tests |https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Cahier_de_Tests.md[Cahier de tests] | Cahier de tests
-|         | 2ème Sprint | Documentation Utilisateur | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Utilisateur/Doc_Utilisateur2.md[Documentation Utilisateur]| Installation et présentation du docker avec ses fonctionnalités
-|         | 2ème Sprint | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Technique/Doc_Technique2.md[Documentation Technique] | Fonctionnement et fichiers clés du docker
-|         | 2ème Sprint | Bilan Sprint 2 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Bilans/Bilan_Sprint2.md[Bilan Sprint 2] | Bilan du deuxième Sprint
+|         | 2ème Sprint | Cahier de tests |https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Cahier_de_Test/Cahier%20de%20Tests%20pour%20Docker.md[Cahier de tests Docker] + https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Cahier_de_Test/Cahier%20de%20Tests%20pour%20Node-RED.md[Cahier de tests Node-Red] | Cahiers de tests
+|         | 2ème Sprint | Documentation Utilisateur | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Utilisateur/Doc_Utilisateur2.adoc[Documentation Utilisateur]| Installation et présentation du docker avec ses fonctionnalités
+|         | 2ème Sprint | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Technique/Doc_Technique2.adoc[Documentation Technique] | Fonctionnement et fichiers clés du docker
+|         | 2ème Sprint | Bilan Sprint 2 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Bilans/Bilan_Sprint2.adoc[Bilan Sprint 2] | Bilan du deuxième Sprint
 |        | 2ème Sprint | Prévision Sprint 3 | https://github.com/orgs/IUT-Blagnac/projects/303[Prévision Sprint 3] | Prévision du prochain Sprint (3) 
 | Sem.4 ( 20/01/25 - 26/01/25 )   | 3ème Sprint | Sprint / Backlog 3 |  https://github.com/orgs/IUT-Blagnac/projects/303[Sprint 3] | 3ème Sprint / Backlog du 3ème Sprint, avec chaque User Story et tâches
-|          | 3ème Sprint |  Cahier de tests | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Cahier_de_Tests.md[Cahier de tests] | Cahier de tests
-|         | 3ème Sprint | Documentation Utilisateur |  https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Utilisateur/Doc_Utilisateur3.md[Documentation Utilisateur] |  Installation et présentation du docker avec ses fonctionnalités
-|       | 3ème Sprint  | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Technique/Doc_Technique3.md[Documentation Technique] | Fonctionnement et fichiers clés du docker
-| | 3ème Sprint | Bilan Sprint 3 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Bilans/Bilan_Sprint3.md[Bilan Sprint 3] | Bilan du troisième Sprint
+|         | 3ème Sprint | Cahier de tests |https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Cahier_de_Test/Cahier%20de%20Tests%20pour%20Docker.md[Cahier de tests Docker] + https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Cahier_de_Test/Cahier%20de%20Tests%20pour%20Node-RED.md[Cahier de tests Node-Red] | Cahiers de tests
+|         | 3ème Sprint | Documentation Utilisateur |  https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Utilisateur/Doc_Utilisateur3.adoc[Documentation Utilisateur] |  Installation et présentation du docker avec ses fonctionnalités
+|       | 3ème Sprint  | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Technique/Doc_Technique3.adoc[Documentation Technique] | Fonctionnement et fichiers clés du docker
+| | 3ème Sprint | Bilan Sprint 3 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Bilans/Bilan_Sprint3.adoc[Bilan Sprint 3] | Bilan du troisième Sprint
 |===
 
 
@@ -197,27 +198,34 @@ Ce projet offre une architecture modulaire pour simplifier le développement, la
 
 == Gestion de projet & Qualité
 
-Chaque sprint (semaine) vous devrez livrer une nouvelle version de votre application (release).
-Utilisez pour cela les fonctionnalités de GitHub pour les https://docs.github.com/en/repositories/releasing-projects-on-github[Releases].
+=== Retour sprint 1
 
-De plus ce fichier `README.adoc` devra être à jour des informations suivantes :
+==== Backlog produit
+Backlog : je dois avoir un backlog produit global qui remplaçe le cahier des charges où les US ne sont pas encore réparties en sprint ! 
 
-- Version courante : https://github.com/IUT-Blagnac/sae3-01-template/releases/tag/v0.1.2[v0.1.2]
-- Lien vers la doc technique
-- Lien vers la doc utilisateur
-- Liste des (ou lien vers les) User Stories (ToDo/Ongoing/Done) et % restant
-- Tests unitaires et plans de test
-- Indicateurs de qualité du code (dette technique)
-- ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
+Votre client doit avoir validé ce Backlog. 
 
-Voici un exemple d'évaluation :
+Vous proposez des backlogs de sprint mais c'est différent, ce sont les US du backlog traitées dans le sprint et on le fait au fur et à mesure de l'anvancée du projet.
 
-ifdef::env-github[]
-image:https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image[link=https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image]
-endif::[]
+Quels sont les utilisateurs de votre application car j'ai des US pour des étudiants ? Vos US ressemblent plutôt à des tâches. Exemple : "Un administrateur souhaite vérifier les capteurs qui ont une batterie faible afin de changer les piles " Cette US nécéssite d'avoir des tâches de récupération de données via des flux, des tâches d'affichage des données, des tâches de tests ... une autre US peut être "un etudiant souhaite visualiser les données des capteurs des salles afin de faire des statistiques" ce qui implique le développement d'une fonctionnalité sur le site et des tâches de back-office et front office sur le site. "site fonctionnel" c'est trop vague.
 
-ifndef::env-github[]
-++++
-<iframe width="786" height="430" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image"></iframe>
-++++
-endif::[]
+non noté  (à modifier et m'avertir pour note finale)
+
+==== Retour sprint 1
+
+Cahier Test ok mais à fusionner et enrichir pour que cela deviennent le cahier de tests de votre appli en général(se servir des critères d'acceptabilité des US), faire une page de garde, sommaire intro contextuelle du projet, version, equipe. 
+Doc ok mais user à avancer et je ne sais toujours pas qui va utiliser votre appli ! 
+
+Backlog sprint ok cf. remarques backlog produit.
+Task : parfois confusion tâches/US cf retour bacglog produit
+Pensez à créer une release (même minimaliste/maquette au début pour le client !)
+NOTE = 3,4/5
+Je suis à l'IUT mercredi  ( en B010 entre 13h et 14h15) si besoin
+
+==== retour communication
+
+CR Très bien, penser à faire un ODJ ! 
+
+==== retour PO
+
+Très bonne avancée pour la première semaine + version démo présentée fonctionnelle. Continuez ! Prochain point d'étape courant semaine 3 !
