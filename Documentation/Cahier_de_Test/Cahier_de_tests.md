@@ -302,7 +302,6 @@ Vérifier la connexion à la base de données TimescaleDB via `psql`.
    psql -h localhost -U admin -d dashboard_db
 
 ### Suivi des Tests
-### Suivi des Tests
 
 | Test                                      | Statut | Observations                                                                                  |
 |-------------------------------------------|--------|-----------------------------------------------------------------------------------------------|
