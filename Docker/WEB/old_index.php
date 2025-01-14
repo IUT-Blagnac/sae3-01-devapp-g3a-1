@@ -52,6 +52,25 @@ try {
 
     echo "</table>";
 
+    // Requête pour trouver la salle la plus récurrente
+    $mostRecurringRoomQuery = "
+        SELECT room, COUNT(room) AS room_count 
+        FROM Mesures 
+        GROUP BY room 
+        ORDER BY room_count DESC 
+        LIMIT 1;
+    ";
+    $mostRecurringStmt = $pdo->query($mostRecurringRoomQuery);
+    $mostRecurringRoom = $mostRecurringStmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($mostRecurringRoom) {
+        echo "<h2>Salle la plus récurrente</h2>";
+        echo "<p>Room: " . htmlspecialchars($mostRecurringRoom['room']) . "</p>";
+        echo "<p>Occurrences: " . htmlspecialchars($mostRecurringRoom['room_count']) . "</p>";
+    } else {
+        echo "<p>Aucune donnée pour déterminer la salle la plus récurrente.</p>";
+    }
+
 } catch (PDOException $e) {
     // Gestion des erreurs de connexion ou d'exécution
     echo "Erreur de connexion à la base de données : " . $e->getMessage();

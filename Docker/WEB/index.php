@@ -8,21 +8,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon"><!-- [Page specific CSS] start -->
-    <link rel="stylesheet" href="../assets/css/plugins/datepicker-bs5.min.css"><!-- [Page specific CSS] end -->
-    <!-- [Font] Family -->
-    <link rel="stylesheet" href="../assets/fonts/inter/inter.css" id="main-font-link">
-    <!-- [phosphor Icons] https://phosphoricons.com/ -->
-    <link rel="stylesheet" href="../assets/fonts/phosphor/duotone/style.css">
-    <!-- [Tabler Icons] https://tablericons.com -->
-    <link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css"><!-- [Feather Icons] https://feathericons.com -->
-    <link rel="stylesheet" href="../assets/fonts/feather.css">
-    <!-- [Font Awesome Icons] https://fontawesome.com/icons -->
-    <link rel="stylesheet" href="../assets/fonts/fontawesome.css">
-    <!-- [Material Icons] https://fonts.google.com/icons -->
-    <link rel="stylesheet" href="../assets/fonts/material.css"><!-- [Template CSS Files] -->
     <link rel="stylesheet" href="../assets/css/style.css" id="main-style-link">
-    <script src="../assets/js/tech-stack.js"></script>
-    <link rel="stylesheet" href="../assets/css/style-preset.css">
     <link rel="stylesheet" href="../assets/css/final.css">
 </head><!-- [Head] end --><!-- [Body] Start -->
 <body data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-layout="vertical" data-pc-direction="ltr"
@@ -36,6 +22,11 @@
     <div class="pc-content"><!-- [ breadcrumb ] start -->
         <div class="alert alert-warning text-center">
             <H3 class="alert-heading mb-0">Tableau de bord</H3>
+        </div>
+        <div class="text-center">
+            <p class="h5">
+                Choisissez une salle :
+            </p>
         </div>
         <div class="row">
             <div class="col-12 first-floor-svg">
@@ -172,39 +163,11 @@
     <div class="footer-wrapper container-fluid">
         <div class="row">
             <div class="col my-1"><p class="m-0">Developed with &#9829; by <a
-                            href="https://daner-sharifi.com" target="_blank">Daner & Yolan</a></p></div>
+                            href="https://daner-sharifi.com" target="_blank" class="text-decoration-underline">Daner</a> & Yolan</p></div>
         </div>
     </div>
 </footer><!-- Required Js -->
 <script src="../assets/js/final.js"></scrpit>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="../assets/js/plugins/popper.min.js"></script>
-<script src="../assets/js/plugins/simplebar.min.js"></script>
-<script src="../assets/js/plugins/bootstrap.min.js"></script>
-<script src="../assets/js/plugins/i18next.min.js"></script>
-<script src="../assets/js/plugins/i18nextHttpBackend.min.js"></script>
 <script src="../assets/js/icon/custom-font.js"></script>
 <script src="../assets/js/script.js"></script>
-<script src="../assets/js/theme.js"></script>
-<script src="../assets/js/multi-lang.js"></script>
-<script src="../assets/js/plugins/feather.min.js"></script>
-<script>layout_change('light');</script>
-<script>change_box_container('false');</script>
-<script>layout_caption_change('true');</script>
-<script>layout_rtl_change('false');</script>
-<script>preset_change('preset-1');</script>
-<script>main_layout_change('vertical');</script><!-- [Page Specific JS] start --><!-- bootstrap-datepicker -->
-<script src="../assets/js/plugins/datepicker-full.min.js"></script>
-<script src="../assets/js/plugins/apexcharts.min.js"></script>
-<script src="../assets/js/plugins/peity-vanilla.min.js"></script><!-- custom widgets js -->
-<script src="../assets/js/widgets/revenue-sales-chart.js"></script>
-<script src="../assets/js/widgets/course-report-bar-chart.js"></script>
-<script src="../assets/js/widgets/total-revenue-line-1-chart.js"></script>
-<script src="../assets/js/widgets/total-revenue-line-2-chart.js"></script>
-<script src="../assets/js/widgets/student-states-chart.js"></script>
-<script src="../assets/js/widgets/activity-line-chart.js"></script>
-<script src="../assets/js/widgets/widget-calender.js"></script>
-<script src="../assets/js/widgets/visitors-bar-chart.js"></script>
-<script src="../assets/js/widgets/earning-courses-line-chart.js"></script>
-<script src="../assets/js/widgets/table-donut.js"></script><!-- [Page Specific JS] end -->
 </body><!-- [Body] end --></html>
