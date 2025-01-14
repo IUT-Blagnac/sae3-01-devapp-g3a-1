@@ -174,10 +174,13 @@ Ce projet offre une architecture modulaire pour simplifier le développement, la
 === Guide pour les Contributeurs
 
 1. **Cloner le Projet** :
-   ```bash
-   git clone https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01.git
-   cd SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01
-   ```
+
+[source,bash]
+----
+git clone https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01.git
+
+cd SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01
+----
 
 2. **Lancer les Conteneurs Docker** :
    ```bash
