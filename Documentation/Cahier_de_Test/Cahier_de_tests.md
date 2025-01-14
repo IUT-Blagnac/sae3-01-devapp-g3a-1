@@ -300,3 +300,16 @@ Vérifier la connexion à la base de données TimescaleDB via `psql`.
 1. Exécuter la commande suivante :
    ```bash
    psql -h localhost -U admin -d dashboard_db
+
+### Suivi des Tests
+### Suivi des Tests
+
+| Test                                      | Statut | Observations                                                                                  |
+|-------------------------------------------|--------|-----------------------------------------------------------------------------------------------|
+| Démarrage des conteneurs Docker           | ✅     | |
+| Arrêt des conteneurs Docker               | ✅     |  |
+| Vérification des ports utilisés           | ✅     | |
+| Accès à la page d'accueil (Nginx)         | ✅     | |
+| Accès à l'interface Node-RED              | ✅     |  |
+| Insertion des données dans TimescaleDB    | ✅     | |
+| Connexion à la base de données TimescaleDB | ✅     |                  |
