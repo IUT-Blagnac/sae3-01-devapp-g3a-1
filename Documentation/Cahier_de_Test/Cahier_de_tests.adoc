@@ -8,27 +8,27 @@ Bastien Bouvet
 Ce document décrit les cas de test pour les environnements Node-RED et Docker.
 
 == Cahier de Test Node-RED
-# Cahier de Recette : Tests pour Docker et ses conteneurs  
+## Cahier de Recette : Tests pour Docker et ses conteneurs  
 
-## Contexte
+### Contexte
 
 Ces tests visent à valider les fonctionnalités liées à l'utilisation de Docker et de ses conteneurs.
 Les cas de test couvrent la création, le démarrage, l'arrêt et la suppression de conteneurs Docker.
 
-### Références
+#### Références
 
 **Issue GitHub** : [Effectuer les tests pour Docker](https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/issues/25)
 
-### Assignees
+#### Assignees
 
 - [Penicaud-Bernal Diego](https://github.com/Diego-PB)
 - [Crisini Aidan](https://github.com/Smogita)
 
 ---
 
-## Tests à effectuer
+### Tests à effectuer
 
-### 1. Démarrage des conteneurs Docker
+#### 1. Démarrage des conteneurs Docker
 
 **Objectif**
 
@@ -50,7 +50,7 @@ Vérifier que les conteneurs Docker (Nginx, PHP, Node-RED, TimescaleDB) démarre
 
 ---
 
-### 2. Arrêt des conteneurs Docker
+#### 2. Arrêt des conteneurs Docker
 
 **Objectif**
 
@@ -72,7 +72,7 @@ Vérifier que les conteneurs Docker s'arrêtent correctement et que les volumes 
 
 ---
 
-### 3. Vérification des ports utilisés
+#### 3. Vérification des ports utilisés
 
 **Objectif**
 
@@ -94,7 +94,7 @@ S'assurer que les ports 80 et 1880 ne sont pas déjà utilisés avant le démarr
 
 ---
 
-### 4. Accès à la page d'accueil (Nginx)
+#### 4. Accès à la page d'accueil (Nginx)
 
 **Objectif**
 
@@ -116,7 +116,7 @@ Vérifier que la page d'accueil du site s'affiche correctement via Nginx.
 
 ---
 
-### 5. Accès à l'interface Node-RED
+#### 5. Accès à l'interface Node-RED
 
 **Objectif**
 
@@ -138,7 +138,7 @@ S'assurer que l'interface de Node-RED est accessible.
 
 ---
 
-### 6. Insertion des données dans TimescaleDB via Node-RED
+#### 6. Insertion des données dans TimescaleDB via Node-RED
 
 **Objectif**
 
@@ -160,7 +160,7 @@ Vérifier que Node-RED insère correctement les données MQTT dans la base de do
 
 ---
 
-### 7. Connexion à la base de données TimescaleDB
+#### 7. Connexion à la base de données TimescaleDB
 
 **Objectif**
 
