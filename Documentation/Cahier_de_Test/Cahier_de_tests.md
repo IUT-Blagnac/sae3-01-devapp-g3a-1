@@ -20,8 +20,8 @@ Les cas de test couvrent la récupération des données MQTT, leur insertion dan
 
 #### Assignees
 
-- @boubast
-- @leonardo-correiamendes
+- [Bouvet Bastien](https://github.com/boubast)
+- [Correiamendes leonardo](https://github.com/leonardo-correiamendes)
 
 ---
 
