@@ -1,5 +1,9 @@
 # Cahier de Test
 
+
+## Introduction
+Ce document décrit les cas de test pour les environnements Node-RED et Docker.
+
 ## Sommaire
 - [Introduction](#introduction)
 - [Tests pour Node-RED](#tests-pour-node-red)
@@ -25,9 +29,6 @@
     - [7. Connexion à la base de données TimescaleDB](#7-connexion-à-la-base-de-données-timescaledb)
 
 ---
-
-## Introduction
-Ce document décrit les cas de test pour les environnements Node-RED et Docker.
 
 ## Tests pour Node-RED
 
