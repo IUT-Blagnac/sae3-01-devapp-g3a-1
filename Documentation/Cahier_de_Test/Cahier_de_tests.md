@@ -1,8 +1,30 @@
 # Cahier de Test
-Bastien Bouvet
-:toc: left
-:toc-title: Sommaire
-:sectnums:
+
+## Sommaire
+- [Introduction](#introduction)
+- [Tests pour Node-RED](#tests-pour-node-red)
+  - [Contexte](#contexte)
+  - [Références](#références)
+  - [Assignees](#assignees)
+  - [Tests à effectuer](#tests-à-effectuer)
+    - [1. Récupération des données depuis le flux MQTT](#1-récupération-des-données-depuis-le-flux-mqtt)
+    - [2. Insertion manuelle des données dans la base de données](#2-insertion-manuelle-des-données-dans-la-base-de-données)
+    - [3. Insertion automatique des données depuis MQTT](#3-insertion-automatique-des-données-depuis-mqtt)
+  - [Suivi des Tests](#suivi-des-tests)
+- [Tests pour Docker et ses conteneurs](#tests-pour-docker-et-ses-conteneurs)
+  - [Contexte](#contexte-1)
+  - [Références](#références-1)
+  - [Assignees](#assignees-1)
+  - [Tests à effectuer](#tests-à-effectuer-1)
+    - [1. Démarrage des conteneurs Docker](#1-démarrage-des-conteneurs-docker)
+    - [2. Arrêt des conteneurs Docker](#2-arrêt-des-conteneurs-docker)
+    - [3. Vérification des ports utilisés](#3-vérification-des-ports-utilisés)
+    - [4. Accès à la page d'accueil (Nginx)](#4-accès-à-la-page-daccueil-nginx)
+    - [5. Accès à l'interface Node-RED](#5-accès-à-linterface-node-red)
+    - [6. Insertion des données dans TimescaleDB via Node-RED](#6-insertion-des-données-dans-timescaledb-via-node-red)
+    - [7. Connexion à la base de données TimescaleDB](#7-connexion-à-la-base-de-données-timescaledb)
+
+---
 
 ## Introduction
 Ce document décrit les cas de test pour les environnements Node-RED et Docker.
@@ -21,7 +43,7 @@ Les cas de test couvrent la récupération des données MQTT, leur insertion dan
 #### Assignees
 
 - [Bouvet Bastien](https://github.com/boubast)
-- [Correiamendes leonardo](https://github.com/leonardo-correiamendes)
+- [Correia Mendes Leonardo](https://github.com/leonardo-correiamendes)
 
 ---
 
