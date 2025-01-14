@@ -74,7 +74,7 @@ try {
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Temperature</p>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <h4 class="mb-0"><?= $badgeRows[0]['temperature'] ?>°</h4>
-                                    <?= badgeEvolution($badgeRows[0]['temperature'], $badgeRows[1]['temperature'], "°") ?>
+                                    <?= (badgeEvolution($badgeRows[0]['temperature'], $badgeRows[1]['temperature'], "°")); ?>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +91,7 @@ try {
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Humidity</p>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <h4 class="mb-0"><?= $badgeRows[0]['humidity'] ?></h4>
-                                    <?= badgeEvolution($badgeRows[0]['humidity'], $badgeRows[1]['humidity']) ?>
+                                    <?= (badgeEvolution($badgeRows[0]['humidity'], $badgeRows[1]['humidity'])); ?>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,7 @@ try {
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Activity</p>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <h4 class="mb-0"><?= isset($badgeRows[0]['activity']) && strlen($badgeRows[0]['activity']) ? $badgeRows[0]['activity'] : 'None' ?></h4>
-                                    <?= badgeEvolution($badgeRows[0]['activity'], $badgeRows[1]['activity']) ?>
+                                    <?= (badgeEvolution($badgeRows[0]['activity'], $badgeRows[1]['activity'])); ?>
                                 </div>
                             </div>
                         </div>
@@ -125,7 +125,7 @@ try {
                             <div class="flex-grow-1 ms-3"><p class="mb-1">TVOC</p>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <h4 class="mb-0"><?= $badgeRows[0]['tvoc'] ?></h4>
-                                    <?= badgeEvolution($badgeRows[0]['tvoc'], $badgeRows[1]['tvoc']) ?>
+                                    <?= (badgeEvolution($badgeRows[0]['tvoc'], $badgeRows[1]['tvoc'])); ?>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +142,7 @@ try {
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Illumination</p>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <h4 class="mb-0"><?= $badgeRows[0]['illumination'] ?></h4>
-                                    <?= badgeEvolution($badgeRows[0]['illumination'], $badgeRows[1]['illumination']) ?>
+                                    <?= (badgeEvolution($badgeRows[0]['illumination'], $badgeRows[1]['illumination'])); ?>
                                 </div>
                             </div>
                         </div>
@@ -159,7 +159,7 @@ try {
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Infrared</p>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <h4 class="mb-0"><?= $badgeRows[0]['infrared'] ?></h4>
-                                    <?= badgeEvolution($badgeRows[0]['infrared'], $badgeRows[1]['infrared']) ?>
+                                    <?= (badgeEvolution($badgeRows[0]['infrared'], $badgeRows[1]['infrared'])); ?>
                                 </div>
                             </div>
                         </div>
@@ -176,7 +176,7 @@ try {
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Infrared and Visible</p>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <h4 class="mb-0"><?= $badgeRows[0]['infrared_and_visible'] ?></h4>
-                                    <?= badgeEvolution($badgeRows[0]['infrared_and_visible'], $badgeRows[1]['infrared_and_visible']) ?>
+                                    <?= (badgeEvolution($badgeRows[0]['infrared_and_visible'], $badgeRows[1]['infrared_and_visible'])); ?>
                                 </div>
                             </div>
                         </div>
@@ -190,10 +190,10 @@ try {
                             <div class="flex-shrink-0">
                                 <div class="avtar bg-light-green"><i class="ti ti-gauge f-24"></i></div>
                             </div>
-                            <div class="flex-grow-1 ms-3"><p class="mb-1">Presure</p>
+                            <div class="flex-grow-1 ms-3"><p class="mb-1">Pressure</p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0"><?= $badgeRows[0]['presure'] ?></h4>
-                                    <?= badgeEvolution($badgeRows[0]['presure'], $badgeRows[1]['presure']) ?>
+                                    <h4 class="mb-0"><?= $badgeRows[0]['pressure'] ?></h4>
+                                    <?= (badgeEvolution($badgeRows[0]['pressure'], $badgeRows[1]['pressure'])); ?>
                                 </div>
                             </div>
                         </div>
