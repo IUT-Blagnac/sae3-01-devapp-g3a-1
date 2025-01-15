@@ -1,1 +1,31 @@
 
+:toc: macro
+
+= Bilan de sprint n°3 SAE-ALT-S3-Dev-24-25-Dashboard_du_departement
+
+=== Sommaire
+toc::[]
+
+
+== Equipe 2024 - 2025
+
+- link:https://github.com/boubast[BOUVET Bastien] -- Scrum Master / Développeur
+- link:https://github.com/YolanBrun[BRUN Yolan] --  Rédacteur / Développeur
+- link:https://github.com/leonardo-correiamendes[CORREIA MENDES Leonardo] -- Chef de projet / Développeur
+- link:https://github.com/Diego-PB[PENICAUD-BERNAL Diego] -- Responsable base de donnée / Développeur
+- link:https://github.com/DanerSharifi-FR[SHARIFI Daner] -- Responsable serveur web / Développeur
+- link:https://github.com/Smogita[CRISTINI Aidan] -- Git Master / Développeur
+
+== Progrès Accompli
+
+=== Objectifs
+
+=== Points Forts
+sudo chown -R 1000:1000 ./nodered
+
+chmod -R 755 ./nodered
+=== Problèmes rencontré
+
+=== Leçons apprises
+
+=== Résumé du sprint
