@@ -1,4 +1,4 @@
-<img src="../../../" alt="Ma superbe image" />
+<img src="../../../images/page-de-garde-v1.jpg" alt="Ma superbe image" />
 
 # **Compte rendu** : 07/01/25
 
