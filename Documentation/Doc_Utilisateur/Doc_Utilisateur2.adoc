@@ -1,5 +1,7 @@
 :toc: macro
 
+image::../../images/page-de-garde-v2.jpg[][alt="Dashboard du Département", align="center", width=100%]
+
 = Documentation Utilisateur sprint n°2 SAE-ALT-S3-Dev-24-25-Dashboard_du_departement
 
 === Sommaire
