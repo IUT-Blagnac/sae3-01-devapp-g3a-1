@@ -124,23 +124,6 @@
         ]
     },
     {
-        "id": "9f923b2297803da5",
-        "type": "debug",
-        "z": "fc36e552fabb57dc",
-        "name": "debug 2",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 640,
-        "y": 560,
-        "wires": []
-    },
-    {
         "id": "39cf3f9ede4b3dbe",
         "type": "function",
         "z": "fc36e552fabb57dc",
@@ -152,8 +135,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
-        "y": 560,
+        "x": 420,
+        "y": 660,
         "wires": [
             [
                 "5755e2a5167ef8bc"
@@ -172,8 +155,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 440,
-        "y": 420,
+        "x": 540,
+        "y": 360,
         "wires": []
     },
     {
@@ -186,10 +169,31 @@
         "split": true,
         "rowsPerMsg": 1,
         "outputs": 1,
-        "x": 650,
-        "y": 740,
+        "x": 850,
+        "y": 620,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "5755e2a5167ef8bc",
+        "type": "function",
+        "z": "fc36e552fabb57dc",
+        "name": "function 2",
+        "func": "// Récupérer l'ID actuel depuis le contexte (si existe)\nlet currentID = flow.get('currentID') || 0;  // Si l'ID n'existe pas, initialiser à 0\n\n// Incrémenter l'ID\ncurrentID++;\n\n// Sauvegarder l'ID mis à jour dans le contexte pour la prochaine exécution\nflow.set('currentID', currentID);\n\n// Construction de la requête SQL avec les valeurs de msg.payload\nlet sqlQuery = `Insert Into Mesures\nValues(${currentID}, ${msg.payload[0]}, ${msg.payload[1]}, ${msg.payload[2]}, ${msg.payload[3]}, ${msg.payload[4]}, ${msg.payload[5]}, ${msg.payload[6]}, ${msg.payload[7]}, '${msg.payload[8]}', '${msg.payload[9]}', '${msg.payload[10]}');`;\n\n// Stocker la requête SQL dans msg.payload\nmsg.payload = sqlQuery;\n\n// Retourner le message avec la requête SQL\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 620,
+        "wires": [
+            [
+                "ece6c1f9ef51d53c",
+                "a45ca024e6a7f1b2"
+            ]
         ]
     },
     {
@@ -209,8 +213,8 @@
         "topic": "",
         "payload": "[{\"temperature\":20,\"humidity\":51,\"activity\":0,\"co2\":601,\"tvoc\":262,\"illumination\":13,\"infrared\":3,\"infrared_and_visible\":12,\"pressure\":987.9},{\"deviceName\":\"AM107-17\",\"devEUI\":\"24e124128c012135\",\"room\":\"B105\",\"floor\":1,\"Building\":\"B\"}]",
         "payloadType": "json",
-        "x": 110,
-        "y": 320,
+        "x": 210,
+        "y": 660,
         "wires": [
             [
                 "39cf3f9ede4b3dbe"
@@ -218,108 +222,22 @@
         ]
     },
     {
-        "id": "5755e2a5167ef8bc",
-        "type": "function",
+        "id": "a45ca024e6a7f1b2",
+        "type": "debug",
         "z": "fc36e552fabb57dc",
-        "name": "function 2",
-        "func": "// Récupérer l'ID actuel depuis le contexte (si existe)\nlet currentID = flow.get('currentID') || 0;  // Si l'ID n'existe pas, initialiser à 0\n\n// Incrémenter l'ID\ncurrentID++;\n\n// Sauvegarder l'ID mis à jour dans le contexte pour la prochaine exécution\nflow.set('currentID', currentID);\n\n// Construction de la requête SQL avec les valeurs de msg.payload\nlet sqlQuery = `Insert Into Mesures\nValues(${currentID}, ${msg.payload[0]}, ${msg.payload[1]}, ${msg.payload[2]}, ${msg.payload[3]}, ${msg.payload[4]}, ${msg.payload[5]}, ${msg.payload[6]}, ${msg.payload[7]}, '${msg.payload[8]}', '${msg.payload[9]}', '${msg.payload[10]}');`;\n\n// Stocker la requête SQL dans msg.payload\nmsg.payload = sqlQuery;\n\n// Retourner le message avec la requête SQL\nreturn msg;\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 430,
-        "y": 640,
-        "wires": [
-            [
-                "9f923b2297803da5",
-                "ece6c1f9ef51d53c"
-            ]
-        ]
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 710,
+        "y": 500,
+        "wires": []
     },
     {
-    "id": "27674495422c578b",
-    "type": "postgresql",
-    "z": "fc36e552fabb57dc",
-    "name": "TimeScaleDB_SAE",
-    "query": "SELECT MAX(ID) AS lastID FROM Mesures;",
-    "postgreSQLConfig": "233a32a7e323113d",
-    "split": true,
-    "rowsPerMsg": 1,
-    "outputs": 1,
-    "x": 490,
-    "y": 540,
-    "wires": [
-        [
-            "90d0dbfa485ffb43",
-            "91bfaa88811b5118"
-        ]
-    ]
-},
-{
-    "id": "90d0dbfa485ffb43",
-    "type": "join",
-    "z": "fc36e552fabb57dc",
-    "name": "",
-    "mode": "custom",
-    "build": "array",
-    "property": "payload",
-    "propertyType": "msg",
-    "key": "topic",
-    "joiner": "\\n",
-    "joinerType": "str",
-    "useparts": false,
-    "accumulate": false,
-    "timeout": "0",
-    "count": "2",
-    "reduceRight": false,
-    "reduceExp": "",
-    "reduceInit": "",
-    "reduceInitType": "",
-    "reduceFixup": "",
-    "x": 670,
-    "y": 440,
-    "wires": [
-        [
-            "5755e2a5167ef8bc",
-            "93d0c95165a777fe"
-        ]
-    ]
-},
-{
-    "id": "93d0c95165a777fe",
-    "type": "debug",
-    "z": "fc36e552fabb57dc",
-    "name": "debug 7",
-    "active": false,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 760,
-    "y": 540,
-    "wires": []
-},
-{
-    "id": "91bfaa88811b5118",
-    "type": "debug",
-    "z": "fc36e552fabb57dc",
-    "name": "debug 8",
-    "active": false,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "statusVal": "",
-    "statusType": "auto",
-    "x": 570,
-    "y": 680,
-    "wires": []
-},
-{
         "id": "33c70efb3db9a385",
         "type": "debug",
         "z": "a9a91092a687928c",
