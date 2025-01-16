@@ -1,6 +1,6 @@
 :toc: macro
 
-= Documentation Utilisateur SAE-ALT-S3-Dev-24-25-Dashboard_du_departement
+= Documentation Utilisateur sprint n°1 SAE-ALT-S3-Dev-24-25-Dashboard_du_departement
 
 === Sommaire
 toc::[]

@@ -316,8 +316,13 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
+<<<<<<< HEAD
         "x": 570,
         "y": 680,
+=======
+        "x": 760,
+        "y": 540,
+>>>>>>> 8fbf50610ebb77142482e79f0f7938807517697b
         "wires": []
     },
     {

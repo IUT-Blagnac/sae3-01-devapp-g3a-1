@@ -1,6 +1,6 @@
 :toc: macro
 
-= Bilan de sprint SAE-ALT-S3-Dev-24-25-Dashboard_du_departement
+= Bilan de sprint n°1 SAE-ALT-S3-Dev-24-25-Dashboard_du_departement
 
 === Sommaire
 toc::[]

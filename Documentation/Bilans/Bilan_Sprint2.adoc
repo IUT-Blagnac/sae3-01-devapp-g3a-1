@@ -1,1 +1,36 @@
+:toc: macro
 
+= Bilan de sprint n°2 SAE-ALT-S3-Dev-24-25-Dashboard_du_departement
+
+=== Sommaire
+toc::[]
+
+
+== Equipe 2024 - 2025
+
+- link:https://github.com/boubast[BOUVET Bastien] -- Scrum Master / Développeur
+- link:https://github.com/YolanBrun[BRUN Yolan] --  Rédacteur / Développeur
+- link:https://github.com/leonardo-correiamendes[CORREIA MENDES Leonardo] -- Chef de projet / Développeur
+- link:https://github.com/Diego-PB[PENICAUD-BERNAL Diego] -- Responsable base de donnée / Développeur
+- link:https://github.com/DanerSharifi-FR[SHARIFI Daner] -- Responsable serveur web / Développeur
+- link:https://github.com/Smogita[CRISTINI Aidan] -- Git Master / Développeur
+
+== Progrès Accompli
+
+=== Objectifs
+- [x] WEB : Ajouter un graphique pour consulter l'historique des mesures stockées avec des filtres et des options d'export.
+
+=== Points Forts
+
+- Graphique JS pour les statistiques
+- Option export en PNG
+- Option export en CSV
+- Option l'option export en SVG
+- Historique des statistiques par jour
+- Historique des statistiques par semaine
+
+=== Problèmes rencontrés
+
+=== Leçons apprises
+
+=== Résumé du sprint

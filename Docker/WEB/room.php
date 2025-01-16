@@ -241,28 +241,36 @@ try {
                             </div>
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Pressure</p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0"><?= $badgeRows[0]['pressure'] ?></h4>
-                                    <?= (badgeEvolution($badgeRows[0]['pressure'], $badgeRows[1]['pressure'])); ?>
+                                    <h4 class="mb-0"><?= $badgeRows[0]['presure'] ?></h4>
+                                    <?= (badgeEvolution($badgeRows[0]['presure'], $badgeRows[1]['presure'])); ?>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-7 col-md-12">
+            <!--<div class="col-lg-7 col-md-12">-->
+            <div class="col-12">
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex align-items-start justify-content-between">
                             <div><h5 class="mb-1">Rapport global</h5></div>
                             <select class="form-select rounded-3 form-select-sm w-auto">
-                                <option selected>Today</option>
-                                <option>Weekly</option>
+                                <option>Today</option>
+                                <option selected>Weekly</option>
                             </select></div>
                         <div id="revenue-sales-chart"></div>
+
+                        <div class="alert alert-info text-center h4">
+                            Pour
+                            FILTRER
+                            les données, cliquez sur les légendes du graphique
+                            pour afficher ou masquer les données correspondantes.
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-7 col-md-12">
+            <!--<div class="col-lg-7 col-md-12">
                 <div class="card" id="allGraphic">
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between"><h5 class="mb-0">Courses</h5>
@@ -330,17 +338,17 @@ try {
                         <div id="earning-courses-line-chart"></div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div><!-- [ Main Content ] end --></div>
 </div><!-- [ Main Content ] end -->
-<footer class="pc-footer">
+<!--<footer class="pc-footer">
     <div class="footer-wrapper container-fluid">
         <div class="row">
             <div class="col my-1"><p class="m-0">Developed with &#9829; by <a
                             href="https://daner-sharifi.com" target="_blank" class="text-decoration-underline">Daner</a> & Yolan</p></div>
         </div>
     </div>
-</footer><!-- Required Js -->
+</footer>--><!-- Required Js -->
 <script>
     const temperatureData = <?= $temperatureJson; ?>;
     const humidityData = <?= $humidityJson; ?>;

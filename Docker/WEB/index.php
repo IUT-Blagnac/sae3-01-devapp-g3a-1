@@ -159,14 +159,14 @@
             </div>
         </div><!-- [ Main Content ] end --></div>
 </div><!-- [ Main Content ] end -->
-<footer class="pc-footer">
+<!--<footer class="pc-footer">
     <div class="footer-wrapper container-fluid">
         <div class="row">
             <div class="col my-1"><p class="m-0">Developed with &#9829; by <a
                             href="https://daner-sharifi.com" target="_blank" class="text-decoration-underline">Daner</a> & Yolan</p></div>
         </div>
     </div>
-</footer><!-- Required Js -->
+</footer>--><!-- Required Js -->
 <script src="../assets/js/final.js"></scrpit>
 <script src="../assets/js/icon/custom-font.js"></script>
 <script src="../assets/js/script.js"></script>

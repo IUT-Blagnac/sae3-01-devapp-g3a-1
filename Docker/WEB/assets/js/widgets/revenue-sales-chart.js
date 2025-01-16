@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // INITIALIZE
     // ─────────────────────────────────────────────────────────────────────────────
     // Default to "Today"
-    filterData('Today');
+    filterData('Weekly');
     renderChart();
 
     // ─────────────────────────────────────────────────────────────────────────────
@@ -261,19 +261,4 @@ document.addEventListener('DOMContentLoaded', function () {
         filterData(selectedPeriod);
         renderChart();
     });
-
-    // ─────────────────────────────────────────────────────────────────────────────
-    // OPTIONAL: REMOVE "MONTHLY" AND AUTO-SELECT WEEKLY
-    // ─────────────────────────────────────────────────────────────────────────────
-    setTimeout(() => {
-        // Target the select dropdown
-        const dropdown = document.querySelector('.form-select');
-
-        // Find and remove the "Monthly" option
-        const monthlyOption = Array.from(dropdown.options).find(option => option.text === "Monthly");
-        const weeklyOption = Array.from(dropdown.options).find(option => option.text === "Weekly");
-        if (monthlyOption) {
-            monthlyOption.remove();
-        }
-    }, 100);
 });
