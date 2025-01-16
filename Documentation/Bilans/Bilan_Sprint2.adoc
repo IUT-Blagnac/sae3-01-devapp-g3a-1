@@ -18,19 +18,18 @@ toc::[]
 == Progrès Accompli
 
 === Objectifs
-==== WEB
-- [x] Améliorer l'interface web
-- [x] Ajouter un graphique JS pour les statistiques
-- [x] Ajouter l'option exporter en PNG
-- [x] Ajouter l'option exporter en CSV
-- [x] Ajouter l'option exporter en SVG
-- [x] Historique des statistiques par jour
-- [x] Historique des statistiques par semaine
-
+- [x] WEB : Ajouter un graphique pour consulter l'historique des mesures stockées avec des filtres et des options d'export.
 
 === Points Forts
 
-=== Problèmes rencontré
+- Graphique JS pour les statistiques
+- Option export en PNG
+- Option export en CSV
+- Option l'option export en SVG
+- Historique des statistiques par jour
+- Historique des statistiques par semaine
+
+=== Problèmes rencontrés
 
 === Leçons apprises
 
