@@ -14,30 +14,7 @@ CREATE TABLE Mesures (
     date_heure TIMESTAMPTZ           --Date et heure avec fuseau horaire
 );
 
--- Insertion d'une ligne de test dans la table Mesures
+-- On vide la base de donnée au démarrage au cas ou des valeurs s'y trouvent
+TRUNCATE TABLE Mesures;
 
- INSERT INTO Mesures (
-     temperature, 
-     humidity, 
-     activity, 
-     tvoc, 
-     illumination, 
-     infrared, 
-     infrared_and_visible, 
-     presure, 
-     deviceName, 
-     room, 
-     date_heure
- ) VALUES (
-     23.5,          --Température (en °C)
-     60.2,          --Humidité (en %)
-     0.8,           --Activité (en % ou unité arbitraire)
-     150.0,         --Total Volatile Organic Compounds (en ppb)
-     300.5,         --Éclairage (en lux)
-     120.0,         --Infrarouge (valeur numérique)
-     450.5,         --Infrarouge et visible (valeur numérique)
-     1013.25,       --Pression (en hPa)
-     'Device_A',    --Nom du dispositif
-     'Room_101',    --Nom de la salle
-     '2025-01-08 10:30:00+01'  --Date et heure (avec fuseau horaire)
- );
+
