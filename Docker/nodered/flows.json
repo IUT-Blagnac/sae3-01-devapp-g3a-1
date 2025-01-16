@@ -239,90 +239,87 @@
         ]
     },
     {
-<<<<<<< HEAD
-        "id": "27674495422c578b",
-        "type": "postgresql",
-        "z": "fc36e552fabb57dc",
-        "name": "TimeScaleDB_SAE",
-        "query": "SELECT MAX(ID) AS lastID FROM Mesures;",
-        "postgreSQLConfig": "233a32a7e323113d",
-        "split": true,
-        "rowsPerMsg": 1,
-        "outputs": 1,
-        "x": 490,
-        "y": 540,
-        "wires": [
-            [
-                "90d0dbfa485ffb43",
-                "91bfaa88811b5118"
-            ]
+    "id": "27674495422c578b",
+    "type": "postgresql",
+    "z": "fc36e552fabb57dc",
+    "name": "TimeScaleDB_SAE",
+    "query": "SELECT MAX(ID) AS lastID FROM Mesures;",
+    "postgreSQLConfig": "233a32a7e323113d",
+    "split": true,
+    "rowsPerMsg": 1,
+    "outputs": 1,
+    "x": 490,
+    "y": 540,
+    "wires": [
+        [
+            "90d0dbfa485ffb43",
+            "91bfaa88811b5118"
         ]
-    },
-    {
-        "id": "90d0dbfa485ffb43",
-        "type": "join",
-        "z": "fc36e552fabb57dc",
-        "name": "",
-        "mode": "custom",
-        "build": "array",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "useparts": false,
-        "accumulate": false,
-        "timeout": "0",
-        "count": "2",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 670,
-        "y": 440,
-        "wires": [
-            [
-                "5755e2a5167ef8bc",
-                "93d0c95165a777fe"
-            ]
+    ]
+},
+{
+    "id": "90d0dbfa485ffb43",
+    "type": "join",
+    "z": "fc36e552fabb57dc",
+    "name": "",
+    "mode": "custom",
+    "build": "array",
+    "property": "payload",
+    "propertyType": "msg",
+    "key": "topic",
+    "joiner": "\\n",
+    "joinerType": "str",
+    "useparts": false,
+    "accumulate": false,
+    "timeout": "0",
+    "count": "2",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "",
+    "reduceFixup": "",
+    "x": 670,
+    "y": 440,
+    "wires": [
+        [
+            "5755e2a5167ef8bc",
+            "93d0c95165a777fe"
         ]
-    },
-    {
-        "id": "93d0c95165a777fe",
-        "type": "debug",
-        "z": "fc36e552fabb57dc",
-        "name": "debug 7",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 760,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "91bfaa88811b5118",
-        "type": "debug",
-        "z": "fc36e552fabb57dc",
-        "name": "debug 8",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 570,
-        "y": 680,
-        "wires": []
-    },
-    {
-=======
->>>>>>> 8fbf50610ebb77142482e79f0f7938807517697b
+    ]
+},
+{
+    "id": "93d0c95165a777fe",
+    "type": "debug",
+    "z": "fc36e552fabb57dc",
+    "name": "debug 7",
+    "active": false,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 760,
+    "y": 540,
+    "wires": []
+},
+{
+    "id": "91bfaa88811b5118",
+    "type": "debug",
+    "z": "fc36e552fabb57dc",
+    "name": "debug 8",
+    "active": false,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 570,
+    "y": 680,
+    "wires": []
+},
+{
         "id": "33c70efb3db9a385",
         "type": "debug",
         "z": "a9a91092a687928c",
