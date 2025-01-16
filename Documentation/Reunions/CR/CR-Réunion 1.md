@@ -1,3 +1,5 @@
+<img src="../../../" alt="Ma superbe image" />
+
 # **Compte rendu** : 07/01/25
 
 ### 1. **Discussion autour des problématiques principales**
