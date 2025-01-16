@@ -49,3 +49,8 @@ Le site permet de visualiser la carte du 1er étage du bâtiment, incluant les s
 
 L'objectif principal est de fournir une interface claire et fonctionnelle permettant d'analyser les données des capteurs et de suivre l'occupation des salles à travers un historique visuel.
 
+== Utilisation de l'interface Web
+
+
+== Scénarios d'usage typiques
+
