@@ -1,3 +1,5 @@
+<img src="../../../images/page-de-garde-v2.jpg" alt="Ma superbe image" />
+
 # **Compte rendu** : 14/01/25
 
 1. **Récapitulatif du travail réalisé, des erreurs commises et des ressentis personnels**
