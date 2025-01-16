@@ -1,11 +1,11 @@
-image::../../images/page-de-garde-v2.jpg[][alt="Dashboard du Département", align="center", width=100%]
+<img src="../../images/page-de-garde-v2.jpg" alt="Ma superbe image" />
 
-= Cahier de Test
+# Cahier de Test
 
-== Introduction
+## Introduction
 Ce document décrit les cas de test pour les environnements Node-RED et Docker.
 
-== Sommaire
+## Sommaire
 - [Introduction](#introduction)
 - [Tests pour Node-RED](#tests-pour-node-red)
   - [Contexte](#contexte)
@@ -41,13 +41,6 @@ Les cas de test couvrent la récupération des données MQTT, leur insertion dan
 #### Références
 
 **Issue GitHub** : [Effectuer les tests pour Node-RED](https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/issues/29)
-
-#### Assignees
-
-- [Bouvet Bastien](https://github.com/boubast)
-- [Correia Mendes Leonardo](https://github.com/leonardo-correiamendes)
-
----
 
 ### Tests à effectuer
 
@@ -144,13 +137,6 @@ Les cas de test couvrent la création, le démarrage, l'arrêt et la suppression
 #### Références
 
 **Issue GitHub** : [Effectuer les tests pour Docker](https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/issues/25)
-
-#### Assignees
-
-- [Penicaud-Bernal Diego](https://github.com/Diego-PB)
-- [Crisini Aidan](https://github.com/Smogita)
-
----
 
 ### Tests à effectuer
 
