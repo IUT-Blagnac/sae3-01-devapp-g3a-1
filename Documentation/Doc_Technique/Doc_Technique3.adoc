@@ -1,1 +1,2 @@
 
+image::../../images/Document_tech3.png[align="center", width=100%]
