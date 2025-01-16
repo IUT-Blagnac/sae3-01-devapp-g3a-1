@@ -1,11 +1,11 @@
 image::../../images/page-de-garde-v2.jpg[][alt="Dashboard du Département", align="center", width=100%]
 
-# Cahier de Test
+= Cahier de Test
 
-## Introduction
+== Introduction
 Ce document décrit les cas de test pour les environnements Node-RED et Docker.
 
-## Sommaire
+== Sommaire
 - [Introduction](#introduction)
 - [Tests pour Node-RED](#tests-pour-node-red)
   - [Contexte](#contexte)
