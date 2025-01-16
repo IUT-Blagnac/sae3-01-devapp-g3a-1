@@ -28,7 +28,7 @@ ifdef::env-github[]
 :icongit: Git
 endif::[]
 
-image::./images/page-de-garde-v2.png[][alt="Dashboard du Département", align="center", width=100%]
+image::./images/page-de-garde-v2.jpg[][alt="Dashboard du Département", align="center", width=100%]
 
 
 // /!\ A MODIFIER !!!
