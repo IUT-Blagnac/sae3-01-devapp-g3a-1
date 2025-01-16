@@ -5,7 +5,7 @@
 image::../../images/Document_tech1.png[align="center", width=100%]
 
 
-=== Sommaire
+== Sommaire
 toc::[]
 
 
@@ -24,6 +24,8 @@ toc::[]
 Ce projet vise à exploiter les données des capteurs AM107 situés dans les salles du 1er étage du département d’informatique. Ces capteurs collectent des données telles que la présence (valeur d’activité), la luminosité (en lux) et le niveau de CO2, diffusées via un flux MQTT.
 
 L'objectif principal est de fournir un outil centralisé pour visualiser et analyser ces données à des fins de gestion et d'optimisation de l’utilisation des salles.
+
+Les principaux utilisateurs de cette solution seront des **analystes de données**, qui pourront exploiter les informations présentées pour mieux comprendre l'utilisation des espaces et optimiser leur gestion.
 
 === Objectif du Projet
 Le projet consiste à développer une interface web qui permet :

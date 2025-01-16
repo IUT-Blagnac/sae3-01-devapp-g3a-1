@@ -1,10 +1,10 @@
 :toc: macro
 
-image::../../images/page-de-garde-v3.jpg[][alt="Dashboard du Département", align="center", width=100%]
-
 = Bilan de sprint n°3 SAE-ALT-S3-Dev-24-25-Dashboard_du_departement
 
-=== Sommaire
+image::../../images/Bilan_sprint3.png[][align="center", width=100%]
+
+== Sommaire
 toc::[]
 
 
@@ -22,9 +22,7 @@ toc::[]
 === Objectifs
 
 === Points Forts
-sudo chown -R 1000:1000 ./nodered
 
-chmod -R 755 ./nodered
 === Problèmes rencontré
 
 === Leçons apprises

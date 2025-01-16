@@ -1,13 +1,11 @@
 :toc: macro
 
-
-image::../../images/page-de-garde-v2.jpg[][alt="Dashboard du Département", align="center", width=100%]
-
 = Bilan de sprint n°2 SAE-ALT-S3-Dev-24-25-Dashboard_du_departement
 
-=== Sommaire
-toc::[]
+image::../../images/Bilan_sprint2.png[][align="center", width=100%]
 
+== Sommaire
+toc::[]
 
 == Equipe 2024 - 2025
 
