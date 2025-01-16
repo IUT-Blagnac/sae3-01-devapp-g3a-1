@@ -1,7 +1,6 @@
 :toc: macro
 
-image::./images/page-de-garde-v1.jpg[][alt="Dashboard du Département", align="center", width=100%]
-
+image::../../../images/page-de-garde-v1.jpg[][alt="Dashboard du Département", align="center", width=100%]
 
 = Bilan de sprint n°1 SAE-ALT-S3-Dev-24-25-Dashboard_du_departement
 
