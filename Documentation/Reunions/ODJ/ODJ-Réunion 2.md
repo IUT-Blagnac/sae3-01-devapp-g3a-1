@@ -1,3 +1,5 @@
+<img src="../../../images/page-de-garde-v2.jpg" alt="Ma superbe image" />
+
 # Réunion : 14/01/25
 
 # **Ordre du jour de la réunion** :
