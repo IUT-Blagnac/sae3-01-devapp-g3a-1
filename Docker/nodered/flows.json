@@ -114,8 +114,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 90,
-        "y": 440,
+        "x": 150,
+        "y": 560,
         "wires": [
             [
                 "d233b8fda5345302",
@@ -136,8 +136,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1040,
-        "y": 340,
+        "x": 640,
+        "y": 560,
         "wires": []
     },
     {
@@ -145,19 +145,18 @@
         "type": "function",
         "z": "fc36e552fabb57dc",
         "name": "function 1",
-        "func": "// Récupération des objets dans le payload\nlet data1 = msg.payload[0]; // Contient les données environnementales\nlet data2 = msg.payload[1]; // Contient les informations sur l'appareil et la pièce\n\n// Récupération de la date et de l'heure actuelles\nlet now = new Date();\n\n// Ajout d'une heure\nnow.setHours(now.getHours() + 1);\n\nlet date = now.toISOString().split('T')[0]+\" \"+now.toTimeString().split(' ')[0]; // YYYY-MM-DD:HH:mm:ss\n\n// Construction du tableau final\nlet tableau = [\n    data1.temperature || null, // Temperature\n    data1.humidity || null,    // Humidity\n    data1.activity || null,    // Activity\n    data1.tvoc || null,        // TVOC\n    data1.illumination || null, // Illumination\n    data1.infrared || null,    // Infrared\n    data1.infrared_and_visible || null, // Infrared and Visible\n    data1.pressure || null,    // Pressure\n    data2.deviceName || null,  // Device Name\n    data2.room || null,        // Room\n    date,                      // Date\n];\n\n// Stocker le tableau dans msg.payload\nmsg.payload = tableau;\n\n// Vérifie si la salle commence par \"B1\"\nif (msg.payload[9] && msg.payload[9].startsWith(\"B1\")) {\n    // Si oui, renvoyer le message\n    return msg;\n} else {\n    // Sinon, ne rien faire (filtrer le message)\n    return null;\n}\n",
+        "func": "// Récupération des objets dans le payload\nlet data1 = msg.payload[0]; // Contient les données environnementales\nlet data2 = msg.payload[1]; // Contient les informations sur l'appareil et la pièce\n\n// Récupération de la date et de l'heure actuelles\nlet now = new Date();\nlet date = now.toISOString().split('T')[0]+\" \"+now.toTimeString().split(' ')[0]; // YYYY-MM-DD:HH:mm:ss\n\n// Construction du tableau final\nlet tableau = [\n    data1.temperature || null, // Temperature\n    data1.humidity || null,    // Humidity\n    data1.activity || null,    // Activity\n    data1.tvoc || null,        // TVOC\n    data1.illumination || null, // Illumination\n    data1.infrared || null,    // Infrared\n    data1.infrared_and_visible || null, // Infrared and Visible\n    data1.pressure || null,    // Pressure\n    data2.deviceName || null,  // Device Name\n    data2.room || null,        // Room\n    date,                      // Date\n];\n\n// Stocker le tableau dans msg.payload\nmsg.payload = tableau;\n\n// Vérifie si la salle commence par \"B1\"\nif (msg.payload[9] && msg.payload[9].startsWith(\"B1\")) {\n    // Si oui, renvoyer le message\n    return msg;\n} else {\n    // Sinon, ne rien faire (filtrer le message)\n    return null;\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 320,
-        "y": 480,
+        "x": 400,
+        "y": 560,
         "wires": [
             [
-                "90d0dbfa485ffb43",
-                "27674495422c578b"
+                "5755e2a5167ef8bc"
             ]
         ]
     },
@@ -173,8 +172,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 360,
-        "y": 360,
+        "x": 440,
+        "y": 420,
         "wires": []
     },
     {
@@ -187,8 +186,8 @@
         "split": true,
         "rowsPerMsg": 1,
         "outputs": 1,
-        "x": 1040,
-        "y": 520,
+        "x": 650,
+        "y": 740,
         "wires": [
             []
         ]
@@ -208,10 +207,10 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "[{\"temperature\":20,\"humidity\":51,\"activity\":0,\"co2\":601,\"tvoc\":262,\"illumination\":13,\"infrared\":3,\"infrared_and_visible\":12,\"pressure\":987.9},{\"deviceName\":\"AM107-17\",\"devEUI\":\"24e124128c012135\",\"room\":\"B111\",\"floor\":1,\"Building\":\"B\"}]",
+        "payload": "[{\"temperature\":20,\"humidity\":51,\"activity\":0,\"co2\":601,\"tvoc\":262,\"illumination\":13,\"infrared\":3,\"infrared_and_visible\":12,\"pressure\":987.9},{\"deviceName\":\"AM107-17\",\"devEUI\":\"24e124128c012135\",\"room\":\"B105\",\"floor\":1,\"Building\":\"B\"}]",
         "payloadType": "json",
         "x": 110,
-        "y": 520,
+        "y": 320,
         "wires": [
             [
                 "39cf3f9ede4b3dbe"
@@ -223,85 +222,21 @@
         "type": "function",
         "z": "fc36e552fabb57dc",
         "name": "function 2",
-        "func": "// Requête pour récupérer le dernier ID\nlet sqlGetLastID = msg.payload[1]['lastid'];\n\n// Exécuter la requête pour obtenir le dernier ID (doit être fait avant cet exécutable)\n// Supposons que `msg.lastID` contient le résultat après exécution de sqlGetLastID\nlet lastID = sqlGetLastID || 0; // Si aucun ID n'existe, valeur par défaut à 0\n\n// Incrémenter l'ID\nlet currentID = lastID + 1;\n\n// Construction de la requête SQL avec les valeurs de msg.payload\nlet sqlQuery = `INSERT INTO Mesures\nVALUES(${currentID}, ${msg.payload[0][0]}, ${msg.payload[0][1]}, ${msg.payload[0][2]}, ${msg.payload[0][3]}, ${msg.payload[0][4]}, ${msg.payload[0][5]}, ${msg.payload[0][6]}, ${msg.payload[0][7]}, '${msg.payload[0][8]}', '${msg.payload[0][9]}', '${msg.payload[0][10]}');`;\n\n// Stocker la requête SQL dans msg.payload\nmsg.payload = sqlQuery;\n\n// Retourner le message avec la requête SQL\nreturn msg;",
+        "func": "// Récupérer l'ID actuel depuis le contexte (si existe)\nlet currentID = flow.get('currentID') || 0;  // Si l'ID n'existe pas, initialiser à 0\n\n// Incrémenter l'ID\ncurrentID++;\n\n// Sauvegarder l'ID mis à jour dans le contexte pour la prochaine exécution\nflow.set('currentID', currentID);\n\n// Construction de la requête SQL avec les valeurs de msg.payload\nlet sqlQuery = `Insert Into Mesures\nValues(${currentID}, ${msg.payload[0]}, ${msg.payload[1]}, ${msg.payload[2]}, ${msg.payload[3]}, ${msg.payload[4]}, ${msg.payload[5]}, ${msg.payload[6]}, ${msg.payload[7]}, '${msg.payload[8]}', '${msg.payload[9]}', '${msg.payload[10]}');`;\n\n// Stocker la requête SQL dans msg.payload\nmsg.payload = sqlQuery;\n\n// Retourner le message avec la requête SQL\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 830,
-        "y": 420,
+        "x": 430,
+        "y": 640,
         "wires": [
             [
                 "9f923b2297803da5",
                 "ece6c1f9ef51d53c"
             ]
         ]
-    },
-    {
-        "id": "27674495422c578b",
-        "type": "postgresql",
-        "z": "fc36e552fabb57dc",
-        "name": "TimeScaleDB_SAE",
-        "query": "SELECT MAX(ID) AS lastID FROM Mesures;",
-        "postgreSQLConfig": "233a32a7e323113d",
-        "split": true,
-        "rowsPerMsg": 1,
-        "outputs": 1,
-        "x": 490,
-        "y": 540,
-        "wires": [
-            [
-                "90d0dbfa485ffb43"
-            ]
-        ]
-    },
-    {
-        "id": "90d0dbfa485ffb43",
-        "type": "join",
-        "z": "fc36e552fabb57dc",
-        "name": "",
-        "mode": "custom",
-        "build": "array",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "useparts": false,
-        "accumulate": false,
-        "timeout": "0",
-        "count": "2",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 670,
-        "y": 440,
-        "wires": [
-            [
-                "5755e2a5167ef8bc",
-                "93d0c95165a777fe"
-            ]
-        ]
-    },
-    {
-        "id": "93d0c95165a777fe",
-        "type": "debug",
-        "z": "fc36e552fabb57dc",
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 760,
-        "y": 540,
-        "wires": []
     },
     {
         "id": "33c70efb3db9a385",

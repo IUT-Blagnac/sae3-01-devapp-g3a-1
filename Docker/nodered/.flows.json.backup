@@ -136,8 +136,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 870,
-        "y": 560,
+        "x": 1040,
+        "y": 340,
         "wires": []
     },
     {
@@ -152,8 +152,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 540,
-        "y": 500,
+        "x": 320,
+        "y": 480,
         "wires": [
             [
                 "90d0dbfa485ffb43",
@@ -173,8 +173,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 440,
-        "y": 420,
+        "x": 360,
+        "y": 360,
         "wires": []
     },
     {
@@ -187,8 +187,8 @@
         "split": true,
         "rowsPerMsg": 1,
         "outputs": 1,
-        "x": 880,
-        "y": 740,
+        "x": 1040,
+        "y": 520,
         "wires": [
             []
         ]
@@ -211,7 +211,7 @@
         "payload": "[{\"temperature\":20,\"humidity\":51,\"activity\":0,\"co2\":601,\"tvoc\":262,\"illumination\":13,\"infrared\":3,\"infrared_and_visible\":12,\"pressure\":987.9},{\"deviceName\":\"AM107-17\",\"devEUI\":\"24e124128c012135\",\"room\":\"B111\",\"floor\":1,\"Building\":\"B\"}]",
         "payloadType": "json",
         "x": 110,
-        "y": 580,
+        "y": 520,
         "wires": [
             [
                 "39cf3f9ede4b3dbe"
@@ -230,8 +230,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 660,
-        "y": 640,
+        "x": 830,
+        "y": 420,
         "wires": [
             [
                 "9f923b2297803da5",
@@ -249,8 +249,8 @@
         "split": true,
         "rowsPerMsg": 1,
         "outputs": 1,
-        "x": 330,
-        "y": 700,
+        "x": 490,
+        "y": 540,
         "wires": [
             [
                 "90d0dbfa485ffb43"
@@ -278,8 +278,8 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 500,
-        "y": 660,
+        "x": 670,
+        "y": 440,
         "wires": [
             [
                 "5755e2a5167ef8bc",
@@ -299,8 +299,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 590,
-        "y": 760,
+        "x": 760,
+        "y": 540,
         "wires": []
     },
     {
