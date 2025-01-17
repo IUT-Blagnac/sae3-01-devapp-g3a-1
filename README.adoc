@@ -224,6 +224,17 @@ Quels sont les utilisateurs de votre application car j'ai des US pour des étudi
 
 non noté  (à modifier et m'avertir pour note finale)
 
+==== Backlog produit final
+
+Rédaction des US ok
+Critères acceptabilités : a revoir ils doivent exprimer comment vous allez tester votre US
+Tâches liées : attentions dans certaines US confusion avec les critères !
+Priorité : ok
+Complexité : non fait ... il faut evaluer la difficulté ou le temps de chaque US
+
+note : 3,5/5
+(le sprint 2 sera evalué lundi, pensez à l'ODJ de la réunion de retrospective de sprint)
+
 ==== Retour sprint 1
 
 Cahier Test ok mais à fusionner et enrichir pour que cela deviennent le cahier de tests de votre appli en général(se servir des critères d'acceptabilité des US), faire une page de garde, sommaire intro contextuelle du projet, version, equipe. 
