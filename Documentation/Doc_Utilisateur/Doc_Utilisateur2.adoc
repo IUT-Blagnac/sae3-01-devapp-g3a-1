@@ -51,6 +51,70 @@ L'objectif principal est de fournir une interface claire et fonctionnelle permet
 
 == Utilisation de l'interface Web
 
+=== Navigation sur la carte
+
+Arrivé sur le site, l'utilisateur est accueilli par une carte du 1er étage du bâtiment.
+En **cliquant** sur une salle, l'utilisateur peut consulter les données des capteurs de la salle.
+
+image::../../images/screen_site/select_room.png[align="center", width=100%]
+
+Une fois une fois une salle sélectionnée, l'utilisateur accède à une page dédiée à la salle, affichant les données des capteurs et un graphique de l'historique des mesures.
+
+image::../../images/screen_site/b105_selected.png[align="center", width=100%]
+
+Il est possible de retourner a la selection de salle en cliquant sur le bouton **Retour au tableau de bord** en haut a droite.
+
+=== Manipulation des données
+
+Il est possible d'interagit avec le graphique pour modifier l'affichage avec le menu en haut a droite du graphique.
+
+image::../../images/screen_site/top_graph.png[align="center", width=100%]
+
+Le menu déroulant permet de choisir les données par jour ou semaine.
+
+Une liste de bouton est disponible pour modifier l'affichage du graphique.
+
+Liste des options disponibles :
+
+- **Zoom** : Permet de zoomer sur le graphique.
+
+- **Dézoomer** : Permet de dézoomer sur le graphique.
+
+- **Loupe** : Permet séléctionner une zone du graphique pour zoomer.
+
+- **Main** : Permet de déplacer le graphique de gauche a droite.
+
+- **Maison** : Permet de réinitialiser le graphique.
+
+- **Menu** : Permet d'exporter le graphique en image.
+
 
 == Scénarios d'usage typiques
+
+=== Scénario : Analyse de l'occupation d'une salle pour optimiser les réservations
+
+Un analyste de données souhaite vérifier l'utilisation d'une salle spécifique (par exemple, la salle B105) au cours de la dernière semaine pour optimiser les réservations futures.
+
+**Étapes :**
+
+1. L'utilisateur ouvre le site web et est accueilli par la carte interactive du 1er étage du bâtiment.  
+
+2. L'analyste clique sur la salle B105. Une page dédiée à la salle s'ouvre, affichant :  
+   - Les dernières données en temps réel des capteurs (présence, luminosité, niveau de CO2, etc.).  
+   - Un graphique interactif montrant l'historique des données de la salle.  
+
+3. L'utilisateur utilise les options du graphique pour visualiser les données d'occupation sur les 7 derniers jours :
+   - En sélectionnant le mode "Weekly" dans le menu déroulant.  
+   - En zoomant sur des périodes spécifiques pour analyser des pics d'activité.  
+
+4. Après avoir analysé les données, l'utilisateur identifie des périodes de faible occupation et propose des ajustements dans le planning des réservations.  
+
+**Résultat attendu :**
+L'analyste peut facilement visualiser et analyser les données d'occupation pour optimiser la gestion des espaces du département.
+
+**Bénéfices :**
+- Visualisation rapide des périodes de faible ou forte occupation.  
+- Meilleure gestion des salles et des ressources grâce à des données concrètes.  
+- Réduction des conflits ou des inefficacités dans l’utilisation des salles.
+
 
