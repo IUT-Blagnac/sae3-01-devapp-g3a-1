@@ -258,4 +258,7 @@ Sprint 2 : CR Très bien mais toujours pas d'ordre du jour !! Pensez-y pour le d
 
 ==== retour PO - M Boulle
 
-Très bonne avancée pour la première semaine + version démo présentée fonctionnelle. Continuez ! Prochain point d'étape courant semaine 3 !
+* Très bonne avancée pour la première semaine + version démo présentée fonctionnelle. Continuez ! Prochain point d'étape courant semaine 3 !
+* Test fin semaine deux : dans le guide de démarrage docker, il me semble que la commande docker-compose n'existe plus, de même que l'utilisation du paquet docker.io (deprecated). Je ne vois pas ce qu'apporte le script docker_control.sh, je ne recommande pas d'utiliser une interface en plus à docker qu'il faudra maintenir ensuite. Autant tout livrer selon les standads docker, non ? Un admin sys saura utiliser et va tout simplement ignorer le script sans compter, que c'est n'est as très secure de lancer un script sans l'auditer. J'ai lancé $docker compose up (pas besoin de script sh)qui renvoie un warning (en effet, l'attribut version est deprecated). Veillez à rester à jour. Il faut que votre livrable fonctionne "out of the box". Adapter la doc en fonction et rajouter que le port 1883 ne doit pas êtes bloqué. Serivir le site sur localhost sans préciser de port ne me semble pas être une bonne pratique de sécurité (de façon générale, on évitera que les ports externes et internes à docker soit les mêmes, à vérifier). J'arrive à accéder à la page servie par nginx.
+
+
