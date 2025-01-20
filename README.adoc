@@ -250,10 +250,11 @@ Je suis à l'IUT mercredi  ( en B010 entre 13h et 14h15) si besoin
 Toutes les tâches doivent être rattachées à une US. Les liens vers les cahiers de tests ne marchent pas. Documentations OK. J'ai une release V1 non commentée, pas de release V2 alors que le sprint est terminé !
 
 NOTE = 3,2/5
-
+(je suis à l'IUT mercredi matin si besoin)
 ==== retour communication
 
-CR Très bien, penser à faire un ODJ ! 
+sprint 1: CR Très bien, penser à faire un ODJ ! 
+Sprint 2 : CR Très bien mais toujours pas d'ordre du jour !! Pensez-y pour le dernier sprint
 
 ==== retour PO - M Boulle
 
