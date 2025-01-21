@@ -1,164 +1,90 @@
-# Guide de démarrage du Docker
+# Guide de Démarrage pour le Projet Dashboard du Département
 
-## 1. Installation de Docker (Linux)
+Bienvenue dans le projet **Dashboard du Département**. Ce guide vous accompagne pour cloner le dépôt, démarrer les services avec Docker, et résoudre les problèmes fréquents.
 
-1. **Mettez à jour les paquets :**
-   ```bash
-   sudo apt update
-   ```
+---
 
-2. **Installez Docker :**
-   ```bash
-   sudo apt install docker.io
-   ```
+## 📋 Prérequis
+Avant de commencer, assurez-vous d'avoir :
+- **Git** installé ([Télécharger ici](https://git-scm.com/))
+- **Docker** et **Docker Compose** installés ([Guide d'installation](https://docs.docker.com/get-docker/))
+- Un environnement Linux mis à jour (Ubuntu, Debian, Fedora, etc.)
 
-3. **Vérifiez l'installation :**
-   ```bash
-   docker --version
-   ```
+---
 
-## 2. Installation de Docker Compose (Linux)
+## 🚀 Étapes de démarrage
 
-1. **Installez Docker Compose :**
-   ```bash
-   sudo apt install docker-compose
-   ```
-
-2. **Vérifiez l'installation :**
-   ```bash
-   docker-compose --version
-   ```
-
-## 3. Clonnage du dépôt
-
+### 1. **Cloner le dépôt**
+Exécutez la commande suivante pour cloner le dépôt GitHub :
 ```bash
-git clone https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01.git
- 
-cd SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01
+git clone https://github.com/username/nom-du-repo.git
+```
+Puis, naviguez dans le dossier du projet :
+```bash
+cd nom-du-repo
 ```
 
-## 4. Lancement de l'application/docker
-
-> [!NOTE]
-> Nous avons créé un script bash interactif pour simplifier le démarrage et l'arrêt des services Docker du projet. 
->
-> Vous pouvez tout de meme lancer les services manuellement en utilisant les commandes `docker-compose` suivantes :
-> - Démarrer les services : `docker-compose up -d
-`
-> - Arrêter les services : `docker-compose down --volumes --remove-orphans
-`
-
-Pour lancer l'application, exécutez le script `docker_control.sh` situé à la racine du projet :
-
+### 2. **Lancer les conteneurs Docker**
+Assurez-vous que vous êtes à la racine du projet et exécutez :
 ```bash
-./docker_control.sh
+docker-compose up -d
+```
+Cette commande démarre tous les services nécessaires en arrière-plan :
+- **Base de données TimescaleDB**
+- **Interface Node-RED**
+- **Serveur Nginx**
+- **Service PHP**
+
+### 3. **Accéder à l'application**
+Une fois les services lancés, ouvrez votre navigateur et accédez à :
+- **Dashboard web** : [http://localhost](http://localhost)
+- **Interface Node-RED** : [http://localhost:1880](http://localhost:1880)
+
+### 4. **Arrêter les conteneurs**
+Lorsque vous avez terminé, arrêtez et supprimez les conteneurs avec :
+```bash
+docker-compose down
 ```
 
-Suivre les instructions affiché à l'écran pour lancer l'application.
-Il vous faudra entrer `1` pour lancer l'application.
+---
 
-### 4.1. Accès à l'application
+## ⚠️ Problèmes fréquents et solutions
 
-L'application est accessible à l'adresse suivante : [http://localhost](http://localhost)
-
-### 4.2. Au node-red
-
-L'interface de node-red est accessible à l'adresse suivante : [http://localhost:1880](http://localhost:1880)
-
-### 4.3. À la base de données
-
-Dans votre terminal, connectez-vous à la base de données avec la commande suivante :
-
+### 1. **Conflit de conteneur**
+**Erreur :** `The container name is already in use.`  
+**Solution :** Supprimez le conteneur existant avant de relancer :
 ```bash
-psql -h localhost -U admin -d dashboard_db
+docker rm -f nom_du_conteneur
 ```
 
-Le mot de passe est `password`.
+### 2. **Script SQL non exécuté**
+**Problème :** Les tables ne sont pas créées dans la base de données.  
+**Cause :** Le script SQL n'est exécuté qu'au premier démarrage du conteneur.  
+**Solution :**
+- Supprimez le volume associé à la base de données :
+  ```bash
+  docker-compose down -v
+  docker-compose up -d
+  ```
 
-## 5. Arrêt de l'application/docker
+### 3. **Ports déjà utilisés**
+**Erreur :** `Bind for 0.0.0.0:80 failed: port is already allocated.`  
+**Solution :**
+- Identifiez le processus qui utilise le port :
+  ```bash
+  sudo lsof -i -P -n | grep LISTEN
+  ```
+- Arrêtez le processus ou modifiez le port dans le fichier `docker-compose.yml`.
 
-```bash
-./docker_control.sh
-```
+### 4. **Problèmes de permissions**
+**Erreur :** `Permission denied` lors du montage des volumes.  
+**Solution :**
+- Donnez les droits nécessaires aux fichiers :
+  ```bash
+  chmod -R 755 ./Docker
+  ```
 
-Suivre les instructions affiché à l'écran pour lancer l'application.
-Il vous faudra entrer `2` pour arrêter l'application.
+---
 
-## 6. Structure et rôle du fichier `docker_control.sh`
-
-Le fichier `docker_control.sh` est un script bash interactif conçu pour simplifier le démarrage et l'arrêt des services Docker du projet. Voici une description de sa structure et de ses fonctionnalités principales :
-
-### Fonctionnalités principales
-
-- **Démarrer les conteneurs** : Lance tous les conteneurs définis dans le fichier `docker-compose.yml` via la commande `docker-compose up -d`.
-- **Arrêter les conteneurs** : Arrête et supprime les conteneurs ainsi que les volumes persistants via la commande `docker-compose down --volumes --remove-orphans`.
-- **Menu interactif** : Propose un menu clair pour choisir entre démarrer ou arrêter les services.
-
-### Structure du script
-
-1. **Vérification des prérequis** : 
-   Le script vérifie si Docker Compose est installé avant de continuer. En cas d'absence, il affiche un message d'erreur et arrête l'exécution.
-
-2. **Définition des fonctions** :
-   - `start_containers` : Lance les services définis dans `docker-compose.yml`.
-   - `stop_containers` : Arrête les services et nettoie les volumes associés.
-
-3. **Interaction utilisateur** :
-   Le script affiche un menu interactif dans le terminal, demandant à l'utilisateur de choisir entre démarrer ou arrêter les conteneurs.
-
-### Utilisation
-
-- **Pour lancer les conteneurs** :
-  Exécutez le script, puis choisissez l'option `1` dans le menu. Tous les services (Node-RED, TimescaleDB, Nginx, PHP) démarreront automatiquement.
-
-- **Pour arrêter les conteneurs** :
-  Exécutez le script, puis choisissez l'option `2`. Cela arrêtera tous les services et libérera les ressources.
-
-### Code complet du script
-
-```bash
-#!/bin/bash
-
-# Chemin du projet
-PROJECT_DIR="$(dirname "$(readlink -f "$0")")"
-
-# Vérification de docker-compose
-if ! command -v docker-compose &> /dev/null; then
-    echo "Erreur : docker-compose n'est pas installé. Veuillez l'installer avant de lancer ce script."
-    exit 1
-fi
-
-# Fonction pour démarrer Docker Compose
-start_containers() {
-    echo "Lancement des conteneurs Docker..."
-    docker-compose -f "$PROJECT_DIR/Docker/docker-compose.yml" up -d
-    echo "Conteneurs lancés !"
-}
-
-# Fonction pour arrêter Docker Compose
-stop_containers() {
-    echo "Arrêt des conteneurs Docker..."
-    docker-compose -f "$PROJECT_DIR/Docker/docker-compose.yml" down --volumes --remove-orphans
-    echo "Conteneurs arrêtés et nettoyés !"
-}
-
-# Menu interactif
-echo
-echo "=== Gestion des Conteneurs Docker ==="
-echo "Chemin du projet : $PROJECT_DIR"
-echo
-echo "Que voulez-vous faire ?"
-echo "1) Démarrer les conteneurs"
-echo "2) Arrêter les conteneurs"
-read -p "Choisissez une option (1/2) : " choice
-
-case $choice in
-    1) start_containers ;;
-    2) stop_containers ;;
-    *) echo "Option invalide. Veuillez choisir 1 ou 2." ;;
-esac
-
-```
-
-Le script est situé à la racine du projet et peut être exécuté directement pour gérer les conteneurs.
+Merci d'utiliser notre projet ! 😊
 
