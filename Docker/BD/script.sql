@@ -16,5 +16,3 @@ CREATE TABLE Mesures (
 
 -- On vide la base de donnée au démarrage au cas ou des valeurs s'y trouvent
 TRUNCATE TABLE Mesures;
-
-

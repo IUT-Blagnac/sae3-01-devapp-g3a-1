@@ -7,17 +7,17 @@ services:
     ports:
       - "80:80" # Expose le service sur localhost:8080
     volumes:
-      - ./WEB:/usr/share/nginx/html # Répertoire contenant le code PHP/HTML
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro # Configuration Nginx
+      - ./Docker/WEB:/usr/share/nginx/html # Répertoire contenant le code PHP/HTML
+      - ./Docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro # Configuration Nginx
     depends_on:
       - php
 
   php:
     build:
-      context: ./WEB # Remonte d'un niveau pour accéder à la racine
+      context: ./Docker/WEB # Chemin relatif pour accéder à la racine WEB
     container_name: php
     volumes:
-      - ./WEB:/usr/share/nginx/html
+      - ./Docker/WEB:/usr/share/nginx/html
     depends_on:
       - db
 
@@ -29,7 +29,7 @@ services:
     environment:
       - NODE_OPTIONS=--max_old_space_size=512
     volumes:
-      - ./nodered:/data # Persistance des flux et configuration
+      - ./Docker/nodered:/data # Persistance des flux et configuration
     depends_on:
       - db # Node-RED dépend de la base de données
 
@@ -44,7 +44,7 @@ services:
       POSTGRES_DB: dashboard_db # Base de données par défaut
     volumes:
       - timescale-data:/var/lib/postgresql/data # Données persistantes
-      - ./BD/script.sql:/docker-entrypoint-initdb.d/script.sql:ro # Script SQL à exécuter
+      - ./Docker/BD/script.sql:/docker-entrypoint-initdb.d/script.sql:ro # Script SQL à exécuter
 
 volumes:
   timescale-data:
