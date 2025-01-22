@@ -122,8 +122,8 @@ try {
                             </div>
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Temperature</p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0"><?= $badgeRows[0]['temperature'] ?>°</h4>
-                                    <?= (badgeEvolution($badgeRows[0]['temperature'], $badgeRows[1]['temperature'], "°")); ?>
+                                    <h4 class="mb-0"><?= $badgeRows[0]['temperature'] ?> °C</h4>
+                                    <?= (badgeEvolution($badgeRows[0]['temperature'], $badgeRows[1]['temperature'], " °C")); ?>
                                 </div>
                             </div>
                         </div>
@@ -139,8 +139,8 @@ try {
                             </div>
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Humidity</p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0"><?= $badgeRows[0]['humidity'] ?></h4>
-                                    <?= (badgeEvolution($badgeRows[0]['humidity'], $badgeRows[1]['humidity'])); ?>
+                                    <h4 class="mb-0"><?= $badgeRows[0]['humidity'] ?> %</h4>
+                                    <?= (badgeEvolution($badgeRows[0]['humidity'], $badgeRows[1]['humidity'], " %")); ?>
                                 </div>
                             </div>
                         </div>
@@ -173,8 +173,8 @@ try {
                             </div>
                             <div class="flex-grow-1 ms-3"><p class="mb-1">TVOC</p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0"><?= $badgeRows[0]['tvoc'] ?></h4>
-                                    <?= (badgeEvolution($badgeRows[0]['tvoc'], $badgeRows[1]['tvoc'])); ?>
+                                    <h4 class="mb-0"><?= $badgeRows[0]['tvoc'] ?> ppb</h4>
+                                    <?= (badgeEvolution($badgeRows[0]['tvoc'], $badgeRows[1]['tvoc'], " ppb")); ?>
                                 </div>
                             </div>
                         </div>
@@ -190,8 +190,8 @@ try {
                             </div>
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Illumination</p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0"><?= $badgeRows[0]['illumination'] ?></h4>
-                                    <?= (badgeEvolution($badgeRows[0]['illumination'], $badgeRows[1]['illumination'])); ?>
+                                    <h4 class="mb-0"><?= $badgeRows[0]['illumination'] ?> lux</h4>
+                                    <?= (badgeEvolution($badgeRows[0]['illumination'], $badgeRows[1]['illumination'], " lux")); ?>
                                 </div>
                             </div>
                         </div>
@@ -241,8 +241,8 @@ try {
                             </div>
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Pressure</p>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0"><?= $badgeRows[0]['presure'] ?></h4>
-                                    <?= (badgeEvolution($badgeRows[0]['presure'], $badgeRows[1]['presure'])); ?>
+                                    <h4 class="mb-0"><?= $badgeRows[0]['presure'] ?> hPa</h4>
+                                    <?= (badgeEvolution($badgeRows[0]['presure'], $badgeRows[1]['presure'], " hPa")); ?>
                                 </div>
                             </div>
                         </div>
