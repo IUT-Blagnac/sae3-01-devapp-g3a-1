@@ -7,8 +7,8 @@ import os
 
 def generate_inserts(output_file):
     # Définition de l'intervalle de dates
-    start_date = datetime.datetime(2025, 1, 1)
-    end_date = datetime.datetime(2030, 1, 1)  # Jusqu'à 5 ans (2025-2030)
+    start_date = datetime.datetime(2000, 1, 1)
+    end_date = datetime.datetime(2025, 6, 1) 
     
     current_date = start_date
     inserts = []
