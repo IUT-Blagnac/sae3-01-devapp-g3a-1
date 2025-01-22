@@ -7,24 +7,24 @@ import os
 
 def generate_inserts(output_file):
     # Définition de l'intervalle de dates
-    start_date = datetime.datetime(2025, 1, 1, 0, 0, 0)
-    end_date   = datetime.datetime(2025, 1, 31, 23, 59, 59)
+    start_date = datetime.datetime(2025, 1, 1)
+    end_date = datetime.datetime(2030, 1, 1)  # Jusqu'à 5 ans (2025-2030)
     
     current_date = start_date
     inserts = []
 
-    while current_date <= end_date:
+    while current_date < end_date:
         # Génération des valeurs aléatoires
-        temperature           = round(18.0 + random.random() * 10.0, 1)  
-        humidity              = round(40.0 + random.random() * 30.0, 1)  
-        activity              = round(random.random() * 1.0, 2)          
-        tvoc                  = round(50.0 + random.random() * 400.0, 1) 
-        illumination          = round(10.0 + random.random() * 500.0, 1) 
-        infrared              = round(50.0 + random.random() * 200.0, 1) 
-        infrared_and_visible  = round(300.0 + random.random() * 400.0, 1)
-        presure               = round(980.0 + random.random() * 50.0, 2) 
-        deviceName            = "Device_A"
-        room                  = "B105"
+        temperature = round(18.0 + random.random() * 10.0, 1)
+        humidity = round(40.0 + random.random() * 30.0, 1)
+        activity = round(random.random() * 1.0, 2)
+        tvoc = round(50.0 + random.random() * 400.0, 1)
+        illumination = round(10.0 + random.random() * 500.0, 1)
+        infrared = round(50.0 + random.random() * 200.0, 1)
+        infrared_and_visible = round(300.0 + random.random() * 400.0, 1)
+        presure = round(980.0 + random.random() * 50.0, 2)
+        deviceName = "Device_A"
+        room = "B105"
         
         # Formatage de la date pour SQL
         date_heure_str = current_date.strftime("%Y-%m-%d %H:%M:%S")
@@ -58,8 +58,11 @@ def generate_inserts(output_file):
 
         inserts.append(insert_query)
         
-        # Passage à l'heure suivante
-        current_date += datetime.timedelta(hours=1)
+        # Passage au mois suivant
+        next_month = current_date.month + 1
+        year_increment = 1 if next_month > 12 else 0
+        next_month = next_month if next_month <= 12 else 1
+        current_date = current_date.replace(year=current_date.year + year_increment, month=next_month)
 
     # Écriture dans le fichier de sortie
     with open(output_file, "w", encoding="utf-8") as f:
