@@ -73,20 +73,9 @@ try {
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon"><!-- [Page specific CSS] start -->
-    <link rel="stylesheet" href="../assets/css/plugins/datepicker-bs5.min.css"><!-- [Page specific CSS] end -->
     <!-- [Font] Family -->
-    <link rel="stylesheet" href="../assets/fonts/inter/inter.css" id="main-font-link">
-    <!-- [phosphor Icons] https://phosphoricons.com/ -->
-    <link rel="stylesheet" href="../assets/fonts/phosphor/duotone/style.css">
-    <!-- [Tabler Icons] https://tablericons.com -->
     <link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css"><!-- [Feather Icons] https://feathericons.com -->
-    <link rel="stylesheet" href="../assets/fonts/feather.css">
-    <!-- [Font Awesome Icons] https://fontawesome.com/icons -->
-    <link rel="stylesheet" href="../assets/fonts/fontawesome.css">
-    <!-- [Material Icons] https://fonts.google.com/icons -->
-    <link rel="stylesheet" href="../assets/fonts/material.css"><!-- [Template CSS Files] -->
     <link rel="stylesheet" href="../assets/css/style.css" id="main-style-link">
-    <script src="../assets/js/tech-stack.js"></script>
     <link rel="stylesheet" href="../assets/css/style-preset.css">
     <link rel="stylesheet" href="../assets/css/final.css">
 </head><!-- [Head] end --><!-- [Body] Start -->
@@ -270,75 +259,6 @@ try {
                     </div>
                 </div>
             </div>
-            <!--<div class="col-lg-7 col-md-12">
-                <div class="card" id="allGraphic">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center justify-content-between"><h5 class="mb-0">Courses</h5>
-                            <button class="btn btn-sm btn-link-primary">View Report</button>
-                        </div>
-                        <h4 class="mb-1">$7,860</h4>
-                        <p class="d-inline-flex align-items-center text-success gap-1 mb-0"><i
-                                    class="ti ti-arrow-narrow-up"></i> 2.1%</p>
-                        <p class="text-muted mb-1">Sales from 1-12 Dec, 2023</p>
-                        <div id="course-report-bar-chart"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <div class="card-body"><p class="text-muted mb-1">Total Revenue</p>
-                        <div class="d-flex align-items-center justify-content-between"><h4 class="mb-0">7,265</h4>
-                            <p class="d-inline-flex align-items-center gap-1 mb-0">+11.02% <i
-                                        class="ti ti-arrow-up-right text-success"></i></p></div>
-                        <div id="total-revenue-line-1-chart"></div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body"><p class="text-muted mb-1">Total Subscription</p>
-                        <div class="d-flex align-items-center justify-content-between"><h4 class="mb-0">5,326</h4>
-                            <p class="d-inline-flex align-items-center gap-1 mb-0">+12.02% <i
-                                        class="ti ti-arrow-down-right text-danger"></i></p></div>
-                        <div id="total-revenue-line-2-chart"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="widget-calender" id="pc-datepicker-6"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center justify-content-between mb-3"><h5 class="mb-0">
-                                Visitors</h5>
-                            <div class="dropdown"><a class="avtar avtar-s btn-link-secondary dropdown-toggle arrow-none"
-                                                     href="#" data-bs-toggle="dropdown" aria-haspopup="true"
-                                                     aria-expanded="false"><i class="ti ti-dots-vertical f-18"></i></a>
-                                <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Today</a>
-                                    <a class="dropdown-item" href="#">Weekly</a> <a class="dropdown-item" href="#">Monthly</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="visitors-bar-chart"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center justify-content-between mb-3"><h5 class="mb-0">Earning
-                                Courses</h5><select class="form-select rounded-3 form-select-sm w-auto">
-                                <option>Day</option>
-                                <option>Month</option>
-                                <option selected="selected">Year</option>
-                            </select></div>
-                        <div id="earning-courses-line-chart"></div>
-                    </div>
-                </div>
-            </div>-->
         </div><!-- [ Main Content ] end --></div>
 </div><!-- [ Main Content ] end -->
 <!--<footer class="pc-footer">
@@ -362,33 +282,8 @@ try {
 </script>
 
 <script src="../assets/js/final.js"></scrpit>
-<script src="../assets/js/plugins/popper.min.js"></script>
-<script src="../assets/js/plugins/simplebar.min.js"></script>
-<script src="../assets/js/plugins/bootstrap.min.js"></script>
-<script src="../assets/js/plugins/i18next.min.js"></script>
-<script src="../assets/js/plugins/i18nextHttpBackend.min.js"></script>
 <script src="../assets/js/icon/custom-font.js"></script>
 <script src="../assets/js/script.js"></script>
-<script src="../assets/js/theme.js"></script>
-<script src="../assets/js/multi-lang.js"></script>
-<script src="../assets/js/plugins/feather.min.js"></script>
-<script>layout_change('light');</script>
-<script>change_box_container('false');</script>
-<script>layout_caption_change('true');</script>
-<script>layout_rtl_change('false');</script>
-<script>preset_change('preset-1');</script>
-<script>main_layout_change('vertical');</script><!-- [Page Specific JS] start --><!-- bootstrap-datepicker -->
-<script src="../assets/js/plugins/datepicker-full.min.js"></script>
 <script src="../assets/js/plugins/apexcharts.min.js"></script>
-<script src="../assets/js/plugins/peity-vanilla.min.js"></script><!-- custom widgets js -->
 <script src="../assets/js/widgets/revenue-sales-chart.js"></script>
-<script src="../assets/js/widgets/course-report-bar-chart.js"></script>
-<script src="../assets/js/widgets/total-revenue-line-1-chart.js"></script>
-<script src="../assets/js/widgets/total-revenue-line-2-chart.js"></script>
-<script src="../assets/js/widgets/student-states-chart.js"></script>
-<script src="../assets/js/widgets/activity-line-chart.js"></script>
-<script src="../assets/js/widgets/widget-calender.js"></script>
-<script src="../assets/js/widgets/visitors-bar-chart.js"></script>
-<script src="../assets/js/widgets/earning-courses-line-chart.js"></script>
-<script src="../assets/js/widgets/table-donut.js"></script><!-- [Page Specific JS] end -->
 </body><!-- [Body] end --></html>
