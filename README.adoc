@@ -28,7 +28,7 @@ ifdef::env-github[]
 :icongit: Git
 endif::[]
 
-image::./images/page-de-garde-v2.jpg[][alt="Dashboard du Département", align="center", width=100%]
+image::./images/page-de-garde-v3.jpg[][alt="Dashboard du Département", align="center", width=100%]
 
 
 // /!\ A MODIFIER !!!
@@ -104,10 +104,10 @@ Le **livrable attendu** est constitué :
 |         | 2ème Sprint | Documentation Utilisateur | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Utilisateur/Doc_Utilisateur2.adoc[Documentation Utilisateur]| Installation et présentation du docker avec ses fonctionnalités
 |         | 2ème Sprint | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Technique/Doc_Technique2.adoc[Documentation Technique] | Fonctionnement et fichiers clés du docker
 |         | 2ème Sprint | Bilan Sprint 2 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Bilans/Bilan_Sprint2.adoc[Bilan Sprint 2] | Bilan du deuxième Sprint
-|        | 2ème Sprint | Release de fin de Sprint 2 | [Release de fin de Sprint 2] | Release de fin de Sprint 2
+|        | 2ème Sprint | Release de fin de Sprint 2 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/releases/tag/2.0[Release de fin de Sprint 2] | Release de fin de Sprint 2
 |        | 2ème Sprint | Prévision Sprint 3 | https://github.com/orgs/IUT-Blagnac/projects/303[Prévision Sprint 3] | Prévision du prochain Sprint (3) 
 | Sem.4 ( 20/01/25 - 26/01/25 )   | 3ème Sprint | Sprint / Backlog 3 |  https://github.com/orgs/IUT-Blagnac/projects/303[Sprint 3] | 3ème Sprint / Backlog du 3ème Sprint, avec chaque User Story et tâches
-|         | 3ème Sprint | Cahier de tests |https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Cahier_de_Test/Cahier_de_tests.md[Cahier de tests]| Cahiers de tests
+|         | 3ème Sprint | Cahier de tests |https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departementw-Equipe-3A01/blob/master/Documentation/Cahier_de_Test/Cahier_de_tests.md[Cahier de tests]| Cahiers de tests
 |         | 3ème Sprint | Documentation Utilisateur |  https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Utilisateur/Doc_Utilisateur3.adoc[Documentation Utilisateur] |  Installation et présentation du docker avec ses fonctionnalités
 |       | 3ème Sprint  | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Technique/Doc_Technique3.adoc[Documentation Technique] | Fonctionnement et fichiers clés du docker
 | | 3ème Sprint | Bilan Sprint 3 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Bilans/Bilan_Sprint3.adoc[Bilan Sprint 3] | Bilan du troisième Sprint
@@ -126,14 +126,11 @@ Ce projet est organisé autour de plusieurs dossiers et fichiers pour structurer
 ----
 .
 ├── Docker
-│   ├── README.md                      // Documentation des conteneurs Docker
-│   ├── docker-compose.yml             // Configuration Docker Compose
 │   ├── nginx.conf                     // Configuration Nginx pour le serveur web
 │   ├── nodered                        // Configuration et données de Node-RED
 │   │   ├── flows.json                 // Flux Node-RED pour gérer les données
 │   │   └── settings.js                // Configuration Node-RED
 │   ├── BD                             // Dossier BD déplacé dans Docker
-│   │   ├── README.md                  // Documentation de la base de données
 │   │   ├── diagramme_de_classe_bd.plantuml // Diagramme de classe de la base de données
 │   │   └── script.sql                 // Script SQL pour créer et initialiser la base de données
 │   └── WEB                             // Contenu web déplacé dans Docker
@@ -162,12 +159,16 @@ Ce projet est organisé autour de plusieurs dossiers et fichiers pour structurer
 │   │   └── Doc_Utilisateur3.md
 │   ├── Cahier_de_Tests.md             // Cahier de tests pour valider les fonctionnalités
 │   └── Reunions                       // Dossier réorganisé, contenant les réunions
-│       └── Reunion_1.md               // Notes des réunions pour le suivi du projet
-├── images
-│   ├── README.md                      // Documentation des images du projet
-│   └── diagramme_de_classe.png        // Diagramme de classe pour l'application
-├── README.adoc                        // Document principal expliquant le projet
-└── docker_control.sh                  // Script pour gérer facilement les conteneurs Docker
+|       ├── ODJ                        // Ordre du jour des réunions
+|       │   ├── ODJ-Réunion 1.md
+│       |   ├── ODJ-Réunion 2.md
+│       |   └── ODJ-Réunion 3.md
+│       └── CR                         // Comptes rendus des réunions
+|           ├── CR-Réunion 1.md
+│           ├── CR-Réunion 2.md
+│           └── CR-Réunion 3.md   
+├── images                             // Images liées au projet
+└── README.adoc                        // Document principal expliquant le projet
 ----
 
 === Description des Composants
@@ -251,6 +252,7 @@ Toutes les tâches doivent être rattachées à une US. Les liens vers les cahie
 
 NOTE = 3,2/5
 (je suis à l'IUT mercredi matin si besoin)
+
 ==== retour communication
 
 sprint 1: CR Très bien, penser à faire un ODJ ! 
@@ -260,5 +262,3 @@ Sprint 2 : CR Très bien mais toujours pas d'ordre du jour !! Pensez-y pour le d
 
 * Très bonne avancée pour la première semaine + version démo présentée fonctionnelle. Continuez ! Prochain point d'étape courant semaine 3 !
 * Test fin semaine deux : dans le guide de démarrage docker, il me semble que la commande docker-compose n'existe plus, de même que l'utilisation du paquet docker.io (deprecated). Je ne vois pas ce qu'apporte le script docker_control.sh, je ne recommande pas d'utiliser une interface en plus à docker qu'il faudra maintenir ensuite. Autant tout livrer selon les standads docker, non ? Un admin sys saura utiliser et va tout simplement ignorer le script sans compter, que c'est n'est as très secure de lancer un script sans l'auditer. J'ai lancé $docker compose up (pas besoin de script sh)qui renvoie un warning (en effet, l'attribut version est deprecated). Veillez à rester à jour. Il faut que votre livrable fonctionne "out of the box". Adapter la doc en fonction et rajouter que le port 1883 ne doit pas êtes bloqué. Serivir le site sur localhost sans préciser de port ne me semble pas être une bonne pratique de sécurité (de façon générale, on évitera que les ports externes et internes à docker soit les mêmes, à vérifier). J'arrive à accéder à la page servie par nginx.
-
-
