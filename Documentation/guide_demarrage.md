@@ -17,11 +17,11 @@ Avant de commencer, assurez-vous d'avoir :
 ### 1. **Cloner le dépôt**
 Exécutez la commande suivante pour cloner le dépôt GitHub :
 ```bash
-git clone https://github.com/username/nom-du-repo.git
+git clone https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01.git
 ```
 Puis, naviguez dans le dossier du projet :
 ```bash
-cd nom-du-repo
+cd SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01
 ```
 
 ### 2. **Lancer les conteneurs Docker**
