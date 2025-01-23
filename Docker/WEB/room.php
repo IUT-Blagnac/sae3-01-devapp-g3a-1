@@ -41,14 +41,14 @@ try {
     $timestamps = [];
 
     foreach ($chartData as $row) {
-        $temperatureData[] = (float) $row['temperature'];
-        $humidityData[] = (float) $row['humidity'];
-        $activityData[] = (float) $row['activity'];
-        $tvocData[] = (float) $row['tvoc'];
-        $illuminationData[] = (float) $row['illumination'];
-        $infraredData[] = (float) $row['infrared'];
-        $infraredVisibleData[] = (float) $row['infrared_and_visible'];
-        $pressureData[] = (float) $row['presure'];
+        $temperatureData[] = (float)$row['temperature'];
+        $humidityData[] = (float)$row['humidity'];
+        $activityData[] = (float)$row['activity'];
+        $tvocData[] = (float)$row['tvoc'];
+        $illuminationData[] = (float)$row['illumination'];
+        $infraredData[] = (float)$row['infrared'];
+        $infraredVisibleData[] = (float)$row['infrared_and_visible'];
+        $pressureData[] = (float)$row['presure'];
         $timestamps[] = $row['date_heure'];
     }
 
@@ -93,7 +93,7 @@ try {
         </a>-->
         <div class="row">
             <div class="col-12">
-                <div class="alert alert-warning text-center">
+                <div class="alert alert-success text-center">
                     <H3 class="alert-heading mb-0">Données de la salle <?= $room ?></H3>
                 </div>
             </div>
@@ -245,9 +245,12 @@ try {
                         <div class="d-flex align-items-start justify-content-between">
                             <div><h5 class="mb-1">Rapport global</h5></div>
                             <select class="form-select rounded-3 form-select-sm w-auto">
-                                <option>Today</option>
-                                <option selected>Weekly</option>
-                            </select></div>
+                                <option value="Aujourdhui">Aujourd'hui</option>
+                                <option value="Hebdomadaire">Hebdomadaire</option>
+                                <option value="Mensuel" selected>Mensuel</option>
+                                <option value="Annuel">Annuel</option>
+                            </select>
+                        </div>
                         <div id="revenue-sales-chart"></div>
 
                         <div class="alert alert-info text-center h4">
@@ -282,8 +285,8 @@ try {
 </script>
 
 <script src="../assets/js/final.js"></scrpit>
-<script src="../assets/js/icon/custom-font.js"></script>
+    <script src="../assets/js/icon/custom-font.js"></script>
 <script src="../assets/js/script.js"></script>
 <script src="../assets/js/plugins/apexcharts.min.js"></script>
-<script src="../assets/js/widgets/revenue-sales-chart.js"></script>
+<script src="../assets/js/widgets/graphic.js"></script>
 </body><!-- [Body] end --></html>
