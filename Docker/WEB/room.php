@@ -88,9 +88,9 @@ try {
 </div><!-- [ Pre-loader ] End --><!-- [ Sidebar Menu ] start -->
 <div class="pc-container">
     <div class="pc-content"><!-- [ breadcrumb ] start -->
-        <a href="index.php" class="btn btn-outline-primary mt-3 mb-3">
+        <!--<a href="index.php" class="btn btn-outline-primary mt-3 mb-3">
             <i class="ti ti-arrow-left"></i> Retour au tableau de bord
-        </a>
+        </a>-->
         <div class="row">
             <div class="col-12">
                 <div class="alert alert-warning text-center">

@@ -8,16 +8,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon"><!-- [Page specific CSS] start -->
+    <link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css"><!-- [Feather Icons] https://feathericons.com -->
     <link rel="stylesheet" href="../assets/css/style.css" id="main-style-link">
     <link rel="stylesheet" href="../assets/css/final.css">
 </head><!-- [Head] end --><!-- [Body] Start -->
 <body data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-layout="vertical" data-pc-direction="ltr"
       data-pc-theme_contrast="" data-pc-theme="light"><!-- [ Pre-loader ] start -->
-<div class="loader-bg">
-    <div class="loader-track">
-        <div class="loader-fill"></div>
-    </div>
-</div><!-- [ Pre-loader ] End --><!-- [ Sidebar Menu ] start -->
+<div class="loader-container" style="display: none">
+    <span class="loader"></span>
+</div>
 <div class="pc-container">
     <div class="pc-content"><!-- [ breadcrumb ] start -->
         <div class="alert alert-warning text-center">
@@ -157,8 +156,18 @@
                     </g>
                 </svg>
             </div>
+            <div class="col-12">
+                <!-- iframe id roomData max height needed and width 100% -->
+                <iframe id="roomData" src="" style="width: 100%; border: none;"></iframe>
+            </div>
         </div><!-- [ Main Content ] end --></div>
 </div><!-- [ Main Content ] end -->
+<!-- scroll up button -->
+<div class="pc-go-top" style="display: none;">
+    <div class="pc-go-top-content">
+        <i class="ti ti-arrow-up"></i>
+    </div>
+</div>
 <!--<footer class="pc-footer">
     <div class="footer-wrapper container-fluid">
         <div class="row">
