@@ -131,6 +131,49 @@ image::../../images/diagramme_de_classe_bd1.png[][]
 Cette structure modulaire permet de répartir efficacement les responsabilités : 
 le frontend gère l'affichage et l'interaction utilisateur, Node-RED automatise le traitement des données en temps réel, et la base TimescaleDB assure leur stockage de manière fiable et évolutive.
 
+==== Dictionnaire de données
+
+[cols="2,3", options="header"]
+|===
+| Attribut | Description
+
+| `id` 
+| Identifiant unique de la mesure (clé primaire)
+
+| `temperature` 
+| Température mesurée (en degrés Celsius)
+
+| `humidity` 
+| Humidité mesurée (en pourcentage)
+
+| `activity` 
+| Niveau d'activité détecté
+
+| `tvoc` 
+| Total Volatile Organic Compounds (en ppm)
+
+| `illumination` 
+| Niveau d'éclairage (en lux)
+
+| `infrared` 
+| Niveau d'infrarouge détecté
+
+| `infrared_and_visible` 
+| Niveau combiné d'infrarouge et de lumière visible
+
+| `presure` 
+| Pression atmosphérique (en hPa)
+
+| `deviceName` 
+| Nom du dispositif ayant effectué la mesure
+
+| `room` 
+| Salle dans laquelle la mesure a été effectuée
+
+| `date_heure` 
+| Date et heure de la mesure, avec fuseau horaire
+|===
+
 
 == Fonctionnalités
 

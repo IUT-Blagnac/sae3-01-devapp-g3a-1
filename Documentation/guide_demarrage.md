@@ -41,9 +41,15 @@ Une fois les services lancés, ouvrez votre navigateur et accédez à :
 - **Interface Node-RED** : [http://localhost:1880](http://localhost:1880)
 
 ### 4. **Arrêter les conteneurs**
-Lorsque vous avez terminé, arrêtez et supprimez les conteneurs avec :
+Lorsque vous avez terminé, vous pouvez éteindre Docker tout en conservant les données de la base de données avec :
 ```bash
 docker-compose down
+```
+Les données de la base de données seront préservées au prochain lancement. 
+
+Si vous souhaitez arrêter Docker et supprimer les données de la base de données, utilisez la commande suivante :
+```bash
+docker-compose down -v
 ```
 
 ---
