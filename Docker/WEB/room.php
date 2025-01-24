@@ -72,12 +72,16 @@ try {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     <link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon"><!-- [Page specific CSS] start -->
     <!-- [Font] Family -->
-    <link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css"><!-- [Feather Icons] https://feathericons.com -->
-    <link rel="stylesheet" href="../assets/css/style.css" id="main-style-link">
-    <link rel="stylesheet" href="../assets/css/style-preset.css">
-    <link rel="stylesheet" href="../assets/css/final.css">
+    <link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css?v=2.0"><!-- [Feather Icons] https://feathericons.com -->
+    <link rel="stylesheet" href="../assets/css/style.css?v=2.0" id="main-style-link">
+    <link rel="stylesheet" href="../assets/css/style-preset.css?v=2.0">
+    <link rel="stylesheet" href="../assets/css/final.css?v=2.0">
 </head><!-- [Head] end --><!-- [Body] Start -->
 <body data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-layout="vertical" data-pc-direction="ltr"
       data-pc-theme_contrast="" data-pc-theme="light"><!-- [ Pre-loader ] start -->
@@ -284,9 +288,9 @@ try {
     const timestamps = <?= $timestampsJson; ?>;
 </script>
 
-<script src="../assets/js/final.js"></scrpit>
-    <script src="../assets/js/icon/custom-font.js"></script>
-<script src="../assets/js/script.js"></script>
-<script src="../assets/js/plugins/apexcharts.min.js"></script>
-<script src="../assets/js/widgets/graphic.js"></script>
+<script src="../assets/js/final.js?v=2.0"></scrpit>
+    <script src="../assets/js/icon/custom-font.js?v=2.0"></script>
+<script src="../assets/js/script.js?v=2.0"></script>
+<script src="../assets/js/plugins/apexcharts.min.js?v=2.0"></script>
+<script src="../assets/js/widgets/graphic.js?v=2.0"></script>
 </body><!-- [Body] end --></html>
