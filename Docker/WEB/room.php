@@ -257,7 +257,7 @@ try {
                         </div>
                         <div id="revenue-sales-chart"></div>
 
-                        <div class="alert alert-info text-center h4">
+                        <div class="alert alert-success text-center h4">
                             Pour
                             FILTRER
                             les données, cliquez sur les légendes du graphique
