@@ -194,22 +194,11 @@ git clone https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_depar
 cd SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01
 ----
 
-2. **Lancer les Conteneurs Docker** :
-   ```bash
-   ./docker_control.sh
-   ```
-   - Suivez les instructions pour démarrer ou arrêter les conteneurs.
-
 3. **Développement Web** :
-   - Modifiez les fichiers dans le répertoire `WEB` pour mettre à jour le backend ou le frontend.
+   - Modifiez les fichiers dans le répertoire `WEB` pour mettre à jour le le frontend.
 
 4. **Base de Données** :
    - Modifiez le script SQL dans le répertoire `BD` pour mettre à jour la strucure de la base de données.
-
-=== Notes
-- Le fichier `docker_control.sh` simplifie la gestion des conteneurs.
-- Assurez-vous que Docker et Docker Compose sont installés sur votre machine avant de démarrer le projet.
-
 
 == Gestion de projet & Qualité
 

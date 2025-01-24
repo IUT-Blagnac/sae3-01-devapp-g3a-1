@@ -57,19 +57,27 @@ En **cliquant** sur une salle, l'utilisateur peut consulter les données des cap
 
 image::../../images/screen_site/select_room.png[align="center", width=100%]
 
-Une fois une fois une salle sélectionnée, l'utilisateur accède à une page dédiée à la salle, affichant les données des capteurs et un graphique de l'historique des mesures.
+Une fois une salle sélectionnée, l'utilisateur accède à une page dédiée à la salle, affichant les données des capteurs et un graphique de l'historique des mesures. Les données des capteurs s'affichent en bas de la page, en dessous du graphique.
 
 image::../../images/screen_site/b105_selected.png[align="center", width=100%]
 
-Il est possible de retourner a la selection de salle en cliquant sur le bouton **Retour au tableau de bord** en haut a droite.
+En remontant en haut de la page, l'utilisateur peut revenir à la carte du 1er étage et cliqué sur une autre salle pour consulter ses données.
 
 === Manipulation des données
 
 Il est possible d'interagit avec le graphique pour modifier l'affichage avec le menu en haut a droite du graphique.
 
-image::../../images/screen_site/top_graph.png[align="center", width=100%]
+image::../../images/screen_site/top_graph.png[align="center", width=50%]
 
-Le menu déroulant permet de choisir les données par jour ou semaine.
+Le menu déroulant permet de choisir les données par :
+
+* Jour
+
+* Semaine
+
+* Mois
+
+* Année
 
 Une liste de bouton est disponible pour modifier l'affichage du graphique.
 
@@ -103,7 +111,7 @@ Un analyste de données souhaite vérifier l'utilisation d'une salle spécifique
    - Un graphique interactif montrant l'historique des données de la salle.  
 
 3. L'utilisateur utilise les options du graphique pour visualiser les données d'occupation sur les 7 derniers jours :
-   - En sélectionnant le mode "Weekly" dans le menu déroulant.  
+   - En sélectionnant le mode "Hebdomadaire" dans le menu déroulant.  
    - En zoomant sur des périodes spécifiques pour analyser des pics d'activité.  
 
 4. Après avoir analysé les données, l'utilisateur identifie des périodes de faible occupation et propose des ajustements dans le planning des réservations.  
