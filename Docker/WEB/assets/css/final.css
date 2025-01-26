@@ -138,3 +138,14 @@ footer {
     display: block;
 
 }
+
+/* Style for the room labels */
+.room-label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    fill: #000000;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    pointer-events: none;
+    user-select: none;
+}

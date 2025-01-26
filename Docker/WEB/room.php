@@ -39,6 +39,7 @@ try {
     $infraredData = [];
     $infraredVisibleData = [];
     $pressureData = [];
+    $dioxideCarbon = [];
     $timestamps = [];
 
     foreach ($chartData as $row) {
@@ -51,6 +52,7 @@ try {
         $infraredData[] = (float)$row['infrared'];
         $infraredVisibleData[] = (float)$row['infrared_and_visible'];
         $pressureData[] = (float)$row['presure'];
+        $dioxideCarbon[] = (float)$row['dioxidecarbon'];
         $timestamps[] = $row['date_heure'];
     }
 
@@ -63,6 +65,7 @@ try {
     $infraredJson = json_encode($infraredData);
     $infraredVisibleJson = json_encode($infraredVisibleData);
     $pressureJson = json_encode($pressureData);
+    $dioxideCarbonJson = json_encode($dioxideCarbon);
     $timestampsJson = json_encode($timestamps);
 } catch (PDOException $e) {
     die("Error fetching chart data: " . $e->getMessage());
@@ -81,10 +84,10 @@ try {
 
     <link rel="icon" href="../assets/images/favicon.svg" type="image/x-icon"><!-- [Page specific CSS] start -->
     <!-- [Font] Family -->
-    <link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css?v=2.0"><!-- [Feather Icons] https://feathericons.com -->
-    <link rel="stylesheet" href="../assets/css/style.css?v=2.0" id="main-style-link">
-    <link rel="stylesheet" href="../assets/css/style-preset.css?v=2.0">
-    <link rel="stylesheet" href="../assets/css/final.css?v=2.0">
+    <link rel="stylesheet" href="../assets/fonts/tabler-icons.min.css?v=3.0"><!-- [Feather Icons] https://feathericons.com -->
+    <link rel="stylesheet" href="../assets/css/style.css?v=3.0" id="main-style-link">
+    <link rel="stylesheet" href="../assets/css/style-preset.css?v=3.0">
+    <link rel="stylesheet" href="../assets/css/final.css?v=3.0">
 </head><!-- [Head] end --><!-- [Body] Start -->
 <body data-pc-preset="preset-1" data-pc-sidebar-caption="true" data-pc-layout="vertical" data-pc-direction="ltr"
       data-pc-theme_contrast="" data-pc-theme="light"><!-- [ Pre-loader ] start -->
@@ -306,12 +309,13 @@ try {
     const infraredData = <?= $infraredJson; ?>;
     const infraredVisibleData = <?= $infraredVisibleJson; ?>;
     const pressureData = <?= $pressureJson; ?>;
+    const dioxideCarbon = <?= $dioxideCarbon; ?>;
     const timestamps = <?= $timestampsJson; ?>;
 </script>
 
-<script src="../assets/js/final.js?v=2.0"></scrpit>
-    <script src="../assets/js/icon/custom-font.js?v=2.0"></script>
-<script src="../assets/js/script.js?v=2.0"></script>
-<script src="../assets/js/plugins/apexcharts.min.js?v=2.0"></script>
-<script src="../assets/js/widgets/graphic.js?v=2.0"></script>
+<script src="../assets/js/final.js?v=3.0"></scrpit>
+    <script src="../assets/js/icon/custom-font.js?v=3.0"></script>
+<script src="../assets/js/script.js?v=3.0"></script>
+<script src="../assets/js/plugins/apexcharts.min.js?v=3.0"></script>
+<script src="../assets/js/widgets/graphic.js?v=3.0"></script>
 </body><!-- [Body] end --></html>

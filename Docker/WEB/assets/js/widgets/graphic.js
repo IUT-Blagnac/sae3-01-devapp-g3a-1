@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         temperature: temperatureData,
         humidity: humidityData,
         activity: activityData,
-        dioxidecarbon: dioxidecarbonData,
+        dioxidecarbon: dioxidecarbonData,  // new CO₂ data
         tvoc: tvocData,
         illumination: illuminationData,
         infrared: infraredData,
@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Données filtrées & groupées
     let filteredData = { ...allData };
-    let currentPeriod = 'Mensuel'; // Par défaut
+    let currentPeriod = 'Mensuel'; // Période par défaut
 
     /**
-     * Génére le nom de fichier d'export
+     * Génère le nom de fichier d'export
      * Format: [Période]-[DD]-[MM]-[YYYY]
      * Ex: "Mensuel-23-01-2025"
      */
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     return date.toISOString().split('T')[0];
                 }
             } else if (period === 'Annuel') {
-                // Regrouper par année: "2025"
+                // Regrouper par année: ex. "2025"
                 return date.getFullYear().toString();
             }
         };
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function () {
             twelveMonthsAgo.setMonth(twelveMonthsAgo.getMonth() - 12);
             cutoff = twelveMonthsAgo;
         } else if (period === 'Annuel') {
-            // On veut toutes les données => pas de cutoff
+            // Toutes les données => pas de cutoff
             cutoff = null;
         }
 
@@ -207,13 +207,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Regroupe & moyenne
         filteredData = groupAndAverage(period);
+
+        // OPTIONAL: Check array lengths to ensure they match (for debugging):
+        console.log(
+          filteredData.temperature.length,
+          filteredData.humidity.length,
+          filteredData.timestamps.length
+        );
     }
 
     // ─────────────────────────────────────────────────────────────────────────────
     // RENDER CHART
     // ─────────────────────────────────────────────────────────────────────────────
     function renderChart() {
-        // Format d'affichage des dates
+        // Format d'affichage des dates selon la période
         let xFormatOptions;
         switch (currentPeriod) {
             case 'Hebdomadaire':
@@ -253,7 +260,18 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
             },
-            colors: ['#e58a00', '#4680ff', '#28a745', '#17a2b8', '#ffc107', '#dc3545', '#6f42c1', '#20c997'],
+            // 9 colors for 9 series
+            colors: [
+                '#e58a00', // Température
+                '#4680ff', // Humidité
+                '#28a745', // Activité
+                '#17a2b8', // CO₂
+                '#ffc107', // TVOC
+                '#dc3545', // Illumination
+                '#6f42c1', // Infrarouge
+                '#20c997', // Infrarouge & Visible
+                '#0d6efd'  // Pression
+            ],
             dataLabels: { enabled: false },
             legend: {
                 show: true,
@@ -271,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 { name: 'Température', data: filteredData.temperature },
                 { name: 'Humidité', data: filteredData.humidity },
                 { name: 'Activité', data: filteredData.activity },
-                { name: 'CO2', data: filteredData.dioxidecarbon },
+                { name: 'CO₂', data: filteredData.dioxidecarbon },
                 { name: 'TVOC', data: filteredData.tvoc },
                 { name: 'Illumination', data: filteredData.illumination },
                 { name: 'Infrarouge', data: filteredData.infrared },
@@ -301,27 +319,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 shared: true,
                 intersect: false,
                 y: {
-                    // Ajoute l'unité selon la série
                     formatter: function (value, { seriesIndex }) {
+                        if (typeof value !== 'number' || isNaN(value)) {
+                            return 'N/A';
+                        }
                         switch (seriesIndex) {
-                            case 0: // Température
-                                return value.toFixed(2) + ' °C';
-                            case 1: // Humidité
-                                return value.toFixed(2) + ' %';
-                            case 2: // Activité
-                                return value.toFixed(2); // sans unité
-                            case 3: // TVOC
-                                return value.toFixed(2) + ' ppb';
-                            case 4: // Illumination
-                                return value.toFixed(2) + ' lux';
-                            case 5: // Infrarouge
-                                return value.toFixed(2); // sans unité
-                            case 6: // Infrarouge et Visible
-                                return value.toFixed(2); // sans unité
-                            case 7: // Pression
-                                return value.toFixed(2) + ' hPa';
-                            default:
-                                return value.toFixed(2);
+                            case 0: return value.toFixed(2) + ' °C';
+                            case 1: return value.toFixed(2) + ' %';
+                            case 2: return value.toFixed(2);
+                            case 3: return value.toFixed(2) + ' ppm';
+                            case 4: return value.toFixed(2) + ' ppb';
+                            case 5: return value.toFixed(2) + ' lux';
+                            case 6: return value.toFixed(2);
+                            case 7: return value.toFixed(2);
+                            case 8: return value.toFixed(2) + ' hPa';
+                            default: return 'N/A';
                         }
                     }
                 }
@@ -330,7 +342,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Création / rendu du graphique
         const chartElement = document.querySelector('#revenue-sales-chart');
-        chartElement.innerHTML = ''; // Nettoyer avant de recréer
+        chartElement.innerHTML = ''; // Nettoyer avant de recréer (éviter doublon)
         const chart = new ApexCharts(chartElement, options);
         chart.render();
     }
@@ -338,7 +350,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // ─────────────────────────────────────────────────────────────────────────────
     // INITIALISATION
     // ─────────────────────────────────────────────────────────────────────────────
-    filterData('Mensuel'); // Par défaut
+    filterData('Mensuel'); // Charger la période "Mensuel" par défaut
     renderChart();
 
     // Écouteur sur le sélecteur de période
