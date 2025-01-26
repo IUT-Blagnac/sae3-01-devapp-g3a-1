@@ -27,7 +27,7 @@ cd SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01
 ### 2. **Lancer les conteneurs Docker**
 Assurez-vous que vous êtes à la racine du projet et exécutez :
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 Cette commande démarre tous les services nécessaires en arrière-plan :
 - **Base de données TimescaleDB**
@@ -43,13 +43,13 @@ Une fois les services lancés, ouvrez votre navigateur et accédez à :
 ### 4. **Arrêter les conteneurs**
 Lorsque vous avez terminé, vous pouvez éteindre Docker tout en conservant les données de la base de données avec :
 ```bash
-docker-compose down
+docker compose down
 ```
 Les données de la base de données seront préservées au prochain lancement. 
 
 Si vous souhaitez arrêter Docker et supprimer les données de la base de données, utilisez la commande suivante :
 ```bash
-docker-compose down -v
+docker compose down -v
 ```
 
 ---
