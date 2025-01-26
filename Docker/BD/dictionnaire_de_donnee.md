@@ -8,6 +8,7 @@ La table `Mesures` stocke les données mesurées par les capteurs. Voici les dé
 | `temperature`               | `FLOAT`           | Température mesurée par le capteur.                |                      |
 | `humidity`                  | `FLOAT`           | Taux d'humidité mesuré par le capteur.             |                      |
 | `activity`                  | `FLOAT`           | Niveau d'activité mesuré par le capteur.           |                      |
+| `dioxydeCarbone`            | `FLOAT`           | Niveau de dioxyde de carbone mesuré.               |                      |
 | `tvoc`                      | `FLOAT`           | Niveau des composés organiques volatils (TVOC).    |                      |
 | `illumination`              | `FLOAT`           | Niveau d'éclairage mesuré.                         |                      |
 | `infrared`                  | `FLOAT`           | Valeur infrarouge mesurée.                         |                      |

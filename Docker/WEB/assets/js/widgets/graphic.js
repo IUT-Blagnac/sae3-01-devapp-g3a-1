@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         temperature: temperatureData,
         humidity: humidityData,
         activity: activityData,
+        dioxidecarbon: dioxidecarbonData,
         tvoc: tvocData,
         illumination: illuminationData,
         infrared: infraredData,
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
             temperature: {},
             humidity: {},
             activity: {},
+            dioxidecarbon: {},
             tvoc: {},
             illumination: {},
             infrared: {},
@@ -76,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 groupedData.temperature[key] = [];
                 groupedData.humidity[key] = [];
                 groupedData.activity[key] = [];
+                groupedData.dioxidecarbon[key] = [];
                 groupedData.tvoc[key] = [];
                 groupedData.illumination[key] = [];
                 groupedData.infrared[key] = [];
@@ -87,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
             groupedData.temperature[key].push(filteredData.temperature[idx]);
             groupedData.humidity[key].push(filteredData.humidity[idx]);
             groupedData.activity[key].push(filteredData.activity[idx]);
+            groupedData.dioxidecarbon[key].push(filteredData.dioxidecarbon[idx]);
             groupedData.tvoc[key].push(filteredData.tvoc[idx]);
             groupedData.illumination[key].push(filteredData.illumination[idx]);
             groupedData.infrared[key].push(filteredData.infrared[idx]);
@@ -104,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
             temperature: [],
             humidity: [],
             activity: [],
+            dioxidecarbon: [],
             tvoc: [],
             illumination: [],
             infrared: [],
@@ -135,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
             averagedData.temperature.push(calculateAverage(groupedData.temperature[key]));
             averagedData.humidity.push(calculateAverage(groupedData.humidity[key]));
             averagedData.activity.push(calculateAverage(groupedData.activity[key]));
+            averagedData.dioxidecarbon.push(calculateAverage(groupedData.dioxidecarbon[key]));
             averagedData.tvoc.push(calculateAverage(groupedData.tvoc[key]));
             averagedData.illumination.push(calculateAverage(groupedData.illumination[key]));
             averagedData.infrared.push(calculateAverage(groupedData.infrared[key]));
@@ -190,6 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
             temperature: indices.map((i) => allData.temperature[i]),
             humidity: indices.map((i) => allData.humidity[i]),
             activity: indices.map((i) => allData.activity[i]),
+            dioxidecarbon: indices.map((i) => allData.dioxidecarbon[i]),
             tvoc: indices.map((i) => allData.tvoc[i]),
             illumination: indices.map((i) => allData.illumination[i]),
             infrared: indices.map((i) => allData.infrared[i]),
@@ -264,6 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 { name: 'Température', data: filteredData.temperature },
                 { name: 'Humidité', data: filteredData.humidity },
                 { name: 'Activité', data: filteredData.activity },
+                { name: 'CO2', data: filteredData.dioxidecarbon },
                 { name: 'TVOC', data: filteredData.tvoc },
                 { name: 'Illumination', data: filteredData.illumination },
                 { name: 'Infrarouge', data: filteredData.infrared },

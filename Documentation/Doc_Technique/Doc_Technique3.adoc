@@ -40,7 +40,7 @@ Le projet consiste à développer une interface web qui permet :
 
 * **Node-RED** : Intégration des flux MQTT pour l’acquisition et le traitement des données des capteurs.
 
-* **TimescaleDB** : Base de données relationnelle pour le stockage des données temporelles.
+* **TimescaleDB** : Système de gestion de bases de données relationnelles basé sur PostgreSQL, conçu pour gérer efficacement les séries temporelles.
 
 * **Nginx** : Serveur web pour l’interface utilisateur.
 
@@ -64,7 +64,7 @@ Voici la liste des ports exposés par les différents services de ce projet Dock
 
 * **Port 5432** :
   - **Service** : TimescaleDB
-  - **Rôle** : Base de données pour stocker les données des capteurs et fournir un historique des données.
+  - **Rôle** : Fournir un stockage performant des données des capteurs, avec des optimisations pour les requêtes temporelles et historiques.
 
 
 == Cas d'Utilisation Global
@@ -121,6 +121,11 @@ Comme le montre le diagramme des classes, notre projet est structuré autour de 
 
 ==== Structure de la base de données :
 
+Lors du premier démarrage, un script SQL (script.sql) est exécuté automatiquement pour initialiser la base de données 
+en créant la table `Mesures`.
+
+* link:../../Docker/BD/script.sql[Script SQL d'initialisation de la base de données]
+
 image::../../images/diagramme_de_classe_bd1.png[][]
 
 
@@ -149,6 +154,9 @@ le frontend gère l'affichage et l'interaction utilisateur, Node-RED automatise 
 | `activity` 
 | Niveau d'activité détecté
 
+| `dioxideCarbone`
+| Niveau de dioxyde de carbone (en ppm)
+
 | `tvoc` 
 | Total Volatile Organic Compounds (en ppm)
 
@@ -174,6 +182,11 @@ le frontend gère l'affichage et l'interaction utilisateur, Node-RED automatise 
 | Date et heure de la mesure, avec fuseau horaire
 |===
 
+==== Ajout de valeurs fictives pour des tests
+
+Pour faciliter les tests et la démonstration de l'application, des valeurs fictives sont insérées dans la base de données lors du lancement du programme python `gen_sql.py`.
+
+* link:../../Docker/BD/gen_sql.py[Programme Python pour générer des valeurs fictives]
 
 == Fonctionnalités
 
@@ -186,8 +199,6 @@ Docker permet de conteneuriser les différents services du projet (Node-RED, Tim
 ==== Fichiers de lancement
 
 * docker-compose.yml : Coordonne le déploiement des services dans des conteneurs Docker.
-
-* docker_control.sh : Script bash interactif permettant de démarrer ou d’arrêter tous les conteneurs avec des commandes simples.
 
 ==== Scripts JavaScript
 

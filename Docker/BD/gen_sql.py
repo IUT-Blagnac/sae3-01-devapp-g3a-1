@@ -7,33 +7,47 @@ import os
 
 def generate_inserts(output_file):
     # Définition de l'intervalle de dates
-    start_date = datetime.datetime(2000, 1, 1)
-    end_date = datetime.datetime(2025, 6, 1) 
+    end_date = datetime.datetime.now()
+    start_date = end_date - datetime.timedelta(days=6 * 30)  # Approximation des 6 derniers mois
     
     current_date = start_date
     inserts = []
 
     while current_date < end_date:
-        # Génération des valeurs aléatoires
-        temperature = round(18.0 + random.random() * 10.0, 1)
-        humidity = round(40.0 + random.random() * 30.0, 1)
-        activity = round(random.random() * 1.0, 2)
-        tvoc = round(50.0 + random.random() * 400.0, 1)
-        illumination = round(10.0 + random.random() * 500.0, 1)
-        infrared = round(50.0 + random.random() * 200.0, 1)
-        infrared_and_visible = round(300.0 + random.random() * 400.0, 1)
-        presure = round(980.0 + random.random() * 50.0, 2)
-        deviceName = "Device_A"
-        room = "B105"
-        
-        # Formatage de la date pour SQL
-        date_heure_str = current_date.strftime("%Y-%m-%d %H:%M:%S")
-        
-        # Construction de la requête INSERT
-        insert_query = f"""INSERT INTO Mesures (
+        # Vérifier si on est dans la dernière semaine
+        if current_date >= end_date - datetime.timedelta(days=7):
+            interval = datetime.timedelta(minutes=10)  # Intervalle de 10 minutes
+        else:
+            interval = datetime.timedelta(hours=5)  # Intervalle de 5 heures
+
+        # Vérifier les jours et horaires
+        if (
+            current_date.weekday() not in [4, 5]  # Pas de vendredi (4) ni samedi (5)
+            and (current_date.weekday() != 3 or current_date.hour < 12)  # Pas le jeudi après-midi
+            and 8 <= current_date.hour < 20  # Horaires entre 8h et 20h
+        ):
+            # Génération des valeurs réalistes
+            temperature = round(random.uniform(20.0, 24.0), 1)  # Température typique en intérieur
+            humidity = round(random.uniform(30.0, 50.0), 1)  # Humidité typique en salle
+            activity = round(random.uniform(0.0, 0.9), 2) if random.random() > 0.1 else None  # Activité faible
+            dioxideCarbon = round(random.uniform(400, 1200), 1)  # CO2, plus élevé en classe
+            tvoc = round(random.uniform(100, 500), 1)  # Composés organiques volatils
+            illumination = round(random.uniform(100, 700), 1)  # Éclairage de la salle
+            infrared = round(random.uniform(50, 150), 1)  # Infrarouge (occupants)
+            infrared_and_visible = round(random.uniform(200, 800), 1)  # Infrarouge et visible
+            presure = round(random.uniform(980.0, 1020.0), 2)  # Pression atmosphérique normale
+            deviceName = "AM107-17"
+            room = "B105"
+            
+            # Formatage de la date pour SQL
+            date_heure_str = current_date.strftime("%Y-%m-%d %H:%M:%S")
+            
+            # Construction de la requête INSERT
+            insert_query = f"""INSERT INTO Mesures (
     temperature,
     humidity,
     activity,
+    dioxideCarbon,
     tvoc,
     illumination,
     infrared,
@@ -45,7 +59,8 @@ def generate_inserts(output_file):
 ) VALUES (
     {temperature},
     {humidity},
-    {activity},
+    {activity if activity is not None else 'NULL'},  -- Permet de gérer NULL pour l'activité
+    {dioxideCarbon},
     {tvoc},
     {illumination},
     {infrared},
@@ -55,14 +70,10 @@ def generate_inserts(output_file):
     '{room}',
     '{date_heure_str}'
 );"""
+            inserts.append(insert_query)
 
-        inserts.append(insert_query)
-        
-        # Passage au mois suivant
-        next_month = current_date.month + 1
-        year_increment = 1 if next_month > 12 else 0
-        next_month = next_month if next_month <= 12 else 1
-        current_date = current_date.replace(year=current_date.year + year_increment, month=next_month)
+        # Avancer dans le temps selon l'intervalle
+        current_date += interval
 
     # Écriture dans le fichier de sortie
     with open(output_file, "w", encoding="utf-8") as f:

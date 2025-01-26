@@ -4,6 +4,7 @@ class Mesures {
   + temperature: FLOAT
   + humidity: FLOAT
   + activity: FLOAT
+  + dioxydeCarbonne : FLOAT
   + tvoc: FLOAT
   + illumination: FLOAT
   + infrared: FLOAT

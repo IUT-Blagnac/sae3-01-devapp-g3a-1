@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS Mesures (
     temperature FLOAT,               -- Température
     humidity FLOAT,                  -- Humidité
     activity FLOAT,                  -- Activité
+    dioxideCarbon FLOAT,             -- Dioxyde de carbone
     tvoc FLOAT,                      -- Total Volatile Organic Compounds
     illumination FLOAT,              -- Éclairage
     infrared FLOAT,                  -- Infrarouge

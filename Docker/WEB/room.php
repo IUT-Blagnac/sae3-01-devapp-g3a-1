@@ -33,6 +33,7 @@ try {
     $temperatureData = [];
     $humidityData = [];
     $activityData = [];
+    $dioxidecarbonData = [];
     $tvocData = [];
     $illuminationData = [];
     $infraredData = [];
@@ -44,6 +45,7 @@ try {
         $temperatureData[] = (float)$row['temperature'];
         $humidityData[] = (float)$row['humidity'];
         $activityData[] = (float)$row['activity'];
+        $dioxidecarbonData[] = (float)$row['dioxidecarbon'];
         $tvocData[] = (float)$row['tvoc'];
         $illuminationData[] = (float)$row['illumination'];
         $infraredData[] = (float)$row['infrared'];
@@ -55,6 +57,7 @@ try {
     $temperatureJson = json_encode($temperatureData);
     $humidityJson = json_encode($humidityData);
     $activityJson = json_encode($activityData);
+    $dioxidecarbonJson = json_encode($dioxidecarbonData);
     $tvocJson = json_encode($tvocData);
     $illuminationJson = json_encode($illuminationData);
     $infraredJson = json_encode($infraredData);
@@ -130,7 +133,7 @@ try {
                             <div class="flex-shrink-0">
                                 <div class="avtar bg-light-warning"><i class="ti ti-droplet f-24"></i></div>
                             </div>
-                            <div class="flex-grow-1 ms-3"><p class="mb-1">Humidity</p>
+                            <div class="flex-grow-1 ms-3"><p class="mb-1">Humidité</p>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <h4 class="mb-0"><?= $badgeRows[0]['humidity'] ?> %</h4>
                                     <?= (badgeEvolution($badgeRows[0]['humidity'], $badgeRows[1]['humidity'], " %")); ?>
@@ -242,6 +245,23 @@ try {
                     </div>
                 </div>
             </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <div class="avtar bg-light-green"><i class="ti ti-gauge f-24"></i></div>
+                            </div>
+                            <div class="flex-grow-1 ms-3"><p class="mb-1">Dioxyde de Carbone</p>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h4 class="mb-0"><?= $badgeRows[0]['dioxidecarbon'] ?> ppm</h4>
+                                    <?= (badgeEvolution($badgeRows[0]['dioxidecarbon'], $badgeRows[1]['dioxidecarbon'], " ppm")); ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!--<div class="col-lg-7 col-md-12">-->
             <div class="col-12">
                 <div class="card">
@@ -280,6 +300,7 @@ try {
     const temperatureData = <?= $temperatureJson; ?>;
     const humidityData = <?= $humidityJson; ?>;
     const activityData = <?= $activityJson; ?>;
+    const dioxidecarbonData = <?= $dioxidecarbonJson; ?>;
     const tvocData = <?= $tvocJson; ?>;
     const illuminationData = <?= $illuminationJson; ?>;
     const infraredData = <?= $infraredJson; ?>;

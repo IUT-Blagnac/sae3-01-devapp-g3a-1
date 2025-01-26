@@ -22,6 +22,7 @@ try {
             <th>Temperature</th>
             <th>Humidity</th>
             <th>Activity</th>
+            <th>co2</th>
             <th>TVOC</th>
             <th>Illumination</th>
             <th>Infrared</th>
@@ -39,6 +40,7 @@ try {
         echo "<td>" . htmlspecialchars($row['temperature']) . "</td>";
         echo "<td>" . htmlspecialchars($row['humidity']) . "</td>";
         echo "<td>" . htmlspecialchars($row['activity']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['dioxidecarbon']) . "</td>";
         echo "<td>" . htmlspecialchars($row['tvoc']) . "</td>";
         echo "<td>" . htmlspecialchars($row['illumination']) . "</td>";
         echo "<td>" . htmlspecialchars($row['infrared']) . "</td>";
