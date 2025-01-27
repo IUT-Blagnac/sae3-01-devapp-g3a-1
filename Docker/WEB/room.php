@@ -255,7 +255,7 @@ try {
                     <div class="card-body">
                         <div class="d-flex align-items-center">
                             <div class="flex-shrink-0">
-                                <div class="avtar bg-light-green"><i class="ti ti-gauge f-24"></i></div>
+                                <div class="avtar bg-light-green"><i class="ti ti-cloud f-24"></i></div>
                             </div>
                             <div class="flex-grow-1 ms-3"><p class="mb-1">Dioxyde de Carbone</p>
                                 <div class="d-flex align-items-center justify-content-between">
