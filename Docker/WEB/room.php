@@ -2,13 +2,15 @@
 require_once "includes/connexion.inc.php";
 require_once "includes/helpers.php";
 $room = strtoupper($_GET["room"] ?? "");
-if (strlen($room) < 4) {
+
+if (strlen($room) !== 4) {
     header("Location: index.php?error=true");
 }
 
 try {
     // Pour le badges, les 2 dernières valeurs
-    $sql = "SELECT * FROM mesures WHERE room = :room ORDER BY id DESC LIMIT 2";
+    $sql = "SELECT * FROM Mesures WHERE room = :room ORDER BY id DESC LIMIT 2";
+    //$sql = "SELECT * FROM Mesures";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(":room", $room);
     $stmt->execute();
@@ -21,7 +23,7 @@ try {
 try {
     $sqlChart = "
     SELECT *
-    FROM mesures
+    FROM Mesures
     WHERE room = :room
     ORDER BY date_heure ASC;
     ";
