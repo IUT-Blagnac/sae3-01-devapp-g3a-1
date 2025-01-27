@@ -1,4 +1,4 @@
-= SAÉ 3.01 2023-2024
+= SAÉ 3.01 2024-2025
 :icons: font
 :models: models
 :experimental:
@@ -28,91 +28,237 @@ ifdef::env-github[]
 :icongit: Git
 endif::[]
 
+image::./images/page-de-garde-v3.jpg[][alt="Dashboard du Département", align="center", width=100%]
+
+
 // /!\ A MODIFIER !!!
 :baseURL: https://github.com/IUT-Blagnac/sae3-01-template
 
 // Tags
 image:{baseURL}/actions/workflows/blank.yml/badge.svg[Bidon] 
-image:{baseURL}/actions/workflows/build.yml/badge.svg[Build] 
-image:{baseURL}/actions/workflows/tests.yml/badge.svg[Tests] 
 image:https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg[License: MPL-2.0, link="https://opensource.org/licenses/MPL-2.0"]
 //---------------------------------------------------------------
 
-TIP: Pensez à mettre à jour les infos dans ce fichier pour que les badges pointent sur les résultats effectifs de vos intégrations continue ou sur la bonne licence logicielle.
-
-WARNING: Ce dépôt présente le projet à développer dans le cadre de la SAÉ 3.01 du BUT1 Informatique de l'IUT de Blagnac.
-
-Ce fichier `README.adoc` (dont vous lisez sûrement le rendu HTML automatiquement effectué par GitHUb), fait partie du dépôt initial cloné à partir du lien GitHub classroom qui vous a été donné en cours (https://classroom.github.com/a/fePVlfpN).
-Vous trouverez le dépôt "template" qui a servi de base ici : https://github.com/IUT-Blagnac/sae3-01-template. En complément du cours Moodle de la SAE 3.01 (cf. <<liensUtiles>>), ce dépôt template vous permet d'accéder à des exemples d'https://github.com/IUT-Blagnac/sae3-01-template/issues[issues], de https://github.com/IUT-Blagnac/sae3-01-template/releases[releases], ou d'autres artefacts à venir.
+== Sommaire :
 
 toc::[]
 
 == Equipe
 
-Projet est réalisé par::
+Projet réalisé par::
 
-- https://github.com/janeDoe[Jane Doe]
-- https://github.com/johnSmith[John Smith]
-...
+- link:https://github.com/boubast[BOUVET Bastien] -- Scrum Master / Développeur
+- link:https://github.com/YolanBrun[BRUN Yolan] --  Rédacteur / Développeur
+- link:https://github.com/leonardo-correiamendes[CORREIA MENDES Leonardo] -- Chef de projet / Développeur
+- link:https://github.com/Diego-PB[PENICAUD-BERNAL Diego] -- Responsable base de donnée / Développeur
+- link:https://github.com/DanerSharifi-FR[SHARIFI Daner] -- Responsable serveur web / Développeur
+- link:https://github.com/Smogita[CRISTINI Aidan] -- Git Master / Développeur
 
-Tuteur/tutrice enseignant(e) de l'équipe:: mailto:jean-michel.bruel@univ-tlse2.fr[JMB]
+Tuteur enseignant de l'équipe:: 
+
+- link:https://github.com/rboulle[BOULLE Rémi] -- Product Owner / Client
+
+Tutrice enseignante de l'équipe:: 
+
+- link:https://github.com/ependaries[PENDARIES Esther]
+
+== Lancement du projet
+
+Pour lancer le projet, il suffit de suivre les instructions du guide de démarrage disponible dans le lien ci-dessous :
+
+- link:https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/guide_demarrage.md[Guide de démarrage]
 
 == Contexte général
 
-TIP: Cette partie de votre `README.adoc` peut être supprimée ou mise ailleurs.
+### Sujet "Dashboard du département"
 
-=== Dépôt initial
+Les salles du 1er étage du département d’informatique sont équipées de capteurs AM107. Ces capteurs remontent des données de présence (via la valeur `activity`), de luminosité (en lux) et de niveau de CO2 sur un flux MQTT.
 
-Ce dépôt initial a été créé pour que tous les groupes de 2ème année aient les mêmes informations de départ.
+L’objectif du projet est de développer une interface web permettant de visualiser les données remontées par les capteurs, les stocker dans une base et d’avoir un historique. Le but est de donner un aperçu de l’occupation des salles et de pouvoir faire des statistiques.
 
-Vous y trouverez des fichiers qui peuvent être supprimés s'ils ne vous sont pas utiles :
+Les principaux utilisateurs de cette solution seront des **analystes de données**, qui pourront exploiter les informations présentées pour mieux comprendre l'utilisation des espaces et optimiser leur gestion.
 
-- `.gitignore` => un fichier minimaliste des éléments à ne pas pousser en général sur vos dépôts (utiliser la commande `git add -f` pour forcer l'ajout d'un fichier Jar qui ne bougera plus, pour archive par exemple).
-- `.github` => le répertoire qui contient des éléments de gestion de projet :
-** `workflows` => le repertoire qui contient les actions à lancer à chaque push sur votre repo. 
-*** `blank.yml` => un exemple bidon mais dont vous pourrez vérifier l’exécution correcte (1er tag)
-** `ISSUE_TEMPLATE` => le repertoire qui contient quelques templates pour vos issues.
-*** `us.yml` => Exemple de template pour les User Stories
-*** `bug.yml` => Exemple de template pour les issues de bug report
+Le **livrable attendu** est constitué :
 
-TIP: Adaptez ces fichiers à votre projet et à votre organisation. Et inspirez-vous en pour en ajouter.
+- un site/application **fonctionnel** et déployable sous la forme d’un container avec docker.
+- des sources du site ou de l’application développée
+- d’une doc précise d’installation au format asciidoc (l’installation sera testée sur machine GNU/Linux)
+- un README présentant le projet avec, au début, la composition du groupe (Noms, prénoms)
 
 [[liensUtiles]]
 === Liens utiles
 
-- Le https://webetud.iut-blagnac.fr/course/view.php?id=841[cours Moodle] sur la SAE
-- Le dépôt https://github.com/IUT-Blagnac/sae3-01-template[template] qui sert de base à tous les dépôts étudiants.
-- Le lien https://classroom.github.com/a/OUF7gxEa[classroom] si besoin.
+[cols="1,2,3,4,5",options="header"]
+|===
+| Date  | Version  | Nom              | Lien | Description
+|   |   | Sujet SAE    | https://webetud.iut-blagnac.fr/mod/resource/view.php?id=36226[Sujet SAE] | Sujet de la SAE, à retrouver sur Webetud
+|   |   | Backlog Produit Global | https://github.com/orgs/IUT-Blagnac/projects/305[Backlog Produit] | Backlog Produit Global, validé par le client
+|   Sem.2 ( 06/01/25 - 12/01/25 )  | 1er Sprint | Sprint 1 | https://github.com/orgs/IUT-Blagnac/projects/300/views/1[1er Sprint] | 1er Sprint, avec chaque User Story et tâches
+|         | 1er Sprint | Cahier de tests |https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Cahier_de_Test/Cahier_de_tests.md[Cahier de tests] | Cahiers de tests
+|        | 1er Sprint | Documentation Utilisateur | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Utilisateur/Doc_Utilisateur1.adoc[Documentation Utilisateur] | Installation et présentation du docker avec ses fonctionnalités
+|        | 1er Sprint | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Technique/Doc_Technique1.adoc[Documentation Technique] | Fonctionnement et fichiers clés du docker
+|        | 1er Sprint | Bilan Sprint 1   | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Bilans/Bilan_Sprint1.adoc[Bilan Sprint 1] |Bilan du premier Sprint
+|        | 1er Sprint | Release de fin de Sprint 1 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/releases/tag/1.0[Release de fin de Sprint 1] | Release de fin de Sprint 1
+|        | 1er Sprint | Prévision Sprint 2 | https://github.com/orgs/IUT-Blagnac/projects/302[Prévision Sprint 2] | Prévision du prochain Sprint (2)
+| Sem.3 ( 13/01/25 - 19/01/25 ) | 2ème Sprint | Sprint 2 | https://github.com/orgs/IUT-Blagnac/projects/302[Sprint 2] | 2ème Sprint, avec chaque User Story et tâches
+|         | 2ème Sprint | Cahier de tests |https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Cahier_de_Test/Cahier_de_tests.md[Cahier de tests]| Cahiers de tests
+|         | 2ème Sprint | Documentation Utilisateur | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Utilisateur/Doc_Utilisateur2.adoc[Documentation Utilisateur]| Installation et présentation du docker avec ses fonctionnalités
+|         | 2ème Sprint | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Technique/Doc_Technique2.adoc[Documentation Technique] | Fonctionnement et fichiers clés du docker
+|         | 2ème Sprint | Bilan Sprint 2 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Bilans/Bilan_Sprint2.adoc[Bilan Sprint 2] | Bilan du deuxième Sprint
+|        | 2ème Sprint | Release de fin de Sprint 2 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/releases/tag/2.0[Release de fin de Sprint 2] | Release de fin de Sprint 2
+|        | 2ème Sprint | Prévision Sprint 3 | https://github.com/orgs/IUT-Blagnac/projects/303[Prévision Sprint 3] | Prévision du prochain Sprint (3) 
+| Sem.4 ( 20/01/25 - 26/01/25 )   | 3ème Sprint | Sprint 3 |  https://github.com/orgs/IUT-Blagnac/projects/303[Sprint 3] | 3ème Sprint, avec chaque User Story et tâches
+|         | 3ème Sprint | Cahier de tests |https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Cahier_de_Test/Cahier_de_tests.md[Cahier de tests]| Cahiers de tests
+|         | 3ème Sprint | Documentation Utilisateur |  https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Utilisateur/Doc_Utilisateur3.adoc[Documentation Utilisateur] |  Installation et présentation du docker avec ses fonctionnalités
+|       | 3ème Sprint  | Documentation Technique | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Doc_Technique/Doc_Technique3.adoc[Documentation Technique] | Fonctionnement et fichiers clés du docker
+| | 3ème Sprint | Bilan Sprint 3 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/blob/master/Documentation/Bilans/Bilan_Sprint3.adoc[Bilan Sprint 3] | Bilan du troisième Sprint
+|        | 3ème Sprint | Release de fin de Sprint 3 | https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01/releases/tag/3.0[Release de fin de Sprint 3] | Release de fin de Sprint 3
+|===
 
-TIP: Pensez à utiliser les salons Discord dédiés pour poser vos questions.
+
 
 == Réalisations 
 
-TIP: Mettez ici toutes les informations nécessaire à l'utilisation de votre dépôt (comment on installe votre application, où sont les docs, etc.)
+=== Organisation Générale
+
+Ce projet est organisé autour de plusieurs dossiers et fichiers pour structurer le développement, le déploiement et la documentation d'une application complète. L'application utilise Docker, une base de données TimescaleDB, un serveur web Nginx, un backend PHP, ainsi que Node-RED pour gérer un flux MQTT. Voici une description de la structure actuelle :
+
+[source]
+----
+.
+├── Docker
+│   ├── nginx.conf                     // Configuration Nginx pour le serveur web
+│   ├── nodered                        // Configuration et données de Node-RED
+│   │   ├── flows.json                 // Flux Node-RED pour gérer les données
+│   │   └── settings.js                // Configuration Node-RED
+│   ├── BD                             // Dossier BD déplacé dans Docker
+│   │   ├── diagramme_de_classe_bd.plantuml // Diagramme de classe de la base de données
+│   │   └── script.sql                 // Script SQL pour créer et initialiser la base de données
+│   └── WEB                             // Contenu web déplacé dans Docker
+│       ├── Dockerfile                 // Dockerfile pour le backend PHP
+│       ├── index.php                  // Page principale de l'application web
+│       ├── includes                   // Scripts PHP supplémentaires
+│       │   └── connexion.inc.php      // Gestion de la connexion à la base de données
+│       ├── assets                     // Ressources front-end (CSS, JS, images)
+│       │   ├── css
+│       │   ├── js
+│       │   └── images
+│       └── room.php                   // Page spécifique pour visualiser les données des salles
+├── Documentation
+│   ├── guide_demarrage.md             // Documentation pour démarrer/stopper le projet
+│   ├── Bilans                         // Rapports des bilans de chaque sprint
+│   │   ├── Bilan_Sprint1.md
+│   │   ├── Bilan_Sprint2.md
+│   │   └── Bilan_Sprint3.md
+│   ├── Doc_Technique                  // Documentation technique détaillant les aspects techniques
+│   │   ├── Doc_Technique1.md
+│   │   ├── Doc_Technique2.md
+│   │   └── Doc_Technique3.md
+│   ├── Doc_Utilisateur                // Documentation utilisateur pour comprendre l'application
+│   │   ├── Doc_Utilisateur1.md
+│   │   ├── Doc_Utilisateur2.md
+│   │   └── Doc_Utilisateur3.md
+│   ├── Cahier_de_Tests.md             // Cahier de tests pour valider les fonctionnalités
+│   └── Reunions                       // Dossier réorganisé, contenant les réunions
+|       ├── ODJ                        // Ordre du jour des réunions
+|       │   ├── ODJ-Réunion 1.md
+│       |   ├── ODJ-Réunion 2.md
+│       |   └── ODJ-Réunion 3.md
+│       └── CR                         // Comptes rendus des réunions
+|           ├── CR-Réunion 1.md
+│           ├── CR-Réunion 2.md
+│           └── CR-Réunion 3.md   
+├── images                             // Images liées au projet
+└── README.adoc                        // Document principal expliquant le projet
+----
+
+=== Description des Composants
+
+- **BD** : Contient tous les fichiers liés à la base de données, y compris les scripts SQL pour initialiser les tables et le diagramme UML.
+- **Docker** : Regroupe les configurations Docker (Nginx, Node-RED, TimescaleDB) et les fichiers associés pour déployer l'application via des conteneurs.
+- **Documentation** : Centralise toutes les documentations liées au projet, y compris les bilans, les guides utilisateur et technique, et le cahier de tests.
+- **Reunions** : Archive des comptes rendus de réunions pour le suivi des discussions et des décisions.
+- **WEB** : Inclut le backend PHP, les ressources front-end, et les scripts supplémentaires pour l'application web.
+- **images** : Contient des ressources visuelles comme des diagrammes et des illustrations.
+
+Ce projet offre une architecture modulaire pour simplifier le développement, la maintenance et le déploiement. Les conteneurs Docker permettent de gérer efficacement les services essentiels tels que la base de données, le serveur web et les flux MQTT avec Node-RED.
+
+=== Guide pour les Contributeurs
+
+1. **Cloner le Projet** :
+
+[source,bash]
+----
+git clone https://github.com/IUT-Blagnac/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01.git
+
+cd SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01
+----
+
+3. **Développement Web** :
+   - Modifiez les fichiers dans le répertoire `WEB` pour mettre à jour le le frontend.
+
+4. **Base de Données** :
+   - Modifiez le script SQL dans le répertoire `BD` pour mettre à jour la strucure de la base de données.
 
 == Gestion de projet & Qualité
 
-Chaque sprint (semaine) vous devrez livrer une nouvelle version de votre application (release).
-Utilisez pour cela les fonctionnalités de GitHub pour les https://docs.github.com/en/repositories/releasing-projects-on-github[Releases].
+=== Retour sprint 1 - Mme Pendaries
 
-De plus ce fichier `README.adoc` devra être à jour des informations suivantes :
+==== Backlog produit
+Backlog : je dois avoir un backlog produit global qui remplaçe le cahier des charges où les US ne sont pas encore réparties en sprint ! 
 
-- Version courante : https://github.com/IUT-Blagnac/sae3-01-template/releases/tag/v0.1.2[v0.1.2]
-- Lien vers la doc technique
-- Lien vers la doc utilisateur
-- Liste des (ou lien vers les) User Stories (ToDo/Ongoing/Done) et % restant
-- Tests unitaires et plans de test
-- Indicateurs de qualité du code (dette technique)
-- ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
+Votre client doit avoir validé ce Backlog. 
 
-Voici un exemple d'évaluation :
+Vous proposez des backlogs de sprint mais c'est différent, ce sont les US du backlog traitées dans le sprint et on le fait au fur et à mesure de l'anvancée du projet.
 
-ifdef::env-github[]
-image:https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image[link=https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image]
-endif::[]
+Quels sont les utilisateurs de votre application car j'ai des US pour des étudiants ? Vos US ressemblent plutôt à des tâches. Exemple : "Un administrateur souhaite vérifier les capteurs qui ont une batterie faible afin de changer les piles " Cette US nécéssite d'avoir des tâches de récupération de données via des flux, des tâches d'affichage des données, des tâches de tests ... une autre US peut être "un etudiant souhaite visualiser les données des capteurs des salles afin de faire des statistiques" ce qui implique le développement d'une fonctionnalité sur le site et des tâches de back-office et front office sur le site. "site fonctionnel" c'est trop vague.
 
-ifndef::env-github[]
-++++
-<iframe width="786" height="430" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1850914734&amp;format=image"></iframe>
-++++
-endif::[]
+non noté  (à modifier et m'avertir pour note finale)
+
+==== Backlog produit final
+
+Rédaction des US ok
+Critères acceptabilités : a revoir ils doivent exprimer comment vous allez tester votre US
+Tâches liées : attentions dans certaines US confusion avec les critères !
+Priorité : ok
+Complexité : non fait ... il faut evaluer la difficulté ou le temps de chaque US
+
+note : 3,5/5
+(le sprint 2 sera evalué lundi, pensez à l'ODJ de la réunion de retrospective de sprint)
+
+==== Retour sprint 1
+
+Cahier Test ok mais à fusionner et enrichir pour que cela deviennent le cahier de tests de votre appli en général(se servir des critères d'acceptabilité des US), faire une page de garde, sommaire intro contextuelle du projet, version, equipe. 
+Doc ok mais user à avancer et je ne sais toujours pas qui va utiliser votre appli ! 
+
+Backlog sprint ok cf. remarques backlog produit.
+Task : parfois confusion tâches/US cf retour bacglog produit
+Pensez à créer une release (même minimaliste/maquette au début pour le client !)
+NOTE = 3,4/5
+Je suis à l'IUT mercredi  ( en B010 entre 13h et 14h15) si besoin
+
+==== retour sprint 2
+Toutes les tâches doivent être rattachées à une US. Les liens vers les cahiers de tests ne marchent pas. Documentations OK. J'ai une release V1 non commentée, pas de release V2 alors que le sprint est terminé !
+
+NOTE = 3,2/5
+(je suis à l'IUT mercredi matin si besoin)
+
+==== retour communication
+
+sprint 1: CR Très bien, penser à faire un ODJ ! 
+Sprint 2 : CR Très bien mais toujours pas d'ordre du jour !! Pensez-y pour le dernier sprint
+
+==== retour PO - M Boulle
+
+* Très bonne avancée pour la première semaine + version démo présentée fonctionnelle. Continuez ! Prochain point d'étape courant semaine 3 !
+* Test fin semaine deux : dans le guide de démarrage docker, il me semble que la commande docker-compose n'existe plus, de même que l'utilisation du paquet docker.io (deprecated). Je ne vois pas ce qu'apporte le script docker_control.sh, je ne recommande pas d'utiliser une interface en plus à docker qu'il faudra maintenir ensuite. Autant tout livrer selon les standads docker, non ? Un admin sys saura utiliser et va tout simplement ignorer le script sans compter, que c'est n'est as très secure de lancer un script sans l'auditer. J'ai lancé $docker compose up (pas besoin de script sh)qui renvoie un warning (en effet, l'attribut version est deprecated). Veillez à rester à jour. Il faut que votre livrable fonctionne "out of the box". Adapter la doc en fonction et rajouter que le port 1883 ne doit pas êtes bloqué. Serivir le site sur localhost sans préciser de port ne me semble pas être une bonne pratique de sécurité (de façon générale, on évitera que les ports externes et internes à docker soit les mêmes, à vérifier). J'arrive à accéder à la page servie par nginx.
+* Test fin semaine trois :
+** Toujours le warning "the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion ". De même docker-compose est deprecated (voir https://docs.docker.com/compose/releases/migrate/) Rien de grave mais ce n'est pas très "propre". Ensuite, rien ne se lance au final, j'ai le message  : "Mounts denied: The path /tmp/SAE-ALT-S3-Dev-24-25-Dashboard_du_departement-Equipe-3A01-3.0/Docker/BD/script.sql is not shared from the host and is not known to Docker. Attention, vous êtes 6 dans l'équipe, il aurait fallu que les 6 testent sur leurs machines respectives. De plus à l'IUT vous avez des stations Linux aussi. Peut-être que cela aurait évité ces soucis. Rien vu dans votre guide d'installation sur ce point de "mounts denied". PAs d'inquiétudes, vous arriverez à régler ça dans la semiane. À l'avenir, pensez à tester très régulièrement votre appli dans des contextes variés. -> Problème réglé, bravo pour la réactivité ! Très probablement un soucis local sur ma machine
+** Dans vos bilan des sprint et vos docs en général, il y a toujours la même image du AM107 en grand. Cela casse le fil de lecture, la supprimer ?
+** Lu dans Doc_Technique3.adoc : "TimescaleDB : Base de données relationnelle pour le stockage des données temporelles." Ce n'est pas du tout une base relationnelle, à corriger :)
+** Aucune donnée ne remonte mais c'est normal car le flux MQTT est visible que sur les heures d'ouverture de l'IUT. Peut-être à préciser dans la doc ? D'ailleurs, où se configure l'adresse du broker MQTT ? À préciser dans la doc technique (vu dans nodered). L'idée est que votre projet fonctionne "out-of-the-box" et qu'un admin sys l'installe aussi quasi directement.
+** Je ne vois pas les données de CO2 alors qu'elles sont bien dans les données et c'est important. Peut-être à mettre à la place d'Infrared ?
+** Sur l'interface utilisateur, le mousover sur le SVG n'est pas très réactif, il faut laisser la souris quelques temps pour avoir la popup indiquant le numéro de la salle
+** Lorsqu'on clique sur une salle, la page scrolle automatiquement vers le bas. Ce serait plus fluide s'il n'y avait pas ce mouvement et que les données s'affichent directement sans faire bouger la page (non bloquant)
+Bon travail dans l'ensemble !
+

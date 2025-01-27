@@ -1,0 +1,21 @@
+@startuml
+title Diagramme des cas d'utilisation
+
+left to right direction
+
+actor Utilisateur as U
+
+package "Système Dashboard" {
+    usecase "Consulter les\ndonnées de la salle sélectionnée" as UC1
+    usecase "Accéder à\nl'historique" as UC2
+    usecase "Selectionner\nune salle" as UC3
+}
+(Selectionner une salle) as UC1
+(Consulter les dernières données) as UC2
+(Consulter l'historique) as UC3
+
+U --> UC1
+UC1 --> UC2
+UC1 --> UC3
+
+@enduml

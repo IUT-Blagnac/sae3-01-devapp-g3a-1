@@ -1,0 +1,151 @@
+.pc-container {
+    top: 0 !important;
+    margin-left: 0 !important;
+}
+
+footer {
+    top: 0 !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+}
+
+.first-floor-svg svg {
+    border: dashed black 1px;
+}
+
+.first-floor-svg {
+    fill: rgb(183, 232, 247);
+    stroke: rgb(0, 26, 255);
+
+    /* stroke:rgb(0, 0, 0);
+    fill: rgb(248, 183, 43); */
+
+    fill-opacity: 1;
+    stroke-width: 1px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-opacity: 1;
+
+    transition: fill 1.2s, stroke 1s
+}
+
+.first-floor-svg g.changeColor:hover {
+    stroke: rgb(56, 0, 102);
+    fill: rgb(247, 156, 239);
+
+    /* stroke:rgb(255, 193, 183);
+    fill: rgb(233, 8, 0); */
+}
+
+.bg-light-violet {
+    background: #fce9f9;
+    color: #dc269d;
+}
+
+.bg-light-green {
+    background: #f1fce9;
+    color: #70dc26;
+}
+
+.bg-light-yellow {
+    background: #fcf7e9;
+    color: #dcc026;
+}
+
+.bg-light-turquoise {
+    background: #e9fcfa;
+    color: #26dcc2;
+}
+.loader-container {
+    /* Put in center of page */
+    position: fixed;
+    z-index: 9999;
+    /* opacity background */
+    background: rgba(0, 0, 0, 0.5);
+    /* full screen */
+    width: 100%;
+    height: 100%;
+}
+
+
+.loader {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    display: inline-block;
+    /* center of parent */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.loader::after,
+.loader::before {
+    content: '';
+    box-sizing: border-box;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 1px solid #FFF;
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: animloader 1s linear infinite;
+}
+
+.loader::after {
+    animation-delay: 0.9s;
+}
+
+@keyframes animloader {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.pc-go-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    background: #dc269d;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: background 0.3s;
+    /* shadow */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.pc-go-top:hover {
+    background: rgba(220, 38, 157, 0.8);
+}
+
+.pc-go-top i {
+    font-size: 40px;
+    line-height: 60px;
+    /* center parent */
+    text-align: center;
+    display: block;
+
+}
+
+/* Style for the room labels */
+.room-label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    fill: #000000;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    pointer-events: none;
+    user-select: none;
+}

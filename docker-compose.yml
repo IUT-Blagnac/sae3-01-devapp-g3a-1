@@ -1,0 +1,48 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80" # Expose le service sur localhost:80
+    volumes:
+      - ./Docker/WEB:/usr/share/nginx/html # Répertoire contenant le code PHP/HTML
+      - ./Docker/nginx.conf:/etc/nginx/conf.d/default.conf:ro # Configuration Nginx
+    depends_on:
+      - php
+
+  php:
+    build:
+      context: ./Docker/WEB # Chemin relatif pour accéder à la racine WEB
+    container_name: php
+    volumes:
+      - ./Docker/WEB:/usr/share/nginx/html # Synchronisation du code avec le conteneur
+    depends_on:
+      - db
+
+  nodered:
+    image: nodered/node-red:latest
+    container_name: nodered
+    ports:
+      - "1880:1880" # Interface web de Node-RED
+    environment:
+      - NODE_OPTIONS=--max_old_space_size=512 # Limite de mémoire Node.js
+    volumes:
+      - ./Docker/nodered:/data # Persistance des flux et configuration
+    depends_on:
+      - db # Node-RED dépend de la base de données
+
+  db:
+    image: timescale/timescaledb:latest-pg14
+    container_name: timescaledb
+    ports:
+      - "5432:5432" # Expose le port PostgreSQL
+    environment:
+      POSTGRES_USER: admin # Nom d'utilisateur
+      POSTGRES_PASSWORD: password # Mot de passe
+      POSTGRES_DB: dashboard_db # Base de données par défaut
+    volumes:
+      - timescale-data:/var/lib/postgresql/data # Données persistantes
+      - ./Docker/BD/script.sql:/docker-entrypoint-initdb.d/script.sql:ro # Script SQL à exécuter
+
+volumes:
+  timescale-data:

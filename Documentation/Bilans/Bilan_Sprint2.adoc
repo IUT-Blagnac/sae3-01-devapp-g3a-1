@@ -1,0 +1,47 @@
+:toc: macro
+
+= Bilan de sprint n°2 SAE-ALT-S3-Dev-24-25-Dashboard_du_departement
+
+image::../../images/Bilan_sprint2.png[][align="center", width=100%]
+
+== Sommaire
+toc::[]
+
+== Equipe 2024 - 2025
+
+- link:https://github.com/boubast[BOUVET Bastien] -- Scrum Master / Développeur
+- link:https://github.com/YolanBrun[BRUN Yolan] --  Rédacteur / Développeur
+- link:https://github.com/leonardo-correiamendes[CORREIA MENDES Leonardo] -- Chef de projet / Développeur
+- link:https://github.com/Diego-PB[PENICAUD-BERNAL Diego] -- Responsable base de donnée / Développeur
+- link:https://github.com/DanerSharifi-FR[SHARIFI Daner] -- Responsable serveur web / Développeur
+- link:https://github.com/Smogita[CRISTINI Aidan] -- Git Master / Développeur
+
+== Progrès Accompli
+
+=== Objectifs
+- [x] WEB : Ajouter un graphique pour consulter l'historique des mesures stockées avec des filtres et des options d'export.
+- [x] BD : Autoincrémenter l'ID des mesures par du code.
+- [x] Documentation : Améliorer la documentation pour la rendre plus claire et plus complète en fonction des 
+
+=== Points Forts
+
+- Graphique JS pour les statistiques
+- Option export en PNG, CSV et SVG
+- Historique des statistiques par jour
+- Historique des statistiques par semaine
+
+=== Problèmes rencontrés
+
+- Mauvaise organisation des users stories et tâches dans le GitHub
+- Problème d'ajout de données dans la base de données
+    1.  L'auto-incrémentation de l'ID des mesures ce faisait très bien par la base de données elle même donc pas besoin de le faire par du code.
+    2.  Au bout de 15 mesures, la base de données ne stockait plus les mesures, le problème venait d'une file d'attente qui ce remplissait dans le nodered.
+
+=== Leçons apprises
+
+- **Importance d'une organisation rigoureuse des tâches :** Une meilleure définition des User Stories et des tâches en amont permettrait d'éviter les pertes de temps et les révisions inutiles du GitHub.
+- **Prévoir des tests réguliers :** Tester plus fréquemment les fonctionnalités aurait permis de détecter le problème de la file d'attente plus tôt.
+
+=== Résumé du sprint
+
+Ce sprint a permis de faire avancer significativement le projet avec l'ajout de fonctionnalités clés comme l'historique des mesures et les options d'export. Malgré des problèmes techniques liés à Node-RED et à l'organisation initiale des tâches, l'équipe a su collaborer pour résoudre ces défis efficacement. Les graphiques et options d'export ajoutent une vraie valeur pour les utilisateurs, et la documentation est en meilleure voie pour guider les futurs utilisateurs et développeurs.

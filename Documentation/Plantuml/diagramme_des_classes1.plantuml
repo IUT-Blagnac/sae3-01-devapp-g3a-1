@@ -1,0 +1,42 @@
+@startuml
+title Diagramme des classes
+
+package "Frontend (CSS & PHP)" {
+    class assets {
+        "Regroupe les fichiers statiques nécessaires au site"
+    }
+    class index {
+        "Affiche la page d'accueil avec les données de la base"
+    }
+    class connexionBaseDeDonnees {
+        "Connecte la page à TimescaleDB"
+    }
+
+    index --> connexionBaseDeDonnees
+    index --> assets
+}
+
+package "Node-RED (Automatisation)" {
+    class fluxMQTT {
+        "Récupère les données des capteurs via MQTT"
+    }
+    class filtreDonnees {
+        "Filtre et prépare les données pour la base"
+    }
+    class insererMesures {
+        "Insère les données dans TimescaleDB"
+    }
+
+    fluxMQTT --> filtreDonnees
+    filtreDonnees --> insererMesures
+}
+
+package "Backend (TimescaleDB)" {
+    class Mesures {
+        "Table de la base contenant les données des capteurs"
+    }
+
+    insererMesures --> Mesures
+    connexionBaseDeDonnees --> Mesures
+}
+@enduml

@@ -34,3 +34,6 @@ bin/
 build/
 /bin1/
 java/build/**
+
+# resultat du code python pour generer des inserts dans la bd
+resultat.sql
